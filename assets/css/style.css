@@ -1,0 +1,1040 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+
+
+/* registration and login form  */
+.register_links {
+    color: white;
+}
+
+.register_links:hover {
+    color: #ff8c00;
+}
+
+/* ======================================================= */
+/* //certification  */
+.certificate .card {
+    width: 100%;
+    background-color: #efefef;
+    border: none;
+    transition: all 0.5s;
+}
+
+.certificate .name {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.certificate .head_title {
+    font-size: 22px;
+    font-weight: bold
+}
+
+
+.certificate .text span {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 500
+}
+
+#comptia_logo {
+    width: 180px;
+    height: auto;
+}
+
+.certificate table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.certificate table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+.certificate table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.certificate table th,
+.certificate table td {
+    padding: .625em;
+    text-align: center;
+}
+
+.certificate table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .certificate table {
+        border: 0;
+    }
+
+    .certificate table caption {
+        font-size: 1.3em;
+    }
+
+    .certificate table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .certificate table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .certificate table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .certificate table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .certificate table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+
+
+/* Verification  */
+.verification .pin-input-container {
+    display: inline-block;
+    position: relative;
+}
+.verification .pin-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+.verification .pin-boxes {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+.verification .pin-box {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+
+/* change_email_verification  */
+.change_email_verification .pin-input-container {
+    display: inline-block;
+    position: relative;
+}
+.change_email_verification .pin-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+.change_email_verification .pin-boxes {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+.change_email_verification .pin-box {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+
+/* profile */
+.profile .profile_img {
+    max-width: 100%;
+    width: 140px;
+    height: auto;
+    border-radius: 100%;
+    border: 4px solid white;
+}
+
+.profile .img_upload {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    background-color: #00008b;
+}
+
+.profile .img_upload:hover {
+    background-color: #e0e0e0;
+    color: #00008b;
+}
+
+.profile table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 120%;
+    table-layout: fixed;
+}
+
+.profile table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.profile table th,
+.profile table td {
+    padding: .625em;
+    text-align: center;
+}
+
+.profile table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .profile table {
+        border: 0;
+        width: 100%;
+    }
+
+    .profile table caption {
+        font-size: 1.3em;
+    }
+
+    .profile table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .profile table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .profile table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .profile table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .profile table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+/* edit_profile */
+.edit_profile .profile_img {
+    max-width: 100%;
+    width: 140px;
+    height: auto;
+    border-radius: 100%;
+    border: 4px solid white;
+}
+
+.edit_profile .img_upload {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    background-color: #00008b;
+}
+
+
+
+
+/* enrollment rna  */
+.enroll_rna .card0 {
+    margin: 40px 12px 15px 12px;
+    border: 0;
+}
+
+.enroll_rna .card1 {
+    margin: 0;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    background: white;
+    height: 100%;
+}
+
+.enroll_rna .head {
+    color: #222222;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+.enroll_rna .head2 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+.enroll_rna .line {
+    border-right: 2px #00008b solid;
+}
+
+.enroll_rna .data {
+    color: #00008b;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.enroll_rna .data2 {
+    color: white;
+}
+
+.enroll_rna .blue-bg {
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #00008b;
+    padding-left: 20px !important;
+    padding: 25px 10px 25px 15px;
+}
+
+.enroll_rna #total {
+    margin-top: 0px;
+    padding-left: 7px;
+}
+
+.enroll_rna #total-label {
+    margin-bottom: 0px;
+    color: #ffffff;
+    padding-left: 7px;
+}
+
+.enroll_rna #heading1 {
+    color: #ffffff;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.enroll_rna .card2 {
+    padding: 25px;
+    margin: 0;
+    height: 100%;
+}
+
+.enroll_rna .form-card .label {
+    font-weight: bold;
+    color: #00008b;
+}
+
+.enroll_rna .form-card input,
+.form-card textarea {
+    padding: 10px 8px 10px 8px;
+    border: none;
+    border: 1px solid lightgrey;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.enroll_rna .radio-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.enroll_rna .radio {
+    display: inline-block;
+    width: 204;
+    height: 64;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    cursor: pointer;
+    margin: 8px 25px 8px 0px;
+}
+
+.enroll_rna .radio:hover {
+    box-shadow: 0px 0px 10px #ff8c00;
+}
+
+.enroll_rna .radio.selected {
+    box-shadow: 0px 0px 10px #ff8c00;
+}
+
+.enroll_rna .fit-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.enroll_rna .enroll_btn {
+    background-color: #00008b;
+}
+
+.enroll_rna .enroll_btn:hover {
+    background-color: #ff8c00;
+}
+
+
+
+.enroll_rna .launch {
+    height: 50px
+}
+
+.enroll_rna .close {
+    font-size: 28px;
+    cursor: pointer;
+    color: rgb(206, 71, 71);
+}
+
+.enroll_rna .modal-body {
+    height: auto;
+}
+
+.enroll_rna .nav-tabs {
+    border: none !important
+}
+
+.enroll_rna .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ffffff #ffffff #fff;
+    border-top: 3px solid blue !important
+}
+
+.enroll_rna .nav-tabs .nav-link {
+    margin-bottom: -1px;
+    border: 1px solid transparent;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+    border-top: 3px solid #eee;
+    font-size: 20px
+}
+
+.enroll_rna .nav-tabs .nav-link:hover {
+    border-color: #e9ecef #ffffff #ffffff
+}
+
+.enroll_rna .nav-tabs {
+    display: table !important;
+    width: 100%
+}
+
+.enroll_rna .nav-item {
+    display: table-cell
+}
+
+.enroll_rna .form-control {
+    border-bottom: 1px solid #eee !important;
+    border: none;
+    font-weight: 600
+}
+
+.enroll_rna .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #8bbafe;
+    outline: 0;
+    box-shadow: none
+}
+
+.enroll_rna .inputbox {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%
+}
+
+.enroll_rna .inputbox span {
+    position: absolute;
+    top: 7px;
+    left: 11px;
+    transition: 0.5s
+}
+
+.enroll_rna .inputbox i {
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    transition: 0.5s;
+    color: #3F51B5;
+}
+
+.enroll_rna .inputbox input:focus~span {
+    transform: translateX(-0px) translateY(-15px);
+    font-size: 12px
+}
+
+.enroll_rna .inputbox input:valid~span {
+    transform: translateX(-0px) translateY(-15px);
+    font-size: 12px
+}
+
+/* view enroll  */
+.view_enroll table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+.view_enroll table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+.view_enroll table th,
+.view_enroll table td {
+    padding: .625em;
+    text-align: center;
+}
+.view_enroll table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+    .view_enroll table {
+        border: 0;
+    }
+
+    .view_enroll table caption {
+        font-size: 1.3em;
+    }
+
+    .view_enroll table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .view_enroll table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .view_enroll table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .view_enroll table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .view_enroll table td:last-child {
+        border-bottom: 0;
+    }
+}
+.view_enroll .card0 {
+    margin: 40px 12px 15px 12px;
+    border: 0;
+}
+.view_enroll .card1 {
+    margin: 0;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    background: white;
+    height: 100%;
+}
+.view_enroll .head {
+    color: #222222;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 30px;
+}
+.view_enroll .head2 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 30px;
+}
+.view_enroll .line {
+    border-right: 2px #00008b solid;
+}
+.view_enroll .data {
+    color: #00008b;
+    font-weight: bold;
+    font-size: 20px;
+}
+.view_enroll .data2 {
+    color: white;
+}
+.view_enroll .blue-bg {
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #00008b;
+    padding-left: 20px !important;
+    padding: 25px 10px 25px 15px;
+}
+.view_enroll #total {
+    margin-top: 0px;
+    padding-left: 7px;
+}
+.view_enroll #total-label {
+    margin-bottom: 0px;
+    color: #ffffff;
+    padding-left: 7px;
+}
+.view_enroll #heading1 {
+    color: #ffffff;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.view_enroll .card2 {
+    padding: 25px;
+    margin: 0;
+    height: 100%;
+}
+.view_enroll .form-card .label {
+    font-weight: bold;
+    color: #00008b;
+}
+.view_enroll .form-card input,
+.view_enroll .form-card textarea {
+    padding: 10px 8px 10px 8px;
+    border: none;
+    border: 1px solid lightgrey;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.view_enroll .card {
+    border: none;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.view_enroll .card:before {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #e3c5a1;
+    transform: scaleY(1);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+.view_enroll .card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #ff8c00;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+.view_enroll .card:hover::after {
+    transform: scaleY(1);
+}
+.view_enroll .fonts {
+    font-size: 11px;
+}
+.view_enroll .social-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+.view_enroll .social-list li {
+    padding: 10px;
+    color: #ff8c00;
+    font-size: 19px;
+}
+.view_enroll .buttons button:nth-child(1) {
+    border: 1px solid #ff8c00 !important;
+    color: #ff8c00;
+    height: 40px;
+}
+.view_enroll .buttons button:nth-child(1):hover {
+    border: 1px solid #ff8c00 !important;
+    color: #fff;
+    height: 40px;
+    background-color: #ff8c00;
+}
+.view_enroll .buttons button:nth-child(2) {
+    border: 1px solid #ff8c00 !important;
+    background-color: #ff8c00;
+    color: #fff;
+    height: 40px;
+}
+
+
+
+.view_enroll .timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.view_enroll .timeline:before {
+    content: "";
+    position: absolute;
+    top: -3em;
+    left: 2em;
+    width: 0.25em;
+    height: calc(100% + 6em);
+    background: linear-gradient(to bottom, #00008b 0%, #00008b 2%, #00008b 98%, #00008b 100%);
+}
+@media screen and (min-width: 45em) {
+    .view_enroll .timeline:before {
+        left: 50%;
+        transform: translateX(-50%);
+   }
+}
+.view_enroll .timeline__entry {
+    position: relative;
+    margin-bottom: 4em;
+    color: #fff;
+}
+.view_enroll .timeline__entry:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.view_enroll .timeline__id {
+    position: absolute;
+    top: 1em;
+    left: 2em;
+    padding: 0.5em 1em;
+    background: #00008b;
+    transform: translateX(-50%);
+}
+@media screen and (min-width: 45em) {
+    .view_enroll .timeline__id {
+        left: 50%;
+        transform: translateX(-50%);
+   }
+}
+.view_enroll .timeline__content {
+    position: relative;
+    display: block;
+    margin-left: 6em;
+    padding: 1em;
+    background: #00008b;
+}
+@media screen and (min-width: 45em) {
+    .view_enroll .timeline__content {
+        margin-left: 0;
+        width: calc(50% - 4em);
+   }
+}
+.view_enroll .timeline__content:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 1em;
+    left: -1em;
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    border-right: 1em solid #00008b;
+}
+@media screen and (min-width: 45em) {
+    .view_enroll .timeline__content:before {
+        left: auto;
+        right: -1em;
+        border-left: 1em solid #00008b;
+        border-right: none;
+   }
+}
+@media screen and (min-width: 45em) {
+    .view_enroll .timeline__content--flipped {
+        float: right;
+   }
+    .view_enroll .timeline__content--flipped:before {
+        left: -1em;
+        right: auto;
+        border-left: none;
+        border-right: 1em solid #00008b;
+   }
+}
+.view_enroll .timeline__heading {
+    margin-bottom: 0.25em;
+    font-size: 1.2rem;
+}
+.view_enroll .timeline__text {
+    color: #ccc;
+}
+.view_enroll .timeline__text:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* examination  */
+.examination label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+}
+.examination label input {
+    position: absolute;
+    left: -9999px;
+}
+.examination label input:checked + span {
+    background-color: #d6d6e5;
+}
+.examination label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+.examination label span {
+    display: flex;
+    align-items: center;
+    padding: 0.275em 0.75em 0.275em 0.275em;
+    border-radius: 79em;
+    transition: 0.25s ease;
+}
+.examination label span:hover {
+    background-color: #d6d6e5;
+}
+.examination label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.275em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+
+/* result_exam  */
+.result_exam table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.result_exam table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.result_exam table th,
+.result_exam table td {
+    padding: .625em;
+    text-align: center;
+}
+
+.result_exam table th,
+.result_exam table td {
+    font-size: 13px;
+}
+
+@media screen and (max-width: 600px) {
+    .result_exam table {
+        border: 0;
+    }
+    .result_exam table caption {
+        font-size: 1.3em;
+    }
+    .result_exam table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        font-size: smaller;
+    }
+    .result_exam table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+    .result_exam table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+    .result_exam table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    .result_exam table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+/* verify certificate  */
+.verify_cert table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.verify_cert table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+.verify_cert table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.verify_cert table th,
+.verify_cert table td {
+    padding: .625em;
+    text-align: center;
+}
+
+.verify_cert table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .verify_cert table {
+        border: 0;
+    }
+
+    .verify_cert table caption {
+        font-size: 1.3em;
+    }
+
+    .verify_cert table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .verify_cert table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .verify_cert table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .verify_cert table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .verify_cert table td:last-child {
+        border-bottom: 0;
+    }
+}

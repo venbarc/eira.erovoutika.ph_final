@@ -1,0 +1,115 @@
+.payment {
+    width: auto;
+    height: 500px;
+}
+
+.payment_container {
+    padding-top: 0%;
+}
+
+.admin_user_profile {
+    border-radius: 100%;
+    width: 80px;
+    height: auto;
+}
+
+.payment table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.payment table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.payment table th,
+.payment table td {
+    padding: .625em;
+    text-align: center;
+}
+
+.payment table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .payment table {
+        border: 0;
+    }
+
+    .payment table caption {
+        font-size: 1.3em;
+    }
+
+    .payment table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .payment table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .payment table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .payment table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .payment table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+.err {
+    text-align: center;
+    padding: 15px;
+    background-color: pink;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; /* add a transition for opacity */
+}
+.err.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.scs {
+    text-align: center;
+    padding: 15px;
+    background-color: lightgreen;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; /* add a transition for opacity */
+}
+.scs.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
