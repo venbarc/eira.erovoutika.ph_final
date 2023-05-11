@@ -7,7 +7,7 @@
     <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
       <div data-aos="zoom-out">
         <h1 class="text-center text-lg-center">
-          Enrollment <strong class="text-warning">Robotics and Automation</strong> <br> Certifications</h1>
+          Erovoutika Training and Certification <br><strong class="text-warning">Robotics and Automation</strong></h1>
       </div>
     </div>
   </div>

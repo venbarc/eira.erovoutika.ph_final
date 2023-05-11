@@ -11,9 +11,9 @@
                             <a href="index.php"><img src="assets/img/logo/eira_logo.png" class="img-fluid"></a>
                         </div>
                         <br>
-                        <p> Phase 3101 Santa Rosa City Laguna </p><br>
+                        <p> Parc House Building II, Guadalupe Nuevo, <br> Makati City , Makati, Philippines </p><br>
                         <p>Philippines</p><br><br>
-                        <strong>Phone:</strong> 074 423 1557<br>
+                        <strong>Phone:</strong>074 423 1557 | 09653546415 <br>
                         <strong>Email:</strong> erovoutika@gmail.com<br>
                         </p>
                         <div class="social-links mt-3">

@@ -99,7 +99,7 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>8 Phase 3101 Santa Rosa City Laguna (Philippines)</p>
+                <p>Parc House Building II, Guadalupe Nuevo, <br> Makati City , Makati, Philippines</p>
               </div>
 
               <div class="email">
@@ -111,7 +111,7 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>074 423 1557</p>
+                <p>074 423 1557 | 09653546415</p>
               </div>
 
             </div>
