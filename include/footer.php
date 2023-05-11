@@ -13,8 +13,8 @@
                         <br>
                         <p> Parc House Building II, Guadalupe Nuevo, <br> Makati City , Makati, Philippines </p><br>
                         <p>Philippines</p><br><br>
-                        <strong>Phone:</strong>074 423 1557 | 09653546415 <br>
-                        <strong>Email:</strong> erovoutika@gmail.com<br>
+                        <strong>Phone: </strong>074 423 1557 | 09653546415 <br>
+                        <strong>Email: </strong> erovoutika@gmail.com<br>
                         </p>
                         <div class="social-links mt-3">
                             <a href="https://twitter.com/erovoutika" class="twitter"><i class="bx bxl-twitter"></i></a>

@@ -110,7 +110,7 @@
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
+                <h4>Call: </h4>
                 <p>074 423 1557 | 09653546415</p>
               </div>
 
