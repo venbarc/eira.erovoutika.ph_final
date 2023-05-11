@@ -11,7 +11,7 @@
                             <a href="index.php"><img src="assets/img/logo/eira_logo.png" class="img-fluid"></a>
                         </div>
                         <br>
-                        <p> Parc House Building II, Guadalupe Nuevo, <br> Makati City , Makati, Philippines </p><br>
+                        <p>Parc House Building II, Guadalupe Nuevo, <br> Makati City , Makati, Philippines </p><br>
                         <p>Philippines</p><br><br>
                         <strong>Phone: </strong>074 423 1557 | 09653546415 <br>
                         <strong>Email: </strong> erovoutika@gmail.com<br>
@@ -21,6 +21,10 @@
                             <a href="https://www.facebook.com/erovoutika/" class="facebook"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.instagram.com/erovoutika/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
                             <a href="https://www.linkedin.com/company/erovoutika/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            <br>
+                        </div>
+                        <div class="text-center">
+                            <p >made with <i class="fas fa-heart text-danger"></i> </p>
                         </div>
                     </div>
                 </div>

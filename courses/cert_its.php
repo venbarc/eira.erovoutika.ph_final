@@ -5,7 +5,7 @@
     <div class="flex justify-content-center">
       <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
         <div data-aos="zoom-out">
-          <h1 class="text-center text-lg-center">Enrollment ITS Certifications</h1>
+          <h1 class="text-center text-lg-center">ITS Certifications</h1>
           <div class="text-center text-lg-center">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScU_KTcMPk2_09vzHLeIIfYvQ5Kl94d0I0YCHRMYf5O68PezA/viewform" target="_blank" type="button" class="btn btn-warning scrollto">
               Enroll now

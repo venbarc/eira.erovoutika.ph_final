@@ -5,7 +5,7 @@
     <div class="flex justify-content-center">
       <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
         <div data-aos="zoom-out">
-          <h1 class="text-center text-lg-center">Enrollment Python Institute Certifications</h1>
+          <h1 class="text-center text-lg-center">Python Institute Certifications</h1>
           <div class="text-center text-lg-center">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5xpHesqmvNbUu6no1OUcQtuGxBO3N6z2Go6-UrK5on-8mDQ/viewform" target="_blank" type="button" class="btn btn-warning scrollto">
               Enroll now

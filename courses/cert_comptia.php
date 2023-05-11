@@ -5,7 +5,7 @@
     <div class="flex justify-content-center">
       <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
         <div data-aos="zoom-out">
-          <h1 class="text-center text-lg-center">Enrollment <strong class="text-danger">CompTIA</strong> Certifications</h1>
+          <h1 class="text-center text-lg-center"><strong class="text-danger">CompTIA</strong> Certifications</h1>
           <div class="text-center text-lg-center">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOLdDhjSfDZBjpz4Nos9sjPHOxMucUt8ngIwVE-FjVyoJc3w/viewform" target="_blank" type="button" class="btn btn-warning scrollto">
               Enroll now
