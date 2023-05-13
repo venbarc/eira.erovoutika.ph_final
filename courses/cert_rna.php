@@ -46,7 +46,7 @@
         <a href="rna.php?type=rna1">
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/ra1.png" alt="">
-            <h3 style="color: #00008b">Robotis and Automation Level 1</h3>
+            <h3 style="color: #00008b">Robotics and Automation Level 1</h3>
           </div>
         </a>
       </div>
@@ -55,7 +55,7 @@
         <!-- <a href=""> -->
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/ra2.png" alt="">
-            <h3 style="color: #00008b">Robotis and Automation Level 2</h3>
+            <h3 style="color: #00008b">Robotics and Automation Level 2</h3>
           </div>
         <!-- </a> -->
       </div>
@@ -64,7 +64,7 @@
         <!-- <a href=""> -->
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/ra3.png" alt="">
-            <h3 style="color: #00008b">Robotis and Automation Level 3</h3>
+            <h3 style="color: #00008b">Robotics and Automation Level 3</h3>
           </div>
         <!-- </a> -->
       </div>
