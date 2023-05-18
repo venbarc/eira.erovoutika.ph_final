@@ -45,7 +45,7 @@
       <div class="col-lg-3 col-md-4">
         <a href="rna.php?type=rna1">
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/ra1.png" alt="">
+            <img class="certi_icon" src="assets/img/certificates/rna/level 1.webp" alt="">
             <h3 style="color: #00008b">Robotics and Automation Level 1</h3>
           </div>
         </a>
@@ -54,7 +54,7 @@
       <div class="col-lg-3 col-md-4">
         <!-- <a href=""> -->
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/ra2.png" alt="">
+            <img class="certi_icon" src="assets/img/certificates/rna/level 2.webp" alt="">
             <h3 style="color: #00008b">Robotics and Automation Level 2</h3>
           </div>
         <!-- </a> -->
@@ -63,7 +63,7 @@
       <div class="col-lg-3 col-md-4">
         <!-- <a href=""> -->
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/ra3.png" alt="">
+            <img class="certi_icon" src="assets/img/certificates/rna/level 3.webp" alt="">
             <h3 style="color: #00008b">Robotics and Automation Level 3</h3>
           </div>
         <!-- </a> -->

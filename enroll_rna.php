@@ -410,7 +410,7 @@
                                                                                 <div class="data">Entry Level</div>
                                                                             </div>
                                                                             <div class="col-lg-5 col-4 mt-4">
-                                                                                <img src="assets/img/certificates/rna/ra1.png" width="200"
+                                                                                <img src="assets/img/certificates/rna/level 1.webp" width="200"
                                                                                     height="200">
                                                                             </div>
                                                                         </div>
