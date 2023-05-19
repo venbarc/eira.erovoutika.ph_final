@@ -151,7 +151,7 @@
                                                                         <div class="col-md-7">
                                                                             <div class="card p-3 py-4">
                                                                                 <div class="text-left">
-                                                                                    <img src="assets/img/certificates/rna/ra1.png" width="150" class="rounded-circle">
+                                                                                    <img src="assets/img/certificates/rna/level 1.webp" width="150" class="rounded-circle">
                                                                                 </div>
                                                                                 <div class="text-left mt-3">
                                                                                     <h6 class="mb-1">

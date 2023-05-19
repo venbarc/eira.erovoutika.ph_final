@@ -8,7 +8,7 @@
                     <div class="footer-info">
                         <div class="logo">
                             <!-- Uncomment below if you prefer to use an image logo -->
-                            <a href="index.php"><img src="assets/img/logo/eira_logo.png" class="img-fluid"></a>
+                            <a href="index.php"><img src="assets/img/logo/EIRA blue.webp" class="img-fluid"style="height:200px"></a>
                         </div>
                         <br>
                         <p>Parc House Building II, Guadalupe Nuevo, <br> Makati City , Makati, Philippines </p><br>
