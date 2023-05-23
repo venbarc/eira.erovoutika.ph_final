@@ -5,13 +5,17 @@
     <div class="flex justify-content-center">
       <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
         <div data-aos="zoom-out">
-          <h1 class="text-center text-lg-center">
-            Erovoutika Training and Certification In<br><strong class="text-warning">Robotics and Automation</strong>
-          </h1>
+          <h1 class="text-center text-lg-center">Linux Institute Certifications</h1>
+          <div class="text-center text-lg-center">
+            <a href="https://bit.ly/LinuxTrainingCert" target="_blank" type="button" class="btn btn-warning scrollto">
+              Enroll now
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 
   <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 150 28 " preserveAspectRatio="none">
@@ -38,41 +42,41 @@
 
       <div class="section-title" data-aos="fade-up">
         <h2>Certifications</h2>
-        <p class="dets">Robotics and Automation Certifications</p>
+        <p class="dets">Linux Institute</p>
       </div>
 
       <div class="row" data-aos="fade-left">
-        <!-- RNA 1  -->
+        <!-- LINUX 1  -->
         <div class="col-lg-3 col-md-4">
-          <a href="rna.php?type=rna1">
+          <a href="linux.php?type=linux">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-              <img class="certi_icon" src="assets/img/certificates/rna/level 1.webp" alt="">
-              <h3 style="color: #00008b">Robotics and Automation Level 1</h3>
+              <img class="certi_icon" src="assets/img/certificates/linux/linux.webp" alt="">
+              <h3 style="color: #00008b">Linux Essentials</h3>
             </div>
           </a>
         </div>
-        <!-- RNA 2  -->
+        <!-- LINUX 2  -->
         <div class="col-lg-3 col-md-4">
-          <!-- <a href=""> -->
-          <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/level 2.webp" alt="">
-            <h3 style="color: #00008b">Robotics and Automation Level 2</h3>
-          </div>
-          <!-- </a> -->
+          <a href="linux.php?type=security">
+            <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
+              <img class="certi_icon" src="assets/img/certificates/linux/security.webp" alt="">
+              <h3 style="color: #00008b">Linux Security Essentials</h3>
+            </div>
+          </a>
         </div>
-        <!-- RNA 3  -->
+        <!-- LINUX 3  -->
         <div class="col-lg-3 col-md-4">
-          <!-- <a href=""> -->
-          <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/level 3.webp" alt="">
-            <h3 style="color: #00008b">Robotics and Automation Level 3</h3>
-          </div>
-          <!-- </a> -->
+          <a href="linux.php?type=web">
+            <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
+              <img class="certi_icon" src="assets/img/certificates/linux/web.webp" alt="">
+              <h3 style="color: #00008b">Linux Web Development Essentials</h3>
+            </div>
+          </a>
         </div>
 
       </div>
 
     </div>
-  </section><!-- End RNA CERTIFICATION Section -->
+  </section><!-- End LINUX CERTIFICATION Section -->
 
 </main><!-- End #main -->

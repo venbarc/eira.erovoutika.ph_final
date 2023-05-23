@@ -26,17 +26,17 @@
 <body>
     <main id="main">
         <?php
-            include "include/hero.php";
-            include "include/how2_enroll.php";
-            include "include/happy_client.php";
-            include "include/learning_courses.php";
-            include "include/gallery.php";
-            // include "include/team.php";
-            include "include/contact.php";
+        include "include/hero.php";
+        include "include/how2_enroll.php";
+        include "include/learning_courses.php";
+        include "include/gallery.php";
+        // include "include/team.php";
+        include "include/contact.php";
         ?>
     </main><!-- End #main -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
     <?php

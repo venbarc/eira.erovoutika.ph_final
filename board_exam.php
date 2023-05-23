@@ -32,16 +32,19 @@
                 <div class="flex justify-content-center">
                     <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
                         <div data-aos="zoom-out">
-                            <h1 class="text-center text-lg-center">ECE Board Exam Review  </h1>
-                            <h2 class="text-center text-lg-center"> Mathematics, General Engineering and Applied Sciences, <br>
-                                 Electronics Engineering, and Electronics Systems and technologies 
+                            <h1 class="text-center text-lg-center">ECT and ECE Board Exam Review </h1>
+                            <h2 class="text-center text-lg-center"> Mathematics, General Engineering and Applied
+                                Sciences, <br>
+                                Electronics Technician, Electronics Engineering, and Electronics Systems and
+                                technologies
                             </h2>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28 " preserveAspectRatio="none">
                 <defs>
                     <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
                 </defs>
@@ -72,7 +75,20 @@
                             <h3>Mathematics</h3>
                             <div class="pic"><img src="assets/img/review/math.webp" class="img-fluid" alt=""></div>
                             <div class="btn-wrap">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHGJH8sA7Lh6YKZK-Oy8jqo5rDPsFgLCqLz9fWuqda9gp5HA/viewform" target="_blank" class="btn-enroll">Enroll Now</a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHGJH8sA7Lh6YKZK-Oy8jqo5rDPsFgLCqLz9fWuqda9gp5HA/viewform"
+                                    target="_blank" class="btn-enroll">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ELECTRONICS TECHNICIAN section here  -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
+                            <span class="avail">Available</span>
+                            <h3>Electronics Technician</h3>
+                            <div class="pic"><img src="assets/img/review/ECT.webp" class="img-fluid" alt=""></div>
+                            <div class="btn-wrap">
+                                <a href="https://bit.ly/ECTReviewERo" target="_blank" class="btn-enroll">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -130,7 +146,8 @@
 
     </main><!-- End #main -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
     <?php
