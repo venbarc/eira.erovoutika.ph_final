@@ -15,7 +15,8 @@
     // navigation bar 
     include 'include/navbar.php';
 
-    if (isset($_SESSION['user_id'])) {
+    if (isset($_SESSION['user_id'])) 
+    {
         ?>
         <script>
             location.href = "404.php";
@@ -44,7 +45,8 @@
                             require 'PHPMailer-master/src/SMTP.php';
                             require 'PHPMailer-master/src/Exception.php';
 
-                            if (isset($_POST['reg_submit'])) {
+                            if (isset($_POST['reg_submit'])) 
+                            {
                                 $email = $_POST['email'];
                                 $fname = $_POST['fname'];
                                 $lname = $_POST['lname'];
