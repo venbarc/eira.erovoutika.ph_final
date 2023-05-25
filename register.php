@@ -16,11 +16,11 @@
     include 'include/navbar.php';
 
     if (isset($_SESSION['user_id'])) {
-    ?>
+        ?>
         <script>
             location.href = "404.php";
         </script>
-    <?php
+        <?php
     }
     ?>
 
@@ -30,21 +30,21 @@
     <main id="main">
         <!-- ======= Hero Section ======= -->
         <section id="hero">
-        
-        <div class="container">
-            <div class="flex justify-content-center">
-                <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
-                    <div data-aos="zoom-out">
-                        <h3 class="text-center text-white text-lg-center">Registration Here</h3>
-                        <!-- if register button is pressed  -->
-                        <?php
+
+            <div class="container">
+                <div class="flex justify-content-center">
+                    <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                        <div data-aos="zoom-out">
+                            <h1 class="text-center text-lg-center">Don't Have an Account?<span
+                                    style="color: #ff8c00;">Register Here</span></h1>
+                            <!-- if register button is pressed  -->
+                            <?php
                             // email set up /////////////////////////////////////////////////
                             require 'PHPMailer-master/src/PHPMailer.php';
                             require 'PHPMailer-master/src/SMTP.php';
                             require 'PHPMailer-master/src/Exception.php';
 
-                            if (isset($_POST['reg_submit'])) 
-                            {
+                            if (isset($_POST['reg_submit'])) {
                                 $email = $_POST['email'];
                                 $fname = $_POST['fname'];
                                 $lname = $_POST['lname'];
@@ -61,32 +61,27 @@
                                 $stmt_check_email->execute();
                                 $res_check_email = $stmt_check_email->get_result();
 
-                                if($res_check_email->num_rows > 0) //if user already exist
+                                if ($res_check_email->num_rows > 0) //if user already exist
                                 {
                                     echo '
                                     <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                         Email is not available try another one !
                                     </div>
                                     ';
-                                }
-                                else
-                                {
-                                    if($password != $c_password) 
-                                    {
+                                } else {
+                                    if ($password != $c_password) {
                                         echo '
                                         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                             Password and confirm password does not match !
                                         </div>
                                         ';
-                                    } 
-                                    else 
-                                    {
+                                    } else {
                                         //SMTP settings
                                         $mail = new PHPMailer\PHPMailer\PHPMailer(true);
                                         $mail->isSMTP();
                                         $mail->Host = 'smtp.gmail.com';
                                         $mail->SMTPAuth = true;
-                                        
+
                                         // erovoutika mails 
                                         $mail->Username = 'erovoutikamails@gmail.com';
                                         // erovoutika password form gmail 
@@ -109,8 +104,7 @@
                                         ';
 
                                         // check if email sent 
-                                        if ($mail->send()) 
-                                        {
+                                        if ($mail->send()) {
                                             // password hashing 
                                             $hash_pass = password_hash($password, PASSWORD_DEFAULT);
 
@@ -119,15 +113,13 @@
                                             $stmt_insert->bind_param("sssisssi", $email, $fname, $lname, $contact, $hash_pass, $company_univ, $address, $pin);
                                             $stmt_insert->execute();
 
-                                            if ($stmt_insert->affected_rows > 0)
-                                            {
+                                            if ($stmt_insert->affected_rows > 0) {
                                                 ?>
                                                 <script>
                                                     location.href = "verification.php?email=<?php echo $email ?>";
                                                 </script>
                                                 <?php
-                                            } 
-                                            else {
+                                            } else {
                                                 echo '
                                                 <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                                     Something went wrong! pls try again.
@@ -135,9 +127,7 @@
                                                 ';
                                             }
                                             $stmt_insert->close();
-                                        } 
-                                        else 
-                                        {
+                                        } else {
                                             echo '
                                             <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                                 Email not sent, something went wrong
@@ -146,104 +136,128 @@
                                         }
                                     }
                                     $stmt_check_email->close();
-                                } 
+                                }
                             }
 
-                        ?>
+                            ?>
 
-                        <div class="row justify-content-center pt-4">
-                            <div class="col-md-12 col-lg-8">
-                                <div class="login-wrap p-0">
-                                    <!-- start form  -->
-                                    <form method="post">
-                                        <div class="row">
-                                            <!-- Email here  -->
-                                            <div class="col-md-4 mb-3">
-                                                <label for="email" class="text-white form-label">Email</label>
-                                                <input type="email" name="email" class="form-control" id="email" placeholder="Juan@gmail.com" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                            <div class="row justify-content-center pt-4">
+                                <div class="col-md-12 col-lg-8">
+                                    <div class="login-wrap p-0">
+                                        <!-- start form  -->
+                                        <form method="post">
+                                            <div class="row">
+                                                <!-- Email here  -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="email" class="text-white form-label">Email</label>
+                                                    <input type="email" name="email" class="form-control" id="email"
+                                                        placeholder="Juan@gmail.com"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
+                                                <!-- First name here  -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="fname" class="text-white form-label">First Name</label>
+                                                    <input type="text" name="fname" class="form-control" id="fname"
+                                                        placeholder="Juan"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
+                                                <!-- Last name here  -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="lname" class="text-white form-label">Last Name</label>
+                                                    <input type="text" name="lname" class="form-control" id="lname"
+                                                        placeholder="Tamad"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
+                                                <!-- contact here  -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="contact" class="text-white form-label">Contact
+                                                        (+63)</label>
+                                                    <input type="text" name="contact" class="form-control" id="contact"
+                                                        placeholder="xxxx-xxx-xxx"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')"
+                                                        pattern="[0-9]{10}" minlength='10' maxlength='10' required>
+                                                </div>
+                                                <!-- password here  -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="password" class="text-white form-label">Password</label>
+                                                    <input type="password" name="password" class="form-control"
+                                                        id="password" placeholder="password here"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
+                                                <!-- confirm password here  -->
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="c_password" class="text-white form-label">Confirm
+                                                        Password</label>
+                                                    <input type="password" name="c_password" class="form-control"
+                                                        id="c_password" placeholder="confirm password here"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
+                                                <!-- Company and University here  -->
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="company_univ" class="text-white form-label">Company /
+                                                        University</label>
+                                                    <input type="text" name="company_univ" class="form-control"
+                                                        id="company_univ" placeholder="Company / University"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
+                                                <!-- Address here -->
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="address" class="text-white form-label">Address</label>
+                                                    <input type="text" name="address" class="form-control" id="address"
+                                                        placeholder="Address here"
+                                                        onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                                </div>
                                             </div>
-                                            <!-- First name here  -->
-                                            <div class="col-md-4 mb-3">
-                                                <label for="fname" class="text-white form-label">First Name</label>
-                                                <input type="text" name="fname" class="form-control" id="fname" placeholder="Juan" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
+                                            <div class="form-group d-md-flex mt-3">
+                                                <!-- links for login and forgot password  -->
+                                                <div class="w-50 text-md-right">
+                                                    <a href="login.php" class="register_links">Already have an account
+                                                        ?</a>
+                                                </div>
                                             </div>
-                                            <!-- Last name here  -->
-                                            <div class="col-md-4 mb-3">
-                                                <label for="lname" class="text-white form-label">Last Name</label>
-                                                <input type="text" name="lname" class="form-control" id="lname" placeholder="Tamad" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
-                                            </div>
-                                            <!-- contact here  -->
-                                            <div class="col-md-4 mb-3">
-                                                <label for="contact" class="text-white form-label">Contact (+63)</label>
-                                                <input type="text" name="contact"  class="form-control" id="contact" placeholder="xxxx-xxx-xxx" onkeyup="this.value=this.value.replace(/[<>]/g,'')" pattern="[0-9]{10}" minlength='10' maxlength='10' required>
-                                            </div>
-                                            <!-- password here  -->
-                                            <div class="col-md-4 mb-3">
-                                                <label for="password" class="text-white form-label">Password</label>
-                                                <input type="password" name="password" class="form-control" id="password" placeholder="password here" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
-                                            </div>
-                                            <!-- confirm password here  -->
-                                            <div class="col-md-4 mb-3">
-                                                <label for="c_password" class="text-white form-label">Confirm Password</label>
-                                                <input type="password" name="c_password" class="form-control" id="c_password" placeholder="confirm password here" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
-                                            </div>
-                                            <!-- Company and University here  -->
-                                            <div class="col-md-6 mb-3">
-                                                <label for="company_univ" class="text-white form-label">Company / University</label>
-                                                <input type="text" name="company_univ" class="form-control" id="company_univ" placeholder="Company / University" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
-                                            </div>
-                                            <!-- Address here -->
-                                            <div class="col-md-6 mb-3">
-                                                <label for="address" class="text-white form-label">Address</label>
-                                                <input type="text" name="address" class="form-control" id="address" placeholder="Address here" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group d-md-flex mt-3">
-                                            <!-- links for login and forgot password  -->
-                                            <div class="w-50 text-md-right">
-                                                <a href="login.php" class="register_links">Already have an account ?</a>
-                                            </div>
-                                        </div>
                                             <!-- submit button to register  -->
                                             <div class="mt-5 text-center">
-                                                <input type="submit" name="reg_submit" value="Register" class="btn btn-warning">
+                                                <input type="submit" name="reg_submit" value="Register"
+                                                    class="btn btn-warning">
                                             </div>
-                                    </form>
-                                    <!-- end form  -->
+                                        </form>
+                                        <!-- end form  -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Start wavy hero  -->
-        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-            <defs>
-                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-            </defs>
-            <g class="wave1">
-                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
-            </g>
-            <g class="wave2">
-                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
-            </g>
-            <g class="wave3">
-                <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
-            </g>
-        </svg>
-        <!-- End wavy hero  -->
+            <!-- Start wavy hero  -->
+            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28 " preserveAspectRatio="none">
+                <defs>
+                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </defs>
+                <g class="wave1">
+                    <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                </g>
+                <g class="wave2">
+                    <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                </g>
+                <g class="wave3">
+                    <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                </g>
+            </svg>
+            <!-- End wavy hero  -->
         </section>
-        
-    <?php
+
+        <?php
         include 'include/contact.php';
-    ?>
+        ?>
 
     </main>
     <!-- End #main -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
     <?php
