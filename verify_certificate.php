@@ -59,7 +59,7 @@
         <!-- End wavy hero  -->
 
         <div style="margin: 5% 10%;" id="verify_cert" class="verify_cert">
-            <p class="p-3 bg-warning text-center mb-5"><strong>Note: </strong> Certificate ID can be viewed on your certificate at the left bottom.</p>
+            <p class="p-3 bg-warning text-center mb-5"><strong>Note: </strong> Certificate ID can be viewed on your certificate at the bottom.</p>
             <form method="post" class="mb-5">
                 <label class="form=label"><strong><h4>Certificate ID</h4></strong></label>
                 <input type="text" class="form-control" placeholder="Certificate ID" name="cert_id" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required> <br>
