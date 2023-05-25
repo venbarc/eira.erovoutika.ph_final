@@ -40,7 +40,8 @@
                 </div>
             </div>
             <!-- Start wavy hero  -->
-            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28 " preserveAspectRatio="none">
                 <defs>
                     <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
                 </defs>
@@ -59,28 +60,33 @@
         <!-- End wavy hero  -->
 
         <div style="margin: 5% 10%;" id="verify_cert" class="verify_cert">
-            <p class="p-3 bg-warning text-center mb-5"><strong>Note: </strong> Certificate ID can be viewed on your certificate at the left bottom.</p>
+            <p style="background-color:#ff8c00;" class="p-3  text-center mb-5"><strong>Note: </strong>You can view the
+                Certificate ID at the
+                bottom left of your certificate.</p>
             <form method="post" class="mb-5">
-                <label class="form=label"><strong><h4>Certificate ID</h4></strong></label>
-                <input type="text" class="form-control" placeholder="Certificate ID" name="cert_id" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required> <br>
-                <button class="btn btn-primary" name="submit_verify_cert">Verify Certificate</button>
+                <label class="form=label"><strong>
+                        <h4>Certificate ID</h4>
+                    </strong></label>
+                <input type="text" class="form-control" placeholder="Certificate ID" name="cert_id"
+                    onkeyup="this.value=this.value.replace(/[<>]/g,'')" required> <br>
+                <button style="color:white; background: rgba(1, 4, 136, 0.9);" class="btn "
+                    name="submit_verify_cert">Verify
+                    Certificate</button>
             </form>
 
             <!-- if submit verify cert is posted  -->
             <?php
-                if(isset($_POST['submit_verify_cert']))
-                {
-                    // initialization 
-                    $cert_id = $_POST['cert_id'];
+            if (isset($_POST['submit_verify_cert'])) {
+                // initialization 
+                $cert_id = $_POST['cert_id'];
 
-                    $stmt = $conn->prepare("select * from result where cert_id = ?");
-                    $stmt->bind_param('s', $cert_id);
-                    $stmt->execute();
-                    $res = $stmt->get_result();
+                $stmt = $conn->prepare("select * from result where cert_id = ?");
+                $stmt->bind_param('s', $cert_id);
+                $stmt->execute();
+                $res = $stmt->get_result();
 
-                    if($res->num_rows > 0)
-                    {
-                        echo'
+                if ($res->num_rows > 0) {
+                    echo '
                             <table>
                                 <thead>
                                     <tr>
@@ -95,73 +101,67 @@
                                     </tr>
                                 </thead>
                         ';
-                        while($row = $res->fetch_assoc())
-                        {
-                            $cert_id = $row['cert_id'];
-                            $rna_type = $row['rna_type'];
-                            $email = $row['email'];
-                            $full_name = $row['full_name'];
-                            $overall_user_percent = $row['overall_user_percent'];
-                            $verdict = $row['verdict'];
-                            $date = date("F j, Y", strtotime($row['date'])); // format the date
-                            
-                            // get rna type 
-                            if($rna_type == 'rna1')
-                            {
-                                $rna_type = 'Robotics and Automation Level 1';
-                            }
-                            else if($rna_type == 'rna2')
-                            {
-                                $rna_type = 'Robotics and Automation Level 2';
-                            }
-                            else if($rna_type == 'rna3')
-                            {
-                                $rna_type = 'Robotics and Automation Level 3';
-                            }
-                            echo'
+                    while ($row = $res->fetch_assoc()) {
+                        $cert_id = $row['cert_id'];
+                        $rna_type = $row['rna_type'];
+                        $email = $row['email'];
+                        $full_name = $row['full_name'];
+                        $overall_user_percent = $row['overall_user_percent'];
+                        $verdict = $row['verdict'];
+                        $date = date("F j, Y", strtotime($row['date'])); // format the date
+            
+                        // get rna type 
+                        if ($rna_type == 'rna1') {
+                            $rna_type = 'Robotics and Automation Level 1';
+                        } else if ($rna_type == 'rna2') {
+                            $rna_type = 'Robotics and Automation Level 2';
+                        } else if ($rna_type == 'rna3') {
+                            $rna_type = 'Robotics and Automation Level 3';
+                        }
+                        echo '
                                 <tbody>
                                     <tr>
-                                        <td data-label="Certificate ID">'.$cert_id.'</td>
-                                        <td data-label="RNA Level">'.$rna_type.'</td>
-                                        <td data-label="Email/Name">'.$email.' <br> '.$full_name.'</td>
-                                        <td data-label="Score Percentage">'.$overall_user_percent.'%</td>
+                                        <td data-label="Certificate ID">' . $cert_id . '</td>
+                                        <td data-label="RNA Level">' . $rna_type . '</td>
+                                        <td data-label="Email/Name">' . $email . ' <br> ' . $full_name . '</td>
+                                        <td data-label="Score Percentage">' . $overall_user_percent . '%</td>
                                         <td data-label="Passing Percentage">70 %</td>
-                                        <td data-label="Verdict">'.$verdict.'</td>
-                                        <td data-label="Date">'.$date.'</td>
+                                        <td data-label="Verdict">' . $verdict . '</td>
+                                        <td data-label="Date">' . $date . '</td>
                                         <td data-label="Verification Status" style="color: green;"><strong>Valid</strong></td>
                                     </tr>
                                 </tbody>
                             ';
 
-                        }
-                        echo'
+                    }
+                    echo '
                             </table>
                         ';
-                    }
-                    else{
-                        echo '
+                } else {
+                    echo '
                         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                             Invalid Certificate ID. Please try again.
                         </div>
                         ';
-                    }
                 }
+            }
             ?>
 
         </div>
 
-        
+
     </main>
     <!-- End #main -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
     <?php
-        include "include/foot_links.php";
+    include "include/foot_links.php";
 
-        // navigation bar 
-        include 'include/footer.php';
+    // navigation bar 
+    include 'include/footer.php';
     ?>
 
 </body>

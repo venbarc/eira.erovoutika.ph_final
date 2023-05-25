@@ -33,11 +33,6 @@
                     <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
                         <div data-aos="zoom-out">
                             <h1 class="text-center text-lg-center">ECT and ECE Board Exam Review </h1>
-                            <h2 class="text-center text-lg-center"> Mathematics, General Engineering and Applied
-                                Sciences, <br>
-                                Electronics Technician, Electronics Engineering, and Electronics Systems and
-                                technologies
-                            </h2>
                         </div>
                     </div>
                 </div>
