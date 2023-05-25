@@ -28,7 +28,8 @@
 
             <?php
             // get url type of RNA certificate 
-            if (isset($_GET['type'])) {
+            if (isset($_GET['type'])) 
+            {
                 $type = $_GET['type'];
 
                 if ($type == 'linux') {
