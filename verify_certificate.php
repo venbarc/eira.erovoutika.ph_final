@@ -60,9 +60,9 @@
         <!-- End wavy hero  -->
 
         <div style="margin: 5% 10%;" id="verify_cert" class="verify_cert">
-            <p style="background-color:#ff8c00;" class="p-3  text-center mb-5"><strong>Note: </strong>You can view the
-                Certificate ID at the
-                bottom left of your certificate.</p>
+
+            <p class="p-3 bg-warning text-center mb-5"><strong>Note: </strong> Certificate ID can be viewed on your certificate at the bottom.</p>
+
             <form method="post" class="mb-5">
                 <label class="form=label"><strong>
                         <h4>Certificate ID</h4>

@@ -131,20 +131,23 @@
                                                     $date = date("F j, Y", strtotime($date)); // format the date
 
                                                     // center align the name
-                                                    $name_width = imagettfbbox(50, 0, $font, $name);
+                                                    $name_width = imagettfbbox(60, 0, $font, $name);
                                                     $name_width = abs($name_width[4] - $name_width[0]);
                                                     $name_x = (imagesx($image) - $name_width) / 2;
                                                     // center align the date
-                                                    $date_width = imagettfbbox(17, 0, $font, $date);
+                                                    $date_width = imagettfbbox(26, 0, $font, $date);
                                                     $date_width = abs($date_width[4] - $date_width[0]);
                                                     $date_x = (imagesx($image) - $date_width) / 2;
+                                                    // center align the certificate id
+                                                    $cert_width = imagettfbbox(31, 0, $font, $date);
+                                                    $cert_width = abs($cert_width[4] - $cert_width[0]);
+                                                    $cert_x = (imagesx($image) - $cert_width) / 2;
 
                                                     // name and date positioning
-                                                    imagettftext($image, 50, 0, $name_x, 365, $color, $font, $name);
-                                                    imagettftext($image, 17, 0, $date_x, 425, $color, $font, $date);
+                                                    imagettftext($image, 50, 0, $name_x, 335, $color, $font, $name);
+                                                    imagettftext($image, 17, 0, $date_x, 570, $color, $font, $date);
                                                     // verification mark 
-                                                    imagettftext($image, 8, 0, 17, 605, $color, $font2, 'Certificate id: '. $cert_id);
-                                                    imagettftext($image, 8, 0, 17, 620, $color, $font2, 'Verify at: eira.erovoutika.ph/verify_certificate.php');
+                                                    imagettftext($image, 8, 0, $cert_x, 670, $color, $font2, 'Certificate id: '. $cert_id);
 
                                                     // Output the image as base64-encoded data URI
                                                     ob_start();
