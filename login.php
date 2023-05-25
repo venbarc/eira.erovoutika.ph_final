@@ -46,7 +46,8 @@
                                     style="color: #ff8c00;">I</span>R<span style="color: #ff8c00;">A</span></h1>
                             <!-- if login button is set  -->
                             <?php
-                            if (isset($_POST['login_submit'])) {
+                            if (isset($_POST['login_submit'])) 
+                            {
                                 $email = $_POST['email'];
                                 $password = $_POST['password'];
 
@@ -81,10 +82,10 @@
                                             $_SESSION['user_id'] = $id;
 
                                             ?>
-                            <script>
-                            location.href = "profile.php";
-                            </script>
-                            <?php
+                                            <script>
+                                            location.href = "profile.php";
+                                            </script>
+                                            <?php
                                         } else {
                                             echo '
                                                 <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
@@ -110,10 +111,10 @@
                                     $row = $res_admin->fetch_assoc();
                                     $_SESSION['admin_id'] = $row['id'];
                                     ?>
-                            <script>
-                            location.href = "admin/";
-                            </script>
-                            <?php
+                                    <script>
+                                    location.href = "admin/";
+                                    </script>
+                                    <?php
                                 } else {
                                     echo '
                                         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
@@ -126,7 +127,8 @@
                             }
 
                             //if the forgot password pressed
-                            if (isset($_POST['submit_forgot_pass'])) {
+                            if (isset($_POST['submit_forgot_pass'])) 
+                            {
                                 // initialization 
                                 $email = $_POST['email'];
 
@@ -180,10 +182,10 @@
 
                                         if ($stmt->affected_rows > 0) {
                                             ?>
-                            <script>
-                            location.href = "forgot_pass.php?email=<?php echo $email ?>";
-                            </script>
-                            <?php
+                                            <script>
+                                            location.href = "forgot_pass.php?email=<?php echo $email ?>";
+                                            </script>
+                                            <?php
                                         } else {
                                             echo '
                                                 <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
