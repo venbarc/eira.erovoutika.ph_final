@@ -159,7 +159,7 @@
                                     $mail->SMTPSecure = 'tls';
                                     $mail->Port = 587;
 
-                                    $mail->setFrom('erovoutikamails@gmail.com', 'Reset Password');
+                                    $mail->setFrom('erovoutikamails@gmail.com', 'Eira Reset Password');
                                     // users email 
                                     $mail->addAddress($email);
                                     $mail->isHTML(true);

@@ -11,6 +11,7 @@
     session_start();
     include "connect.php";
     include "include/head_links.php";
+    
 
     // email set up /////////////////////////////////////////////////
     require 'PHPMailer-master/src/PHPMailer.php';
@@ -41,9 +42,8 @@
 
     <?php
     include "include/foot_links.php";
-
-    // navigation bar 
     include 'include/footer.php';
+    include "messenger.php";
     ?>
 
 </body>
