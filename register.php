@@ -106,7 +106,8 @@
                                         ';
 
                                         // check if email sent 
-                                        if ($mail->send()) {
+                                        if ($mail->send()) 
+                                        {
                                             // password hashing 
                                             $hash_pass = password_hash($password, PASSWORD_DEFAULT);
 

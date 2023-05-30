@@ -50,7 +50,7 @@
 
 
     // navigation bar 
-    include 'include/navbar.php';
+    // include 'include/navbar.php';
     ?>
 
 </head>
@@ -60,7 +60,7 @@
     <main>
 
         <!-- start  -->
-        <main id="main" id="examination" class="examination">
+        <main id="examination" class="examination">
 
             <?php
                 if(isset($_GET['type']) && isset($_GET['approval']))
@@ -300,7 +300,8 @@
                                                                         var currentQuestion = 1;
                                                                         var numQuestions = <?php echo $count_ques-1; ?>; // number of questions, excluding the submit button
 
-                                                                        document.getElementById("next").addEventListener("click", function() {
+                                                                        document.getElementById("next").addEventListener("click", function() 
+                                                                        {
                                                                             if (currentQuestion < numQuestions) {
                                                                                 document.querySelector(".question:nth-of-type(" + currentQuestion + ")").style.display = "none";
                                                                                 currentQuestion++;
@@ -311,7 +312,8 @@
                                                                             }
                                                                         });
 
-                                                                        document.getElementById("prev").addEventListener("click", function() {
+                                                                        document.getElementById("prev").addEventListener("click", function() 
+                                                                        {
                                                                             if (currentQuestion > 1) {
                                                                                 document.querySelector(".question:nth-of-type(" + currentQuestion + ")").style.display = "none";
                                                                                 currentQuestion--;
@@ -319,6 +321,64 @@
                                                                             }
                                                                             if (currentQuestion < numQuestions) {
                                                                                 document.getElementById("submit-container").style.display = "none";
+                                                                            }
+                                                                        });
+
+                                                                        // browser restriction 
+                                                                        var tabContainer = document.getElementById('examination');
+                                                                        var warn = 2;
+
+                                                                        tabContainer.addEventListener('mouseenter', handleMouseEnter)   
+                                                                        tabContainer.addEventListener('mouseleave', handleMouseLeave)
+                                                                        
+                                                                        // mouse is inside the browser  
+                                                                        function handleMouseEnter() {
+                                                                        console.log('Mouse entered the tab');
+                                                                        }
+                                                                        // mouse is outside the browser  
+                                                                        function handleMouseLeave() 
+                                                                        {
+                                                                            if(warn > 0)
+                                                                            {
+                                                                                alert('you can\'t leave during the examination ! warning left: '
+                                                                                 +  warn);
+                                                                                 warn --;
+                                                                            }
+                                                                            else if(warn == 0)
+                                                                            {
+                                                                                document.getElementById("submit_id").click();
+                                                                            }
+
+                                                                        }
+
+                                                                        // Declare the warn variables outside the event listener to retain their values
+                                                                        var warnAlt = 2;
+                                                                        var warnCtrl = 2;
+                                                                        var warnPrtsc = 2;
+
+                                                                        // Disable Alt, Ctrl, and Print Screen keys
+                                                                        document.addEventListener("keydown", function(event) 
+                                                                        {
+                                                                            if (event.key === "Alt") {
+                                                                                event.preventDefault();
+                                                                                if (warnAlt > 0) 
+                                                                                {
+                                                                                    alert("Warning: Alt + Tab is forbidden. Remaining warnings: " + warnAlt);
+                                                                                    warnAlt--;
+                                                                                } else {
+                                                                                    document.getElementById("submit_id").click();
+                                                                                }
+                                                                            } 
+                                                                            else if (event.key === "Control") 
+                                                                            {   
+                                                                                event.preventDefault();
+                                                                                if (warnCtrl > 0) 
+                                                                                {
+                                                                                    alert("Warning: ctrl is forbidden. Remaining warnings: " + warnCtrl);
+                                                                                    warnCtrl--;
+                                                                                } else {
+                                                                                    document.getElementById("submit_id").click();
+                                                                                }
                                                                             }
                                                                         });
 
