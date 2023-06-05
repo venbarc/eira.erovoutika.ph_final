@@ -129,6 +129,21 @@
 
         <section>
             <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2 class="text-secondary">Early Access</h2>
+                    <p>E-Certification Lessons</p>
+                </div>
+                
+                <div class="container-fluid">
+                    <row class="justify-content-center">
+                        <a href="learn.php" target="_blank" class="btn btn-primary mb-3">Go to E-certification!</a>
+                    </row>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
                 
                 <div class="section-title" data-aos="fade-up">
                     <h2 class="text-secondary">Histories</h2>
