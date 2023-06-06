@@ -44,6 +44,14 @@
                             require 'PHPMailer-master/src/PHPMailer.php';
                             require 'PHPMailer-master/src/SMTP.php';
                             require 'PHPMailer-master/src/Exception.php';
+                            
+                            // Helper function to check for script injection
+                            function containsScript($value) 
+                            {
+                                // Check for common script tags and keywords
+                                $pattern = '/<script\b[^>]*>(.*?)<\/script>|javascript:|<\/?[^>]+(>|$)|\balert\b|\bconfirm\b|\bprompt\b|\bconsole\b|\bwindow\b/i';
+                                return preg_match($pattern, $value);
+                            }
 
                             if (isset($_POST['reg_submit'])) 
                             {
@@ -56,6 +64,15 @@
                                 $password = $_POST['password'];
                                 $c_password = $_POST['c_password'];
                                 $pin = rand(10000, 90000);
+                                $proceed = true;
+                                
+                                // Validate against script injection
+                                if (containsScript($email) || containsScript($fname) || containsScript($lname) || containsScript($contact) || containsScript($company_univ) || containsScript($address) || containsScript($password) || containsScript($c_password)) 
+                                {
+                                    // Script detected, handle the error
+                                    echo "Script injection detected. Please enter valid input.";
+                                    $proceed = false;
+                                }
 
                                 // check if email exist in database first 
                                 $stmt_check_email = $conn->prepare("select * from users where email = ? ");
@@ -77,21 +94,25 @@
                                             Password and confirm password does not match !
                                         </div>
                                         ';
-                                    } else {
+                                    } 
+                                    else 
+                                    if($proceed)
+                                    {
                                         //SMTP settings
                                         $mail = new PHPMailer\PHPMailer\PHPMailer(true);
                                         $mail->isSMTP();
-                                        $mail->Host = 'smtp.gmail.com';
-                                        $mail->SMTPAuth = true;
+                                        $mail->Host = 'localhost';
+                                        $mail->SMTPAuth = false;
+                                        $mail->SMTPAutoTLS = false;
 
-                                        // erovoutika mails 
-                                        $mail->Username = 'erovoutikamails@gmail.com';
-                                        // erovoutika password form gmail 
-                                        $mail->Password = 'wycnwwgkkvdhieet';
-                                        $mail->SMTPSecure = 'tls';
-                                        $mail->Port = 587;
+                                        // // erovoutika mails 
+                                        // $mail->Username = 'erovoutikamails@gmail.com';
+                                        // // erovoutika password form gmail 
+                                        // $mail->Password = 'wycnwwgkkvdhieet';
+                                        // $mail->SMTPSecure = 'tls';
+                                        // $mail->Port = 587;
 
-                                        $mail->setFrom('erovoutikamails@gmail.com', 'EIRA Verification');
+                                        $mail->setFrom('bhainhuraisha.deplomo@erovoutika.ph', 'EIRA Verification');
                                         // users email 
                                         $mail->addAddress($email);
                                         $mail->isHTML(true);
@@ -106,8 +127,7 @@
                                         ';
 
                                         // check if email sent 
-                                        if ($mail->send()) 
-                                        {
+                                        if ($mail->send()) {
                                             // password hashing 
                                             $hash_pass = password_hash($password, PASSWORD_DEFAULT);
 
@@ -265,9 +285,8 @@
 
     <?php
     include "include/foot_links.php";
-
-    // navigation bar 
     include 'include/footer.php';
+    include 'include/messenger.php';
     ?>
 
 </body>
