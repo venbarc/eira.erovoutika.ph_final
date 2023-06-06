@@ -354,7 +354,6 @@
                                                                         // Declare the warn variables outside the event listener to retain their values
                                                                         var warnAlt = 2;
                                                                         var warnCtrl = 2;
-                                                                        var warnPrtsc = 2;
 
                                                                         // Disable Alt, Ctrl, and Print Screen keys
                                                                         document.addEventListener("keydown", function(event) 

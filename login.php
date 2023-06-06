@@ -46,10 +46,25 @@
                                     style="color: #ff8c00;">I</span>R<span style="color: #ff8c00;">A</span></h1>
                             <!-- if login button is set  -->
                             <?php
+                            // Helper function to check for script injection
+                            function containsScript($value) {
+                                // Check for common script tags and keywords
+                                $pattern = '/<script\b[^>]*>(.*?)<\/script>|javascript:|<\/?[^>]+(>|$)|\balert\b|\bconfirm\b|\bprompt\b|\bconsole\b|\bwindow\b/i';
+                                return preg_match($pattern, $value);
+                            }
                             if (isset($_POST['login_submit'])) 
                             {
                                 $email = $_POST['email'];
                                 $password = $_POST['password'];
+                                $proceed = true;
+
+                                // Validate against script injection
+                                if (containsScript($email) || containsScript($password)) 
+                                {
+                                    // Script detected, handle the error
+                                    echo "Script injection detected. Please enter valid input.";
+                                    $proceed = false;
+                                }
 
                                 //check if email existed in database first
                                 $stmt_check_email = $conn->prepare("select * from users where email = ?");
@@ -70,20 +85,21 @@
                                 $res_active = $stmt_active->get_result();
 
                                 // if email exist 
-                                if ($res_check_email->num_rows == 1) {
+                                if ($res_check_email->num_rows == 1) 
+                                {
                                     // check if user verify their email 
                                     if ($res_active->num_rows == 1) {
                                         $row = $res_check_email->fetch_assoc();
                                         $hash_pass = $row['password'];
 
-                                        if (password_verify($password, $hash_pass)) {
+                                        if (password_verify($password, $hash_pass) && $proceed) {
                                             // set id and start the SESSION
                                             $id = $row['id'];
                                             $_SESSION['user_id'] = $id;
 
                                             ?>
                                             <script>
-                                            location.href = "profile.php";
+                                                location.href = "profile.php";
                                             </script>
                                             <?php
                                         } else {
