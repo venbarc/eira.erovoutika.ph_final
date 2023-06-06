@@ -2,7 +2,7 @@
 
     $localhost = 'localhost';
     $root = 'root';
-    $password = 'C@ntd0od3ez_';
+    $password = '';
     $db_name = 'db_eira';
 
     $conn = mysqli_connect($localhost, $root, $password, $db_name);
