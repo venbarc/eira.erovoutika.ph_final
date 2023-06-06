@@ -1,17 +1,31 @@
+<?php 
+    $learn_pages = array("/learn.php", "/learn_css.php", "/learn_html.php", "/learn_js.php", "/learnphp.php");
+?>
 <!-- ======= Hero Section ======= -->
 <section id="hero">
 
     <div class="container">
         <div class="flex justify-content-center">
             <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
-                <div data-aos="zoom-out">
-                    <h1 class="text-center text-lg-center">Erovoutika <span
-                            style=" color:darkorange; border-bottom:0;">I</span>nternational <span
-                            style=" color:darkorange; border-bottom:0;">A</span>cademy
+                <?php if (in_array($_SERVER['REQUEST_URI'], $learn_pages) ): ?>
+                    <div data-aos="zoom-out">
+                        <h1 class="text-center text-lg-center">E-<span
+                        style=" color:darkorange; border-bottom:0;">C</span>ertification <span
+                        style=" color:darkorange; border-bottom:0;">L</span>essons
+                    </h1>
+                    <h2 class="text-center text-lg-center" style="margin-bottom:0;">Learn to Code at your own pace</h2>
+                    <p class="text-center text-lg-center" style="color:darkorange; font-size:small">An early preview of the Erovoutika Self Learn Website!</p>
+                </div>
+                <?php else: ?>
+                    <div data-aos="zoom-out">
+                        <h1 class="text-center text-lg-center">Erovoutika <span
+                        style=" color:darkorange; border-bottom:0;">I</span>nternational <span
+                        style=" color:darkorange; border-bottom:0;">A</span>cademy
                     </h1>
                     <h2 class="text-center text-lg-center">Online Courses about Electronics, Robotics, Automation, and
                         ICT... </h2>
-                </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
