@@ -193,9 +193,8 @@
 
                                         $approval = $row['approval'];
                                         $status = "";
-
-                                        // pending 
-                                        if($approval == 0)
+                                        
+                                        if($approval == 0)// pending 
                                         {
                                             $status = '
                                             <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
@@ -205,8 +204,7 @@
                                             ';
                                         }
                                         else
-                                        //approved
-                                        if($approval == 1)
+                                        if($approval == 1)//approved
                                         {
                                             $status = '
                                             <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
@@ -216,8 +214,7 @@
                                             ';
                                         }
                                         else
-                                        //rejected
-                                        if($approval == 2)
+                                        if($approval == 2)//rejected
                                         {
                                             $status = '
                                             <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
@@ -226,7 +223,7 @@
                                             </a> 
                                             ';
                                         }
-
+                                        
                                         echo'
                                         <tbody>
                                             <tr>
