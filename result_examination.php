@@ -350,7 +350,6 @@
                                                             </div>
 
                                                             <!-- download link here  -->
-
                                                             <?php
                                                                 if($verdict == 'passed')
                                                                 {
@@ -364,13 +363,7 @@
                                                                 }
                                                                 else
                                                                 {
-                                                                    ?>
-                                                                        <div class="col-md-12 mt-5 text-center">
-                                                                            <a href="retake_rna.php?type=<?php echo $type?>&email=<?php echo $email ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to retake ?')">
-                                                                                Retake Examination ?
-                                                                            </a>
-                                                                        </div>
-                                                                    <?php
+                                                                    
                                                                 }
                                                             ?>
 
