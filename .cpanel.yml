@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fvbjzc9zmlng/public_html/eira.erovoutika.ph
+    - /bin/cp -R /home/fvbjzc9zmlng/repositories/eira.erovoutika.ph_final/* $DEPLOYPATH
