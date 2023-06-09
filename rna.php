@@ -83,7 +83,7 @@
                                         <div class="card p-4" data-aos="fade-up">
                                             <div class="image d-flex flex-column justify-content-center align-items-center"> 
                                                 <!-- img here  -->
-                                                <img src="assets/img/certificates/rna/ra1.png" height="200" width="200" />
+                                                <img src="assets/img/certificates/rna/level 1.webp" height="200" width="200" />
                                                 <!-- title here  -->
                                                 <span class="name">ENTRY LEVEL</span> 
                                                 <span class="idd"> ROBOTICS AND AUTOMATION</span>

@@ -4,7 +4,7 @@
 
         <div class="logo">
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="index.php"><img src="assets/img/logo/eira_logo.png" alt="" class="img-fluid"></a>
+            <a href="index.php"><img src="assets/img/logo/EIRA blue.webp"  alt="" class="img-fluid" style="height:140px;"></a>
         </div>
 
         <nav id="navbar" class="navbar">

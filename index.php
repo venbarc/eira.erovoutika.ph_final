@@ -11,6 +11,7 @@
     session_start();
     include "connect.php";
     include "include/head_links.php";
+    
 
     // email set up /////////////////////////////////////////////////
     require 'PHPMailer-master/src/PHPMailer.php';
@@ -26,24 +27,23 @@
 <body>
     <main id="main">
         <?php
-            include "include/hero.php";
-            include "include/how2_enroll.php";
-            include "include/happy_client.php";
-            include "include/learning_courses.php";
-            include "include/gallery.php";
-            // include "include/team.php";
-            include "include/contact.php";
+        include "include/hero.php";
+        include "include/how2_enroll.php";
+        include "include/learning_courses.php";
+        include "include/gallery.php";
+        // include "include/team.php";
+        include "include/contact.php";
         ?>
     </main><!-- End #main -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
     <?php
     include "include/foot_links.php";
-
-    // navigation bar 
     include 'include/footer.php';
+    include "messenger.php";
     ?>
 
 </body>

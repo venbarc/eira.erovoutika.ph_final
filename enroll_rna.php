@@ -116,9 +116,8 @@
                             if($res->num_rows > 0)// The user is already enrolled 
                             {
                                 $approval = $row['approval'];
-
-                                // Pending 
-                                if($approval == 0)
+                                
+                                if($approval == 0)// Pending 
                                 {
                                     ?>
                                         <script>
@@ -127,8 +126,7 @@
                                     <?php
                                 }
                                 else
-                                // Approved 
-                                if($approval == 1)
+                                if($approval == 1)// Approved 
                                 {
                                     ?>
                                         <script>
@@ -137,8 +135,7 @@
                                     <?php
                                 }
                                 else
-                                // Rejected 
-                                if($approval == 2)
+                                if($approval == 2)// Rejected 
                                 {
                                     ?>
                                         <script>
@@ -410,7 +407,7 @@
                                                                                 <div class="data">Entry Level</div>
                                                                             </div>
                                                                             <div class="col-lg-5 col-4 mt-4">
-                                                                                <img src="assets/img/certificates/rna/ra1.png" width="200"
+                                                                                <img src="assets/img/certificates/rna/level 1.webp" width="200"
                                                                                     height="200">
                                                                             </div>
                                                                         </div>
@@ -683,7 +680,7 @@
                                         </div>
                                     </section>
                                     <!-- ======= End rna1 Enrollment form Section ======= -->
-                        <?php
+                                <?php
                             }
                     }
                    

@@ -129,6 +129,21 @@
 
         <section>
             <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2 class="text-secondary">Early Access</h2>
+                    <p>E-Certification Lessons</p>
+                </div>
+                
+                <div class="container-fluid">
+                    <row class="justify-content-center">
+                        <a href="learn.php" target="_blank" class="btn btn-primary mb-3">Go to E-certification!</a>
+                    </row>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
                 
                 <div class="section-title" data-aos="fade-up">
                     <h2 class="text-secondary">Histories</h2>
@@ -178,9 +193,8 @@
 
                                         $approval = $row['approval'];
                                         $status = "";
-
-                                        // pending 
-                                        if($approval == 0)
+                                        
+                                        if($approval == 0)// pending 
                                         {
                                             $status = '
                                             <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
@@ -190,8 +204,7 @@
                                             ';
                                         }
                                         else
-                                        //approved
-                                        if($approval == 1)
+                                        if($approval == 1)//approved
                                         {
                                             $status = '
                                             <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
@@ -201,8 +214,7 @@
                                             ';
                                         }
                                         else
-                                        //rejected
-                                        if($approval == 2)
+                                        if($approval == 2)//rejected
                                         {
                                             $status = '
                                             <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
@@ -211,7 +223,7 @@
                                             </a> 
                                             ';
                                         }
-
+                                        
                                         echo'
                                         <tbody>
                                             <tr>
