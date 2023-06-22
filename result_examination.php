@@ -42,10 +42,10 @@
     }
     else{
         ?>
-    <script>
-        location.href = "login.php";
-    </script>
-    <?php
+        <script>
+            location.href = "login.php";
+        </script>
+        <?php
     }
 
 
@@ -350,7 +350,6 @@
                                                             </div>
 
                                                             <!-- download link here  -->
-
                                                             <?php
                                                                 if($verdict == 'passed')
                                                                 {
@@ -362,8 +361,9 @@
                                                                         </div>
                                                                     <?php
                                                                 }
-                                                                else{
-
+                                                                else
+                                                                {
+                                                                    
                                                                 }
                                                             ?>
 

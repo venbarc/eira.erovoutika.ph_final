@@ -2,7 +2,6 @@
 <html>
 <head>
   <style>
-    /* CSS for the modal */
     #modal {
       display: flex;
       justify-content: center;
@@ -16,7 +15,6 @@
       z-index: 9999;
       visibility: visible; /* Initially visible */
     }
-
     #modal-message {
       background-color: #fff;
       padding: 20px;

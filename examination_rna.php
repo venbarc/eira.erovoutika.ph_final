@@ -59,6 +59,86 @@
 
     <main>
 
+        <!--////////////// full screen codes //////////////////////// -->
+        <style>
+            #modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: darkblue;
+            z-index: 9999;
+            visibility: visible; /* Initially visible */
+            }
+            #modal-message {
+            background-color: #fff;
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 5px;
+            }
+            ::-webkit-scrollbar{
+                display: none;
+            }
+        </style>
+        <div id="modal">
+            <button id="modal-message" onclick="toggleFullScreen()">
+                Your time is ticking please press here To start and don't exit full screen mode.
+            </button>
+        </div>
+        <script>
+            var modal = document.getElementById('modal');
+            var modalMessage = document.getElementById('modal-message');
+            var isExamStarted = false;
+
+            document.addEventListener('keydown', function(event) {
+            if (event.key === 'F11') 
+            {
+                if (isExamStarted) 
+                {
+                modal.style.visibility = 'visible';
+                modalMessage.innerText = 'Press F11 to start the examination';
+                isExamStarted = false;
+                } 
+                else 
+                {
+                modal.style.visibility = 'hidden';
+                isExamStarted = true;
+                }
+            } 
+            else 
+            {
+                // Prevent the default behavior if F11 key is not pressed
+                event.preventDefault();
+            }
+            });
+
+            function toggleFullScreen() 
+            {
+            const doc = window.document;
+            const docEl = doc.documentElement;
+
+            const requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            const exitFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+            if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) 
+            {
+                requestFullScreen.call(docEl);
+                modal.style.visibility = 'hidden';
+                isExamStarted = true;
+            } 
+            else 
+            {
+                exitFullScreen.call(doc);
+            }
+            }
+        </script>
+        <!--////////////// full screen codes //////////////////////// -->
+
         <!-- start  -->
         <main id="examination" class="examination">
 
@@ -76,6 +156,12 @@
                     $row = mysqli_fetch_assoc($res);
                     // fetch approval in db 
                     $approval_db = $row['approval'];
+
+                    ?>
+                    <script>
+                        console.log('<?php echo $approval_db ?>');
+                    </script>
+                    <?php
                     
                     if($approval == $approval_db) // if approval url is actually equals to approval in db 
                     {
@@ -170,7 +256,7 @@
                                                                             <div class="col-md-12">
                                                                                 <div id="submit-container" style="display:none; text-align: center;">
                                                                                     <button type="submit" id="submit_id" name="submit_quiz" class="btn btn-primary">
-                                                                                    <h6 class="text-white"> Submit Quiz </h6>
+                                                                                    <h6 class="text-white"> Submit Examination </h6>
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
@@ -259,7 +345,7 @@
                                                                                 </label>
                                                                                 <label>
                                                                                     <input type="radio" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $options[3] ?>" class="mb-3"/>
-                                                                                    <span title="<?php echo $answer ?>"><h6>D.) &nbsp; </h6><?php echo $options[3] ?></span>
+                                                                                    <span><h6>D.) &nbsp; </h6><?php echo $options[3] ?></span>
                                                                                 </label>
                                                                             </div>
                                                                             <!-- Default answer  -->
@@ -324,41 +410,45 @@
                                                                             }
                                                                         });
 
+
                                                                         // browser restriction 
-                                                                        var tabContainer = document.getElementById('examination');
-                                                                        var warn = 2;
+                                                                        // var tabContainer = document.getElementById('examination');
+                                                                        // var warn = 2;
 
-                                                                        tabContainer.addEventListener('mouseenter', handleMouseEnter)   
-                                                                        tabContainer.addEventListener('mouseleave', handleMouseLeave)
+                                                                        // tabContainer.addEventListener('mouseenter', handleMouseEnter)   
+                                                                        // tabContainer.addEventListener('mouseleave', handleMouseLeave)
                                                                         
-                                                                        // mouse is inside the browser  
-                                                                        function handleMouseEnter() {
-                                                                        console.log('Mouse entered the tab');
-                                                                        }
-                                                                        // mouse is outside the browser  
-                                                                        function handleMouseLeave() 
-                                                                        {
-                                                                            if(warn > 0)
-                                                                            {
-                                                                                alert('you can\'t leave during the examination ! warning left: '
-                                                                                 +  warn);
-                                                                                 warn --;
-                                                                            }
-                                                                            else if(warn == 0)
-                                                                            {
-                                                                                document.getElementById("submit_id").click();
-                                                                            }
+                                                                        // // mouse is inside the browser  
+                                                                        // function handleMouseEnter() 
+                                                                        // {
+                                                                        //     console.log('Mouse entered the tab');
+                                                                        // }
+                                                                        // // mouse is outside the browser  
+                                                                        // function handleMouseLeave() 
+                                                                        // {
+                                                                        //     if(warn > 0)
+                                                                        //     {
+                                                                        //         alert('you can\'t leave during the examination ! warning left: '
+                                                                        //          +  warn);
+                                                                        //          warn --;
+                                                                        //     }
+                                                                        //     else if(warn == 0)
+                                                                        //     {
+                                                                        //         document.getElementById("submit_id").click();
+                                                                        //     }
 
-                                                                        }
+                                                                        // }
 
                                                                         // Declare the warn variables outside the event listener to retain their values
                                                                         var warnAlt = 2;
                                                                         var warnCtrl = 2;
+                                                                        var warnPrtSc = 2;
 
                                                                         // Disable Alt, Ctrl, and Print Screen keys
                                                                         document.addEventListener("keydown", function(event) 
                                                                         {
-                                                                            if (event.key === "Alt") {
+                                                                            if (event.key === "Alt") 
+                                                                            {
                                                                                 event.preventDefault();
                                                                                 if (warnAlt > 0) 
                                                                                 {
@@ -379,8 +469,18 @@
                                                                                     document.getElementById("submit_id").click();
                                                                                 }
                                                                             }
-                                                                        });
-
+                                                                            else if (event.key === "PrintScreen") 
+                                                                            {
+                                                                                event.preventDefault();
+                                                                                if (warnPrtSc > 0) 
+                                                                                {
+                                                                                    alert("Warning: PrtSc is forbidden. Remaining warnings: " + warnPrtSc);
+                                                                                    warnPrtSc--;
+                                                                                } else {
+                                                                                    document.getElementById("submit_id").click();
+                                                                                }
+                                                                            }
+                                                                            });
                                                                     </script>
                                                                 <?php
                                                             }
@@ -644,10 +744,7 @@
     <div id="preloader"></div>
 
     <?php
-    include "include/foot_links.php";
-
-    // footer  
-    include 'include/footer.php';
+        include "include/foot_links.php";
     ?>
 
 </body>

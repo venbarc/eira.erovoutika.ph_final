@@ -1,5 +1,4 @@
-<?php
-
+<?php   
     $localhost = 'localhost';
     $root = 'root';
     $password = '';

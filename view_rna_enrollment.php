@@ -77,8 +77,8 @@
                     
                     if($approval == $approval_db) // if approval url is actually equals to approval in db 
                     {
-                        // START RNA 1 section PENDING APPROVAL
-                        if($type == 'rna1' && $approval == 0)
+                        
+                        if($type == 'rna1' && $approval == 0)// START RNA 1 section PENDING APPROVAL
                         {
                             ?>
                                 <!-- ======= start Hero ======= -->
@@ -201,8 +201,7 @@
                             <?php
                         }
                         else
-                        // START RNA 1 section ACCEPTED APPROVAL
-                        if($type == 'rna1' && $approval == 1)
+                        if($type == 'rna1' && $approval == 1)// START RNA 1 section ACCEPTED APPROVAL
                         {
                             ?>
                                 <!-- ======= start Hero ======= -->
@@ -368,14 +367,15 @@
                                                                 }
                                                                 else{
                                                                     ?>
-                                                                    <a href="examination_rna.php?type=<?php echo $type ?>&approval=<?php echo $approval?>" onclick="return confirm('Are You sure you want to take the examination? if you already read the instructions please press yes else please read the exam instruction first.')" 
+                                                                    <a href="examination_rna.php?type=<?php echo $type ?>&approval=<?php echo $approval?>" 
+                                                                    onclick="return confirm('Are You sure you want to take the examination? if you already read the instructions please press yes else please read the exam instruction first.')" 
                                                                     class="btn btn-primary">
-                                                                        Take you exam here.
+                                                                        Take you exam here
                                                                     </a>
                                                                     <?php
                                                                 }
                                                             ?>
-                                                            
+                                                           
                                                         </h5>
                                                     </article>
                                                 </div>
@@ -387,8 +387,7 @@
                             <?php
                         }
                         else
-                        // START RNA 1 section REJECTED APPROVAL
-                        if($type == 'rna1' && $approval == 2)
+                        if($type == 'rna1' && $approval == 2)// START RNA 1 section REJECTED APPROVAL
                         {
                             ?>
                                 <!-- ======= start Hero ======= -->
