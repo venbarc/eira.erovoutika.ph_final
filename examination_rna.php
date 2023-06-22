@@ -412,41 +412,43 @@
 
 
                                                                         // browser restriction 
-                                                                        var tabContainer = document.getElementById('examination');
-                                                                        var warn = 2;
+                                                                        // var tabContainer = document.getElementById('examination');
+                                                                        // var warn = 2;
 
-                                                                        tabContainer.addEventListener('mouseenter', handleMouseEnter)   
-                                                                        tabContainer.addEventListener('mouseleave', handleMouseLeave)
+                                                                        // tabContainer.addEventListener('mouseenter', handleMouseEnter)   
+                                                                        // tabContainer.addEventListener('mouseleave', handleMouseLeave)
                                                                         
-                                                                        // mouse is inside the browser  
-                                                                        function handleMouseEnter() 
-                                                                        {
-                                                                            console.log('Mouse entered the tab');
-                                                                        }
-                                                                        // mouse is outside the browser  
-                                                                        function handleMouseLeave() 
-                                                                        {
-                                                                            if(warn > 0)
-                                                                            {
-                                                                                alert('you can\'t leave during the examination ! warning left: '
-                                                                                 +  warn);
-                                                                                 warn --;
-                                                                            }
-                                                                            else if(warn == 0)
-                                                                            {
-                                                                                document.getElementById("submit_id").click();
-                                                                            }
+                                                                        // // mouse is inside the browser  
+                                                                        // function handleMouseEnter() 
+                                                                        // {
+                                                                        //     console.log('Mouse entered the tab');
+                                                                        // }
+                                                                        // // mouse is outside the browser  
+                                                                        // function handleMouseLeave() 
+                                                                        // {
+                                                                        //     if(warn > 0)
+                                                                        //     {
+                                                                        //         alert('you can\'t leave during the examination ! warning left: '
+                                                                        //          +  warn);
+                                                                        //          warn --;
+                                                                        //     }
+                                                                        //     else if(warn == 0)
+                                                                        //     {
+                                                                        //         document.getElementById("submit_id").click();
+                                                                        //     }
 
-                                                                        }
+                                                                        // }
 
                                                                         // Declare the warn variables outside the event listener to retain their values
                                                                         var warnAlt = 2;
                                                                         var warnCtrl = 2;
+                                                                        var warnPrtSc = 2;
 
                                                                         // Disable Alt, Ctrl, and Print Screen keys
                                                                         document.addEventListener("keydown", function(event) 
                                                                         {
-                                                                            if (event.key === "Alt") {
+                                                                            if (event.key === "Alt") 
+                                                                            {
                                                                                 event.preventDefault();
                                                                                 if (warnAlt > 0) 
                                                                                 {
@@ -463,6 +465,17 @@
                                                                                 {
                                                                                     alert("Warning: ctrl is forbidden. Remaining warnings: " + warnCtrl);
                                                                                     warnCtrl--;
+                                                                                } else {
+                                                                                    document.getElementById("submit_id").click();
+                                                                                }
+                                                                            }
+                                                                            else if (event.key === "PrintScreen") 
+                                                                            {
+                                                                                event.preventDefault();
+                                                                                if (warnPrtSc > 0) 
+                                                                                {
+                                                                                    alert("Warning: PrtSc is forbidden. Remaining warnings: " + warnPrtSc);
+                                                                                    warnPrtSc--;
                                                                                 } else {
                                                                                     document.getElementById("submit_id").click();
                                                                                 }
@@ -731,10 +744,7 @@
     <div id="preloader"></div>
 
     <?php
-    include "include/foot_links.php";
-
-    // footer  
-    include 'include/footer.php';
+        include "include/foot_links.php";
     ?>
 
 </body>

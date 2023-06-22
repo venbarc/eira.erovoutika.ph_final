@@ -25,7 +25,7 @@
     <div class="p-4 sm:ml-64">
         <div class=" rounded-lg dark:border-gray-700">
             <section class="bg-white dark:bg-gray-900">
-                <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                <div>
 
                     <?php
                         // count all users 
@@ -254,7 +254,6 @@
                         if ($result->num_rows > 0) 
                         {
                             echo '
-                            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
@@ -362,8 +361,6 @@
                                 ';
                             }
                             echo '</table>
-                                </div>
-
                             ';
                             
                         } 
