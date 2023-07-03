@@ -26,6 +26,8 @@
     <div class="p-4 sm:ml-64">
         <div class=" rounded-lg dark:border-gray-700">
             <section class="bg-white dark:bg-gray-900">
+
+                <!-- Rna Section  -->
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Test
@@ -35,7 +37,7 @@
                         <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                             <!-- RNA1 -->
                             <div
-                                class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
                                     <a href="test_create.php?rna_type=rna1" class="mr-2 text-5xl font-extrabold">
                                         RNA 1
@@ -44,7 +46,7 @@
                             </div>
                             <!-- RNA2 -->
                             <div
-                                class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
                                     <a href="test_create.php?rna_type=rna2" class="mr-2 text-5xl font-extrabold">
                                         RNA 2
@@ -53,7 +55,7 @@
                             </div>
                             <!-- RNA3 -->
                             <div
-                                class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
                                     <a href="test_create.php?rna_type=rna3" class="mr-2 text-5xl font-extrabold">
                                         RNA 3
@@ -63,7 +65,6 @@
                         </div>
                     </section>
                 </div>
-
 
                 <?php
                     if(isset($_GET['rna_type']))
@@ -340,14 +341,112 @@
                         if($rna_type == 'rna2')
                         {
                             echo '
-                            <div class="text-white">Coming soon</div>
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                RNA 2 Coming soon
+                            </div>
                             ';
                         }
                         else
                         if($rna_type == 'rna3')
                         {
                             echo '
-                            <div class="text-white">Coming soon</div>
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                RNA 3 Coming soon
+                            </div>
+                            ';
+                        }
+                        
+                    }
+                ?>
+
+                <div class="border-b border-black m-5 dark:border-white border-solid border-2"></div>
+
+                <!-- Web Dev Section  -->
+                <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                    <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Test
+                            Create for Web Development Exam</h2>
+                    </div>
+                    <section class="bg-white dark:bg-gray-900">
+                        <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 ">
+                            <!-- web dev 1 -->
+                            <div
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <div class="flex justify-center items-baseline my-8">
+                                    <a href="test_create.php?rna_type=web_dev_1" class="mr-2 text-5xl font-extrabold">
+                                        Web Dev 1
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- web dev 2 -->
+                            <div
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <div class="flex justify-center items-baseline my-8">
+                                    <a href="test_create.php?rna_type=web_dev_2" class="mr-2 text-5xl font-extrabold">
+                                        Web Dev 2
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- web dev 3 -->
+                            <div
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <div class="flex justify-center items-baseline my-8">
+                                    <a href="test_create.php?rna_type=web_dev_3" class="mr-2 text-5xl font-extrabold">
+                                        Web Dev 3
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- web dev 4 -->
+                            <div
+                                class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                <div class="flex justify-center items-baseline my-8">
+                                    <a href="test_create.php?rna_type=web_dev_4" class="mr-2 text-5xl font-extrabold">
+                                        Web Dev 4
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <?php
+                    if(isset($_GET['rna_type']))
+                    {
+                        $rna_type = $_GET['rna_type'];
+                        
+                        if($rna_type == 'web_dev_1')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                In progress web dev 1
+                            </div>
+                            ';
+                        }   
+                        else
+                        if($rna_type == 'web_dev_2')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web Dev 2 Coming soon
+                            </div>
+                            ';
+                        }
+                        else
+                        if($rna_type == 'web_dev_3')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web Dev 3 Coming soon
+                            </div>
+                            ';
+                        }
+                        else
+                        if($rna_type == 'web_dev_4')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web Dev 4 Coming soon
+                            </div>
                             ';
                         }
                         

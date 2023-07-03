@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotics and Automation | EIRA</title>
+    <title>Web Development | EIRA</title>
 
     <?php
     session_start();
@@ -32,21 +32,21 @@
                 {
                     $type = $_GET['type'];
 
-                    if($type == 'rna1')
+                    if($type == 'web_level_1')
                     {
                         ?>
-                            <!-- ======= RNA1 Section ======= -->
+                            <!-- ======= Web dev 1 Section ======= -->
                             <section id="hero">
                                 <div class="container">
                                     <div class="flex justify-content-center">
                                         <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
                                             <div data-aos="zoom-out">
                                                 <h1 class="text-center text-lg-center">
-                                                    Enrollment <strong class="text-warning">Robotics and Automation</strong> <br>
+                                                    Enrollment <strong class="text-warning">Web Development</strong> <br>
                                                     Certifications Level 1
                                                 </h1>
                                                 <div class="text-center text-lg-center">
-                                                    <a href="enroll_rna.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">Enroll now</a>
+                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">Enroll now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -70,13 +70,13 @@
                             </section>
                             <!-- End Hero -->
 
-                            <!-- ======= rna1 Section ======= -->
+                            <!-- ======= Web dev 1 Section ======= -->
                             <section id="certificate" class="certificate">
                                 <div class="container">
 
                                     <div class="section-title" data-aos="fade-up">
                                         <h2 class="text-secondary">Certifications</h2>
-                                        <p style="color: #00008b;">Robotics and automation Certifications</p>
+                                        <p style="color: #00008b;">HTML, CSS, and JavaScript</p>
                                     </div>
 
                                     <div class="container">
@@ -85,8 +85,8 @@
                                                 <!-- img here  -->
                                                 <img src="assets/img/certificates/rna/level 1.webp" height="200" width="200" />
                                                 <!-- title here  -->
-                                                <span class="name">ENTRY LEVEL</span> 
-                                                <span class="idd"> ROBOTICS AND AUTOMATION</span>
+                                                <span class="name">LEVEL 1</span> 
+                                                <span class="idd"> HTML, CSS, and JavaScript</span>
                                                
                                                 <!-- details here  -->
                                                 <div class="row mt-3">
@@ -375,7 +375,7 @@
 
                                 </div>
                             </section>
-                            <!-- End rna1 Section -->
+                            <!-- End Web dev 1 Section -->
                         <?php
                     }
                    

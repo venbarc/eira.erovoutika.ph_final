@@ -745,6 +745,9 @@
 
     <?php
         include "include/foot_links.php";
+
+        // footer  
+        // include 'include/footer.php';
     ?>
 
 </body>

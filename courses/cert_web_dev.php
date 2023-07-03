@@ -1,4 +1,4 @@
-<!-- ======= ROBOTICS AND AUTOMATION CERTIFICATION HERE ======= -->
+<!-- ======= WEB DEVELOPMENT CERTIFICATION HERE ======= -->
 <section id="hero">
 
   <div class="container">
@@ -6,7 +6,7 @@
       <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
         <div data-aos="zoom-out">
           <h1 class="text-center text-lg-center">
-            Erovoutika Training and Certification In<br><strong class="text-warning">Robotics and Automation</strong>
+            Erovoutika Training and Certification In<br><strong class="text-warning">Web Development</strong>
           </h1>
         </div>
       </div>
@@ -38,38 +38,45 @@
 
       <div class="section-title" data-aos="fade-up">
         <h2>Certifications</h2>
-        <p class="dets">Robotics and Automation Certifications</p>
+        <p class="dets">Web Development Certifications</p>
       </div>
-
       <div class="row" data-aos="fade-left">
-        <!-- RNA 1  -->
+        <!-- web dev 1  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <a href="rna.php?type=rna1">
+          <a href="web_dev.php?type=web_level_1">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-              <img class="certi_icon" src="assets/img/certificates/rna/level 1.webp" alt="">
-              <h3 style="color: #00008b">Robotics and Automation Level 1</h3>
+              <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev1.png">
+              <h3 style="color: #00008b">Web development Level 1</h3>
             </div>
           </a>
         </div>
-        <!-- RNA 2  -->
+        <!-- web dev 2  -->
         <div class="col-lg-3 col-md-4 mt-4">
           <!-- <a href=""> -->
-          <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/level 2.webp" alt="">
-            <h3 style="color: #00008b">Robotics and Automation Level 2</h3>
-          </div>
+            <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
+              <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev2.png">
+              <h3 style="color: #00008b">Web development Level 2</h3>
+            </div>
           <!-- </a> -->
         </div>
-        <!-- RNA 3  -->
+         <!-- web dev 3  -->
         <div class="col-lg-3 col-md-4 mt-4">
           <!-- <a href=""> -->
-          <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
-            <img class="certi_icon" src="assets/img/certificates/rna/level 3.webp" alt="">
-            <h3 style="color: #00008b">Robotics and Automation Level 3</h3>
-          </div>
+            <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
+              <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev3.png">
+              <h3 style="color: #00008b">Web development Level 3</h3>
+            </div>
           <!-- </a> -->
         </div>
-
+         <!-- web dev 4  -->
+         <div class="col-lg-3 col-md-4 mt-4">
+          <!-- <a href=""> -->
+            <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
+              <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev4.png">
+              <h3 style="color: #00008b">Web development Level 4</h3>
+            </div>
+          <!-- </a> -->
+        </div>
       </div>
 
     </div>

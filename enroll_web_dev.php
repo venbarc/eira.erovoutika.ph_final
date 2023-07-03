@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrollment Robotics and Automation | EIRA</title>
+    <title>Enrollment Web Development | EIRA</title>
 
     <?php
     session_start();
@@ -36,7 +36,7 @@
     else{
         ?>
     <script>
-        location.href = "../login.php";
+        location.href = "login.php";
     </script>
     <?php
     }
@@ -68,7 +68,7 @@
                     $type = $_GET['type'];
 
                     // enroll to rna 1 
-                    if($type == 'rna1')
+                    if($type == 'web_level_1')
                     {
                         ?>
                         <!-- ======= Start hero ======= -->
@@ -78,7 +78,7 @@
                                     <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
                                         <div data-aos="zoom-out">
                                             <h1 class="text-center text-lg-center">
-                                                Enrollment <strong class="text-warning">Robotics and Automation</strong> <br>
+                                                Enrollment <strong class="text-warning">Web Development</strong> <br>
                                                 Entry Level
                                             </h1>
                                         </div>
@@ -121,7 +121,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_rna_enrollment.php?type=rna1&approval=0";
+                                            location.href = "view_web_dev_enrollment.php?type=<?php echo $type ?>&approval=0";
                                         </script>
                                     <?php
                                 }
@@ -130,7 +130,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_rna_enrollment.php?type=rna1&approval=1";
+                                            location.href = "view_web_dev_enrollment.php?type=<?php echo $type ?>&approval=1";
                                         </script>
                                     <?php
                                 }
@@ -139,7 +139,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_rna_enrollment.php?type=rna1&approval=2";
+                                            location.href = "view_web_dev_enrollment.php?type=<?php echo $type ?>&approval=2";
                                         </script>
                                     <?php
                                 }
