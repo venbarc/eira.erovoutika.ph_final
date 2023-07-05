@@ -106,7 +106,7 @@
 
                         <!-- check if user is already enrolled  -->
                         <?php
-                            $stmt = $conn->prepare("select * from payments where email = ? and rna_type = ?");
+                            $stmt = $conn->prepare("select * from payments where email = ? and type = ?");
                             $stmt->bind_param('ss', $email, $type);
                             $stmt->execute();
                             $res = $stmt->get_result();
@@ -193,14 +193,14 @@
                                                         // insert into payments data 
                                                         $stmt_insert = $conn->prepare("
                                                         insert into 
-                                                        payments (rna_type, pay_type, ref_num, email, fname, lname, contact, address, proof_pay) 
+                                                        payments (type, pay_type, ref_num, email, fname, lname, contact, address, proof_pay) 
                                                         values(?,?,?,?,?,?,?,?,?)
                                                         ");
                                                         $stmt_insert->bind_param('sssssssss', $type, $pay_type, $ref_num, $email, $fname, $lname, $contact, $address, $file_path);
                                                         $stmt_insert->execute();
 
                                                         // get the approval in db to put in url
-                                                        $stmt_approval = $conn->prepare("select * from payments where email = ? and rna_type = ?");
+                                                        $stmt_approval = $conn->prepare("select * from payments where email = ? and type = ?");
                                                         $stmt_approval->bind_param('ss', $email, $type);
                                                         $stmt_approval->execute();
                                                         $res = $stmt_approval->get_result();
@@ -333,7 +333,7 @@
                                                     {
                                                         $stmt = $conn->prepare("
                                                         insert into 
-                                                        payments (rna_type, pay_type, ref_num, email, fname, lname, contact, address, proof_pay) 
+                                                        payments (type, pay_type, ref_num, email, fname, lname, contact, address, proof_pay) 
                                                         values(?,?,?,?,?,?,?,?,?)
                                                         ");
                                                         $stmt->bind_param('sssssssss', $type, $pay_type, $ref_num, $email, $fname, $lname, $contact, $address, $file_path);

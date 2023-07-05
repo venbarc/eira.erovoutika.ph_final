@@ -132,7 +132,7 @@
                                                     <!-- user data result -->
                                                     
                                                     <?php 
-                                                        $stmt = $conn->prepare("select * from result where email = ? and rna_type = ?");
+                                                        $stmt = $conn->prepare("select * from result where email = ? and type = ?");
                                                         $stmt->bind_param('ss', $email, $type);
                                                         $stmt->execute();
                                                         $res = $stmt->get_result();

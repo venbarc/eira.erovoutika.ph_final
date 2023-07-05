@@ -92,29 +92,10 @@
                                                 <div class="row mt-3">
                                                     <div class="col-md-12 mb-5">
                                                     <br>
-                                                    <div style="text-align: justify;">
-                                                    Robotics Automation Level 1 is an entry-level comprehensive learning experience for 
-                                                    individuals seeking to acquire new skills in the fields of robotics and automation. 
-                                                    The program covers the basics to advanced concepts of the Arduino environment, programming 
-                                                    language, and design. Participants will have hands-on experience in constructing their own 
-                                                    automation projects enabling them to put their newfound knowledge into practice. At the end 
-                                                    of the program, individuals will acquire the following:
-                                                    </div>
-                                                    <div style="margin-left: 3%;">
-                                                         <span style="color: #00008b;">✱</span> Understanding of the fundamentals of robotics 
-                                                         and automation <br>
-                                                         <span style="color: #00008b;">✱</span> Design and build basic robotics and automation 
-                                                         projects <br>
-                                                         <span style="color: #00008b;">✱</span> Design and construct own automation projects 
-                                                         using the Arduino environment, language, and programming. <br>
-                                                    </div>
-                                                    <br>
-                                                    Similarly, there’s a Robotics and Automation certification exam. It’s designed to assess 
-                                                    the candidate's knowledge and understanding of the fundamentals of robotics and automation 
-                                                    such as Arduino programming, electronics circuit design, and troubleshooting. This exam is 
-                                                    intended for candidates who wants to pursue career for Research and Development (R&D) 
-                                                    engineer, Embedded system engineer, electronics design engineer, robotics and automation 
-                                                    engineer, robotics teacher.
+                                                    HTML (Hypertext Markup Language) is the standard markup language used to create the structure and content of web pages. It uses tags to define elements such as headings, paragraphs, lists, images, tables, and more. HTML provides the foundation for organizing and presenting information on the web.
+                                                    CSS (Cascading Style Sheets) is a styling language that works in conjunction with HTML. It allows developers to control the visual appearance of web pages. With CSS, you can specify colors, fonts, spacing, borders, backgrounds, and other stylistic properties. It provides a way to separate the presentation of a web page from its structure, making it easier to maintain and update the design across multiple pages.
+                                                    JavaScript is a versatile scripting language that adds interactivity to web pages. It enables dynamic behavior and functionality, such as form validation, interactive maps, image sliders, and much more. JavaScript can manipulate HTML elements, respond to user actions, handle events, and interact with servers to fetch data asynchronously, making web pages more engaging and responsive.
+                                                    By combining HTML, CSS, and JavaScript, developers can create rich and interactive web experiences. HTML provides the structure, CSS handles the visual styling, and JavaScript adds functionality and interactivity. This powerful trio forms the backbone of modern web development and is essential for creating user-friendly, visually appealing, and dynamic websites and web applications.
                                                 </div>
                                                 </div>
                                             </div>
@@ -140,83 +121,57 @@
                                                     <!-- details 1  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            1. INTRODUCTION TO ROBOTICS AND AUTOMATION
+                                                            1. HTML BASICS
                                                         </div>
-                                                        The exam objective in Introduction to Robotics and Automation assesses knowledge of 
-                                                        basic principles, components, and applications of robots and automation, including history, 
-                                                        types, artificial intelligence (AI), control, simulation and design, ethics and social 
-                                                        implications, and current trends. It aims to provide a foundation for further study and 
-                                                        careers.
+                                                        Understanding the syntax and structure of HTML, including tags, elements, attributes, and document 
+                                                        hierarchy. Familiarity with common HTML tags like html, head, body, p, a, img, and table. 
+                                                        Knowledge of creating basic web page structure and organizing content.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 2  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            2. ARDUINO BOARD AND IDE
+                                                            2. CSS STYLING
                                                         </div>
-                                                        The Arduino is a platform for creating interactive objects and environments, with a 
-                                                        micro controller and input/output (I/O) pins for interaction. The Arduino Integrated 
-                                                        Development Environment (IDE) is a software application used to write and upload 
-                                                        code to the board. The IDE includes a text editor, compiler, serial monitor, and 
-                                                        library manager, making it user-friendly and easy to use.
+                                                        Knowledge of CSS selectors and their usage to target HTML elements for styling. Understanding how to 
+                                                        apply styles to elements using properties like colors, fonts, backgrounds, margins, and padding. 
+                                                        Ability to create and use CSS classes and IDs, and familiarity with CSS box model concepts.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 3  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            3. ARDUINO PROGRAMMING
+                                                            3. CSS LAYOUTS
                                                         </div>
-                                                        The objective in Arduino Programming is to assess the candidate's understanding of 
-                                                        writing and uploading code to the Arduino board, including controlling output devices, 
-                                                        reading inputs, using operators and statements, implementing serial communication, using 
-                                                        sensors, displaying data on an LCD, and developing a robotics project. The exam will 
-                                                        evaluate the candidate's coding skills, understanding of Arduino programming, and ability 
-                                                        to use the Arduino IDE and debug code.
+                                                        Understanding CSS layout techniques, including using floats, positioning, and CSS grid. Knowledge of 
+                                                        creating responsive designs using media queries and understanding the concept of mobile-first design. 
+                                                        Familiarity with flexbox for creating flexible and responsive layouts.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 4  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            4. SERIAL COMMUNICATION
+                                                            4. JAVASCRIPT FUNDAMENTALS
                                                         </div>
-                                                        The objective in Serial Communication is to evaluate the candidate's understanding of 
-                                                        transmitting data between the Arduino and a computer using serial communication, 
-                                                        including sending and receiving data, using the Serial Monitor in the Arduino IDE, 
-                                                        using serial communication in projects, and troubleshooting issues. The exam will 
-                                                        test the candidate's knowledge of the basic principles of serial communication and 
-                                                        their ability to implement it effectively in an Arduino project.
+                                                        Understanding JavaScript syntax, variables, data types, and operators. Knowledge of control structures 
+                                                        such as conditional statements (if, else, switch) and loops (for, while). Ability to write functions and
+                                                        work with arrays and objects. Understanding event handling and DOM manipulation.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 5  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            5. REVIEW ON ELECTRONICS
+                                                            5. DOM MANIPULATION
                                                         </div>
-                                                        The objective in Review on Electronics is to test the candidate's knowledge of basic 
-                                                        electronics concepts and their ability to apply them in practical projects. The exam 
-                                                        covers topics such as current, voltage, resistance, power, electrical components, 
-                                                        use of basic electronic tools, reading schematics and circuit diagrams, analog and 
-                                                        digital signals, and troubleshooting basic electronic circuits. The candidate's 
-                                                        understanding and application of these concepts will be evaluated.
+                                                        Knowledge of accessing and manipulating HTML elements using JavaScript. Understanding how to traverse
+                                                        the DOM, modify element properties, create new elements, and handle events. Familiarity with common DOM 
+                                                        methods and properties.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 6  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            6. DIGITAL OUTPUT, DELAY, LED
-                                                        </div>
-                                                        The objective in Digital Output, Delay, LED tests the candidate’s understanding and 
-                                                        ability to control digital outputs, use delays, and control LEDs using the Arduino 
-                                                        platform. The student should be able to write code to control digital outputs, use the 
-                                                        delay () function, connect an LED and control its brightness, and calculate the 
-                                                        appropriate resistor value. The goal is to ensure the student has a strong foundation 
-                                                        in these basic concepts for practical applications.
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 7  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            7. COMPARISON OPERATORS AND IF ELSES
+                                                            6. JAVASCRIPT EVENTS
                                                         </div>
                                                         The objective of this is to test the candidate’s understanding of comparison operators 
                                                         and their ability to use if-else statements to control the flow of a program based on 
@@ -226,51 +181,28 @@
                                                         projects and applications.
                                                         <br><br>
                                                     </div>
+                                                    <!-- details 7  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            7. DEBUGGING AND ERROR HANDLING
+                                                        </div>
+                                                        Understanding how to use browser developer tools for debugging JavaScript code. Knowledge of common 
+                                                        JavaScript errors and how to handle them using try-catch blocks and error handling techniques.
+                                                        <br><br>
+                                                    </div>
                                                     <!-- details 8  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            8. DIGITAL AND ANALOG SENSORS
+                                                            8. PROJECT DEVELOPMENT
                                                         </div>
-                                                        The objective of this exam is to test the candidate's understanding of analog and 
-                                                        digital inputs and their ability to use them to control the behavior of a program. 
-                                                        The student should be able to connect sensors to a microcontroller, to read and get 
-                                                        sensor values in a program using Seral monitor, and use them to control the output 
-                                                        devices.  
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 9  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            9. INTEGRATION OF THE INPUT DEVICE TO THE OUTPUT DEVICES OF MICROCONTROLLER
-                                                        </div>
-                                                        The exam objective in Integration of the Input Device to the Output Device of 
-                                                        Microcontroller is to assess the students' understanding of how to connect different 
-                                                        types of input devices such as digital and analog sensors to the microcontroller and to 
-                                                        determine the output of the microcontroller. The students should be able to demonstrate 
-                                                        their ability to integrate input devices and perform operations on the microcontroller 
-                                                        to achieve the desired output. This includes understanding how to program the 
-                                                        microcontroller to communicate with the input and output devices, as well as the use of 
-                                                        various programming techniques to perform operations on the data received from the input
-                                                        devices.
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 10  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            10. ROBOTICS AND AUTOMATION PROJECT
-                                                        </div>
-                                                        The objective in the Robotics and Automation Project is to assess the student's 
-                                                        understanding of the fundamental concepts and principles of robotics and automation, 
-                                                        as well as their ability to apply this knowledge to real-world problems. Additionally, 
-                                                        they will evaluate the student's ability to analyze and design robotic systems, 
-                                                        understand and implement automation processes, and analyze and solve complex problems 
-                                                        related to robotics and automation.
+                                                        Ability to apply HTML, CSS, and JavaScript together to build a complete web project. Understanding how 
+                                                        to structure a project, organize files, and implement interactivity and styling. Familiarity with best 
+                                                        practices for code organization, performance optimization, and cross-browser compatibility.
                                                         <br><br>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
 
                                     <!-- HOW TO EVALUATE details  -->
@@ -281,49 +213,40 @@
                                         <br><br>
                                         <!-- evaluation 1  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>1. Robotics and Automation Terminologies (%)</strong>
+                                            <strong>1. HTML (%)</strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
-                                            Covers Robotics and Automation Terminologies which will assess the examiner’s knowledge regarding 
-                                            different Robotics and Automation concepts and terminologies. Additionally, this will evaluate the 
-                                            examiner’s understanding of different terminologies that are used in learning about robot 
-                                            components, automation, operation, and application.
+                                            Limited understanding of HTML basics, struggles with syntax and structure.
+                                            Adequate knowledge of HTML fundamentals, can create simple web pages with basic tags and structure.
+                                            Proficient in HTML, demonstrates a good grasp of tags, attributes, and document structure.
+                                            Advanced understanding of HTML, capable of building complex web pages, effectively using semantic elements, and optimizing for accessibility.
                                         </div>
                                         <br>
                                         <!-- evaluation 2  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>2. Programming (%)</strong>
+                                            <strong>2. CSS (%)</strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
-                                            Understand the process and execution of programming languages and commands. Additionally, 
-                                            this aims to evaluate the examiner’s programming language proficiency and capability to 
-                                            interpret logic and come up with efficient techniques to solve problems. 
+                                            Limited knowledge of CSS, struggles with applying styles and understanding selectors.
+                                            Basic understanding of CSS styling, can modify colors, fonts, and basic layout properties.
+                                            Proficient in CSS, demonstrates competence in using selectors, properties, and applying advanced styling techniques.
+                                            Advanced CSS skills, able to create complex layouts, responsive designs, and custom animations.
                                         </div>
                                         <br>
                                         <!-- evaluation 3  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>3. Troubleshooting (%)</strong>
+                                            <strong>3. JAVASCRIPT (%)</strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
-                                            The ability to recognize signs and issues and develop troubleshooting strategies to resolve 
-                                            technical problems, and errors.  Evaluates the critical thinking skills and utilization of
-                                            repair tools and resources required for diagnosing malfunctions of the robots or any Arduino 
-                                            based automation projects. 
+                                            Limited familiarity with JavaScript, struggles with syntax and basic concepts.
+                                            Basic understanding of JavaScript fundamentals, can write simple scripts and handle basic interactivity.
+                                            Proficient in JavaScript, capable of implementing advanced functionality, working with arrays, objects, and manipulating the DOM.
+                                            Advanced JavaScript skills, proficient in using advanced concepts like closures, asynchronous programming, and working with APIs.
                                         </div>
                                         <br>
-                                        <!-- evaluation 4  -->
-                                        <div style="margin-left: 3%;">
-                                            <strong>4. Design and Implementation (%)</strong>
-                                        </div>
-                                        <br>
-                                        <div style="margin-left: 5%;">
-                                            Produce a thorough plan outlining the structure, elements, and functionality of the product. 
-                                            Able to understand the architecture, data structures, algorithms, and interfaces. Evaluate an 
-                                            entire system and develop based on the integrated design specification including various components. 
-                                        </div>
                                     </div>
 
                                     <div class="mt-5"></div>
@@ -333,7 +256,7 @@
                                         <h2 style="color:#00008b;" data-aos="fade-right">Examination Details</h2>
                                             <tr>
                                                 <th scope="col">Exam Name</th>
-                                                <td>Exam RA-101</td>
+                                                <td>Exam WDV-101</td>
                                             </tr>
                                             <tr>
                                                 <th scope="col">Pre-requisites</th>
@@ -347,9 +270,9 @@
                                             </tr>
                                             <tr>
                                                 <th scope="col">Exam Duration</th>
-                                                <td>55 minutes</td>
-                                            </tr>
-                                            <tr>
+                                                            <td>55 minutes</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                                                 <th scope="col">Number of Questions</th>
                                                 <td>40 questions</td>
                                             </tr>
@@ -370,9 +293,6 @@
                                                 <td>English</td>
                                             </tr>
                                     </table>
-                                    
-                                    
-
                                 </div>
                             </section>
                             <!-- End Web dev 1 Section -->
@@ -381,8 +301,6 @@
                    
                 }
             ?>
-
-            
 
         </main>
         <!-- end  -->

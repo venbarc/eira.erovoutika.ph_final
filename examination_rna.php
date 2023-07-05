@@ -168,7 +168,7 @@
                         // check if it's already approved
                         if($type == 'rna1' && $approval == 1)
                         {
-                            $stmt = $conn->prepare("select * from result where email = ? and rna_type = ?"); // check if already taken the exam
+                            $stmt = $conn->prepare("select * from result where email = ? and type = ?"); // check if already taken the exam
                             $stmt->bind_param('ss', $email, $type);
                             $stmt->execute();
                             $res = $stmt->get_result();
@@ -237,7 +237,7 @@
                                                         
                                                         <?php 
                                                         
-                                                            $stmt = $conn->prepare("select * from test where rna_type = ? order by rand() limit 40");
+                                                            $stmt = $conn->prepare("select * from test where type = ? order by rand() limit 40");
                                                             $stmt->bind_param('s', $type);
                                                             $stmt->execute();
                                                             $res = $stmt->get_result();
@@ -670,7 +670,7 @@
 
                                                                 // insert data in result db 
                                                                 $stmt = $conn->prepare("insert into result 
-                                                                (cert_id, rna_type, email, full_name,
+                                                                (cert_id, type, email, full_name,
                                                                 user_percent_rnat, user_percent_rap, user_percent_rat, user_percent_dai, overall_user_percent,  
                                                                 max_percent_rnat, max_percent_rap, max_percent_rat, max_percent_dai, overall_max_percent, verdict) 
                                                                 value (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");

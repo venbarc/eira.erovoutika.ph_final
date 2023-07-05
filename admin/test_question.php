@@ -36,27 +36,25 @@
                                 <!-- RNA1 -->
                                 <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                     <div class="flex justify-center items-baseline my-8">
-                                        <a href="test_question.php?rna_type=rna1" class="mr-2 text-5xl font-extrabold">RNA 1</a>
+                                        <a href="test_question.php?type=rna1" class="mr-2 text-5xl font-extrabold">RNA 1</a>
                                     </div>
                                 </div>
                                 <!-- RNA2 -->
                                 <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                     <div class="flex justify-center items-baseline my-8">
-                                        <a href="test_question.php?rna_type=rna2" class="mr-2 text-5xl font-extrabold">RNA 2</a>
+                                        <a href="test_question.php?type=rna2" class="mr-2 text-5xl font-extrabold">RNA 2</a>
                                     </div>
                                 </div>
                                 <!-- RNA3 -->
                                 <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                     <div class="flex justify-center items-baseline my-8">
-                                        <a href="test_question.php?rna_type=rna3" class="mr-2 text-5xl font-extrabold">RNA 3</a>
+                                        <a href="test_question.php?type=rna3" class="mr-2 text-5xl font-extrabold">RNA 3</a>
                                     </div>
                                 </div>
                             </div>
                     </section>
                 </div>
-
                 <?php
-
                     // if delete button is posted 
                     if(isset($_POST['delete_id']))
                     {
@@ -82,15 +80,15 @@
                     }
 
                     // selecting rna type 
-                    if(isset($_GET['rna_type']))
+                    if(isset($_GET['type']))
                     {
-                        $rna_type = $_GET['rna_type'];
+                        $type = $_GET['type'];
                         
-                        if($rna_type == 'rna1')
+                        if($type == 'rna1')
                         {
 
-                            $stmt = $conn->prepare("select * from test where rna_type = ?");
-                            $stmt->bind_param('s', $rna_type);
+                            $stmt = $conn->prepare("select * from test where type = ?");
+                            $stmt->bind_param('s', $type);
                             $stmt->execute();
                             $res = $stmt->get_result();
 
@@ -209,7 +207,7 @@
                                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                         <div class="flex items-center">
                                                             <form method="post">
-                                                                <a href="edit_question.php?id='.$row['id'].'&rna_type='.$rna_type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
                                                                     Edit
                                                                 </a>
                                                                 <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
@@ -241,24 +239,108 @@
                             }
                         }
                         else
-                        if($rna_type == 'rna2')
+                        if($type == 'rna2')
                         {
                             echo '
-                            <div class="text-white">RNA 2 Not available yet</div>
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                RNA 2 Not available yet
+                            </div>
                             ';
                         }
                         else
-                        if($rna_type == 'rna3')
+                        if($type == 'rna3')
                         {
                             echo '
-                            <div class="text-white">RNA 3 Not available yet</div>
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                RNA 3 Not available yet
+                            </div>
+                            ';
+                        }
+                    }
+                
+                ?>
+
+                <!-- line  -->
+                <div class="border-b border-black m-5 dark:border-white border-solid border-2"></div>
+
+                <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Questions for Web Dev Exam</h2>
+                </div>
+                    <section class="bg-white dark:bg-gray-900">
+                            <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                                <!-- WDV1 -->
+                                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                    <div class="flex justify-center items-baseline my-8">
+                                        <a href="test_question.php?type=web_dev_1" class="mr-2 text-5xl font-extrabold">WDV 1</a>
+                                    </div>
+                                </div>
+                                <!-- WDV2 -->
+                                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                    <div class="flex justify-center items-baseline my-8">
+                                        <a href="test_question.php?type=web_dev_2" class="mr-2 text-5xl font-extrabold">WDV 2</a>
+                                    </div>
+                                </div>
+                                <!-- WDV3 -->
+                                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                    <div class="flex justify-center items-baseline my-8">
+                                        <a href="test_question.php?type=web_dev_3" class="mr-2 text-5xl font-extrabold">WDV 3</a>
+                                    </div>
+                                </div>
+                                <!-- WDV4 -->
+                                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                                    <div class="flex justify-center items-baseline my-8">
+                                        <a href="test_question.php?type=web_dev_4" class="mr-2 text-5xl font-extrabold">WDV 4</a>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+                <?php
+
+                    // selecting rna type 
+                    if(isset($_GET['type']))
+                    {
+                        $type = $_GET['type'];
+                        
+                        if($type == 'web_dev_1')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web dev 1 on progress
+                            </div>
+                            ';
+                        }
+                        else
+                        if($type == 'web_dev_2')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web dev 2 not available yet
+                            </div>
+                            ';
+                        }
+                        else
+                        if($type == 'web_dev_3')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web dev 3 not available yet
+                            </div>
+                            ';
+                        }
+                        else
+                        if($type == 'web_dev_4')
+                        {
+                            echo '
+                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
+                                Web dev 4 not available yet
+                            </div>
                             ';
                         }
                         
                     }
                 
                 ?>
-
             </section>
         </div>
     </div>

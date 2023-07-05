@@ -103,7 +103,7 @@
                         ';
                     while ($row = $res->fetch_assoc()) {
                         $cert_id = $row['cert_id'];
-                        $rna_type = $row['rna_type'];
+                        $type = $row['type'];
                         $email = $row['email'];
                         $full_name = $row['full_name'];
                         $overall_user_percent = $row['overall_user_percent'];
@@ -111,18 +111,18 @@
                         $date = date("F j, Y", strtotime($row['date'])); // format the date
             
                         // get rna type 
-                        if ($rna_type == 'rna1') {
-                            $rna_type = 'Robotics and Automation Level 1';
-                        } else if ($rna_type == 'rna2') {
-                            $rna_type = 'Robotics and Automation Level 2';
-                        } else if ($rna_type == 'rna3') {
-                            $rna_type = 'Robotics and Automation Level 3';
+                        if ($type == 'rna1') {
+                            $type = 'Robotics and Automation Level 1';
+                        } else if ($type == 'rna2') {
+                            $type = 'Robotics and Automation Level 2';
+                        } else if ($type == 'rna3') {
+                            $type = 'Robotics and Automation Level 3';
                         }
                         echo '
                                 <tbody>
                                     <tr>
                                         <td data-label="Certificate ID">' . $cert_id . '</td>
-                                        <td data-label="RNA Level">' . $rna_type . '</td>
+                                        <td data-label="RNA Level">' . $type . '</td>
                                         <td data-label="Email/Name">' . $email . ' <br> ' . $full_name . '</td>
                                         <td data-label="Score Percentage">' . $overall_user_percent . '%</td>
                                         <td data-label="Passing Percentage">70 %</td>

@@ -88,7 +88,7 @@
                                     while($row = $res->fetch_assoc())
                                     {
                                         $email = $row['email'];
-                                        $rna_type = $row['rna_type'];
+                                        $type = $row['type'];
                                         $pay_type = $row['pay_type'];
                                         $ref_num = $row['ref_num'];
                                         $approval = $row['approval'];

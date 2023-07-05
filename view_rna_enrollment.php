@@ -125,7 +125,7 @@
                                                 <div class="col-12 col-lg-11">
                                                     <!-- user data for enrollment -->
                                                     <?php
-                                                        $stmt = $conn->prepare("select * from payments where email = ? and rna_type = ?");
+                                                        $stmt = $conn->prepare("select * from payments where email = ? and type = ?");
                                                         $stmt->bind_param('ss', $email, $type);
                                                         $stmt->execute();
                                                         $res = $stmt->get_result();
@@ -143,7 +143,7 @@
                                                                 $ref_num = $row['ref_num'];
                                                                 $pay_type = $row['pay_type'];
                                                                 $proof_pay = $row['proof_pay'];
-                                                                $rna_type = $row['rna_type'];
+                                                                $type = $row['type'];
 
                                                                 ?>
                                                                 <div class="container">
@@ -351,7 +351,7 @@
                                                             <br><br>
 
                                                             <?php
-                                                                $stmt = $conn->prepare("select * from result where email = ? and rna_type = ?");
+                                                                $stmt = $conn->prepare("select * from result where email = ? and type = ?");
                                                                 $stmt->bind_param('ss', $email, $type);
                                                                 $stmt->execute();
                                                                 $res = $stmt->get_result();

@@ -39,7 +39,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=rna1" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=rna1" class="mr-2 text-5xl font-extrabold">
                                         RNA 1
                                     </a>
                                 </div>
@@ -48,7 +48,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=rna2" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=rna2" class="mr-2 text-5xl font-extrabold">
                                         RNA 2
                                     </a>
                                 </div>
@@ -57,7 +57,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=rna3" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=rna3" class="mr-2 text-5xl font-extrabold">
                                         RNA 3
                                     </a>
                                 </div>
@@ -67,11 +67,11 @@
                 </div>
 
                 <?php
-                    if(isset($_GET['rna_type']))
+                    if(isset($_GET['type']))
                     {
-                        $rna_type = $_GET['rna_type'];
+                        $type = $_GET['type'];
                         
-                        if($rna_type == 'rna1')
+                        if($type == 'rna1')
                         {
                             ?>
                                 <!-- // rna form is submitted  -->
@@ -135,9 +135,9 @@
                                             {
                                                 // insert data in test db 
                                                 $stmt = $conn->prepare("insert into test 
-                                                                    (rna_type, question, opt1, opt2, opt3, opt4, answer, ques_type, image) 
+                                                                    (type, question, opt1, opt2, opt3, opt4, answer, ques_type, image) 
                                                                     values (?, ?, ?, ?, ?, ?, ?, ?, ? )");
-                                                $stmt->bind_param('sssssssss', $rna_type, $question, $opt1, $opt2, $opt3, $opt4, $answer, $ques_type, $image );
+                                                $stmt->bind_param('sssssssss', $type, $question, $opt1, $opt2, $opt3, $opt4, $answer, $ques_type, $image );
                                                 $stmt->execute();
                                                 
                                                 if($stmt->affected_rows > 0)
@@ -338,7 +338,7 @@
                             <?php
                         }   
                         else
-                        if($rna_type == 'rna2')
+                        if($type == 'rna2')
                         {
                             echo '
                             <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
@@ -347,7 +347,7 @@
                             ';
                         }
                         else
-                        if($rna_type == 'rna3')
+                        if($type == 'rna3')
                         {
                             echo '
                             <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
@@ -358,7 +358,8 @@
                         
                     }
                 ?>
-
+                
+                <!-- line  -->
                 <div class="border-b border-black m-5 dark:border-white border-solid border-2"></div>
 
                 <!-- Web Dev Section  -->
@@ -373,7 +374,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=web_dev_1" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=web_dev_1" class="mr-2 text-5xl font-extrabold">
                                         Web Dev 1
                                     </a>
                                 </div>
@@ -382,7 +383,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=web_dev_2" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=web_dev_2" class="mr-2 text-5xl font-extrabold">
                                         Web Dev 2
                                     </a>
                                 </div>
@@ -391,7 +392,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=web_dev_3" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=web_dev_3" class="mr-2 text-5xl font-extrabold">
                                         Web Dev 3
                                     </a>
                                 </div>
@@ -400,7 +401,7 @@
                             <div
                                 class="shadow-2xl flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                                 <div class="flex justify-center items-baseline my-8">
-                                    <a href="test_create.php?rna_type=web_dev_4" class="mr-2 text-5xl font-extrabold">
+                                    <a href="test_create.php?type=web_dev_4" class="mr-2 text-5xl font-extrabold">
                                         Web Dev 4
                                     </a>
                                 </div>
@@ -410,11 +411,11 @@
                 </div>
                 
                 <?php
-                    if(isset($_GET['rna_type']))
+                    if(isset($_GET['type']))
                     {
-                        $rna_type = $_GET['rna_type'];
+                        $type = $_GET['type'];
                         
-                        if($rna_type == 'web_dev_1')
+                        if($type == 'web_dev_1')
                         {
                             echo '
                             <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
@@ -423,7 +424,7 @@
                             ';
                         }   
                         else
-                        if($rna_type == 'web_dev_2')
+                        if($type == 'web_dev_2')
                         {
                             echo '
                             <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
@@ -432,7 +433,7 @@
                             ';
                         }
                         else
-                        if($rna_type == 'web_dev_3')
+                        if($type == 'web_dev_3')
                         {
                             echo '
                             <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
@@ -441,7 +442,7 @@
                             ';
                         }
                         else
-                        if($rna_type == 'web_dev_4')
+                        if($type == 'web_dev_4')
                         {
                             echo '
                             <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
@@ -459,19 +460,19 @@
 
     <script>
         // pop up message error
-window.onload = function() {
-    var popup = document.querySelector('.err');
-    setTimeout(function() {
-        popup.classList.add('hidden');
-    }, 5000);
-}
-// pop up message success
-window.onload = function() {
-    var popup = document.querySelector('.scs');
-    setTimeout(function() {
-        popup.classList.add('hidden');
-    }, 5000);
-}
+        window.onload = function() {
+            var popup = document.querySelector('.err');
+            setTimeout(function() {
+                popup.classList.add('hidden');
+            }, 5000);
+        }
+        // pop up message success
+        window.onload = function() {
+            var popup = document.querySelector('.scs');
+            setTimeout(function() {
+                popup.classList.add('hidden');
+            }, 5000);
+        }
     </script>
 
     <?php

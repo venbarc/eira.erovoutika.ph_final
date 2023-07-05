@@ -89,7 +89,7 @@
                                         ';
                                         while($row = $res->fetch_assoc())
                                         {
-                                            $rna_type = $row['rna_type'];
+                                            $type = $row['type'];
                                             $pay_type = $row['pay_type'];
                                             $ref_num = $row['ref_num'];
                                             $approval = $row['approval'];
@@ -102,19 +102,19 @@
                                             $proof_pay = $row['proof_pay'];
 
                                             // check robotics and automation level
-                                            if($rna_type == 'rna1')
+                                            if($type == 'rna1')
                                             {
-                                                $rna_type = 'Robotics And Automation 1';
+                                                $type = 'Robotics And Automation 1';
                                             } 
                                             else
-                                            if($rna_type == 'rna2')
+                                            if($type == 'rna2')
                                             {
-                                                $rna_type = 'Robotics And Automation 1';
+                                                $type = 'Robotics And Automation 1';
                                             }
                                             else
-                                            if($rna_type == 'rna3')
+                                            if($type == 'rna3')
                                             {
-                                                $rna_type = 'Robotics And Automation 3';
+                                                $type = 'Robotics And Automation 3';
                                             }
                                             // check approval
                                             if($approval == 0)
@@ -135,7 +135,7 @@
                                             echo'
                                                 <tbody>
                                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                        <td class="px-6 py-4">'. $rna_type .'</td>
+                                                        <td class="px-6 py-4">'. $type .'</td>
                                                         <td class="px-6 py-4">'. $pay_type .'</td>
                                                         <td class="px-6 py-4">'. $ref_num .'</td>
                                                         <td class="px-6 py-4">'. $approval .'</td>

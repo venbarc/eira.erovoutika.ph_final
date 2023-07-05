@@ -78,7 +78,7 @@
                             {
                                 $image = $row['image'];
                                 $verdict = $row['verdict'];
-                                $type = $row['rna_type'];
+                                $type = $row['type'];
                                 $email = $row['email'];
 
                                 // check image 
