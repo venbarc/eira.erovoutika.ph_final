@@ -53,7 +53,7 @@
             <section class="bg-white dark:bg-gray-900">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Total Payment Robotics and Automation</h2>
+                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Total Payment EIRA</h2>
                         <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white"><!-- Insert Echo Total USer here --><?php echo $total_payment?></h2>
                     </div>
                     
@@ -74,7 +74,7 @@
                                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                     <tr>
-                                                        <th scope="col" class="px-6 py-3" >Robotics and Automation Type</th>
+                                                        <th scope="col" class="px-6 py-3" >Type</th>
                                                         <th scope="col" class="px-6 py-3" >Payment Method </th>
                                                         <th scope="col" class="px-6 py-3" >Reference Number </th>
                                                         <th scope="col" class="px-6 py-3" >Approval </th>
@@ -116,6 +116,33 @@
                                             {
                                                 $type = 'Robotics And Automation 3';
                                             }
+                                            // check Web Development level
+                                            if($type == 'wdv1')
+                                            {
+                                                $type = 'Web Development 1';
+                                            } 
+                                            else
+                                            if($type == 'wdv2')
+                                            {
+                                                $type = 'Web Development 2';
+
+                                            }
+                                            else
+                                            if($type == 'wdv3')
+                                            {
+                                                $type = 'Web Development 3';
+                                            }
+                                            else
+                                            if($type == 'wdv4')
+                                            {
+                                                $type = 'Web Development 4';
+                                            }
+                                            else
+                                            if($type == 'wdv5')
+                                            {
+                                                $type = 'Web Development 5';
+                                            }
+
                                             // check approval
                                             if($approval == 0)
                                             {

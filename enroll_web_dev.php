@@ -62,13 +62,13 @@
         <main id="main" id="enroll_rna" class="enroll_rna">
 
             <?php
-                // get url type of RNA certificate 
+                // get url type of wdv certificate 
                 if(isset($_GET['type']))
                 {
                     $type = $_GET['type'];
 
-                    // enroll to rna 1 
-                    if($type == 'web_level_1')
+                    // enroll to wdv 1 
+                    if($type == 'wdv1')
                     {
                         ?>
                         <!-- ======= Start hero ======= -->
@@ -79,7 +79,7 @@
                                         <div data-aos="zoom-out">
                                             <h1 class="text-center text-lg-center">
                                                 Enrollment <strong class="text-warning">Web Development</strong> <br>
-                                                Entry Level
+                                                Basic HTML and CSS
                                             </h1>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_web_dev_enrollment.php?type=<?php echo $type ?>&approval=0";
+                                            location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=0";
                                         </script>
                                     <?php
                                 }
@@ -130,7 +130,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_web_dev_enrollment.php?type=<?php echo $type ?>&approval=1";
+                                            location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=1";
                                         </script>
                                     <?php
                                 }
@@ -139,7 +139,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_web_dev_enrollment.php?type=<?php echo $type ?>&approval=2";
+                                            location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=2";
                                         </script>
                                     <?php
                                 }
@@ -147,12 +147,12 @@
                             else //if user is not yet enrolled
                             {
                                 ?>
-                                    <!-- ======= Start rna1 Enrollment form Section ======= -->
+                                    <!-- ======= Start wdv1 Enrollment form Section ======= -->
                                     <section id="enroll_rna" class="enroll_rna">
                                         <div class="container">
                                             <div class="section-title" data-aos="fade-up">
                                                 <h2 class="text-secondary">Enrollment</h2>
-                                                <p style="color: #00008b;">Robotics and Automation Entry Level 1</p>
+                                                <p style="color: #00008b;">Web Development Level 1</p>
                                             </div>
                                             <?php
                                                 // post gcash and security bank buttons in form 
@@ -216,7 +216,7 @@
                                                             {
                                                                 ?>
                                                                     <script>
-                                                                        location.href = "view_rna_enrollment.php?type=rna1&approval=<?php echo $approval ?>";
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
                                                                     </script>
                                                                 <?php
                                                             }
@@ -226,7 +226,7 @@
                                                             {
                                                                 ?>
                                                                     <script>
-                                                                        location.href = "view_rna_enrollment.php?type=rna1&approval=<?php echo $approval ?>";
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
                                                                     </script>
                                                                 <?php
                                                             }
@@ -236,7 +236,7 @@
                                                             {
                                                                 ?>
                                                                     <script>
-                                                                        location.href = "view_rna_enrollment.php?type=rna1&approval=<?php echo $approval ?>";
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
                                                                     </script>
                                                                 <?php
                                                             }
@@ -245,7 +245,7 @@
                                                         {
                                                             ?>
                                                             <script>
-                                                                location.href = "view_rna_enrollment.php?type=rna1&approval=0";
+                                                                location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=0";
                                                             </script>
                                                             <?php
                                                         }
@@ -331,19 +331,62 @@
                                                     }
                                                     if(move_uploaded_file($_FILES['proof_pay']['tmp_name'], $file_path))
                                                     {
-                                                        $stmt = $conn->prepare("
+                                                        // insert into payments data 
+                                                        $stmt_insert = $conn->prepare("
                                                         insert into 
                                                         payments (type, pay_type, ref_num, email, fname, lname, contact, address, proof_pay) 
                                                         values(?,?,?,?,?,?,?,?,?)
                                                         ");
-                                                        $stmt->bind_param('sssssssss', $type, $pay_type, $ref_num, $email, $fname, $lname, $contact, $address, $file_path);
-                                                        $stmt->execute();
-                                                        
-                                                        if($stmt->affected_rows > 0)
+                                                        $stmt_insert->bind_param('sssssssss', $type, $pay_type, $ref_num, $email, $fname, $lname, $contact, $address, $file_path);
+                                                        $stmt_insert->execute();
+
+                                                        // get the approval in db to put in url
+                                                        $stmt_approval = $conn->prepare("select * from payments where email = ? and type = ?");
+                                                        $stmt_approval->bind_param('ss', $email, $type);
+                                                        $stmt_approval->execute();
+                                                        $res = $stmt_approval->get_result();
+                                                        // get approval 
+                                                        $row = mysqli_fetch_assoc($res);
+
+                                                        if($res->num_rows > 0)
+                                                        {
+                                                            $approval = $row['approval'];
+
+                                                            // Pending 
+                                                            if($approval == 0)
+                                                            {
+                                                                ?>
+                                                                    <script>
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
+                                                                    </script>
+                                                                <?php
+                                                            }
+                                                            else
+                                                            // Approved 
+                                                            if($approval == 1)
+                                                            {
+                                                                ?>
+                                                                    <script>
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
+                                                                    </script>
+                                                                <?php
+                                                            }
+                                                            else
+                                                            // Rejected 
+                                                            if($approval == 2)
+                                                            {
+                                                                ?>
+                                                                    <script>
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
+                                                                    </script>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        if($stmt_insert->affected_rows > 0)
                                                         {
                                                             ?>
                                                             <script>
-                                                                location.href = "view_rna_enrollment.php?type=rna1&approval=0";
+                                                                location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=0";
                                                             </script>
                                                             <?php
                                                         }
@@ -354,7 +397,9 @@
                                                             </div>
                                                             ';
                                                         }
-                                                        $stmt->close();
+                                                        $stmt_insert->close();
+                                                        $stmt_approval->close();
+
                                                     }
 
                                                     //SMTP settings
@@ -403,11 +448,11 @@
                                                                         <h3 id="heading1">Payment Summary</h3>
                                                                         <div class="row">
                                                                             <div class="col-lg-7 col-8 mt-4 line pl-4">
-                                                                                <h2 class="head">Robotics and Automation</h2>
-                                                                                <div class="data">Entry Level</div>
+                                                                                <h2 class="head">Web Development</h2>
+                                                                                <div class="data">Level 1</div>
                                                                             </div>
                                                                             <div class="col-lg-5 col-4 mt-4">
-                                                                                <img src="assets/img/certificates/rna/level 1.webp" width="200"
+                                                                                <img src="assets/img/certificates/web_dev/web_dev1.png" width="200"
                                                                                     height="200">
                                                                             </div>
                                                                         </div>
@@ -421,7 +466,7 @@
                                                                                     </div>
                                                                                     <div class="col-md-6">
                                                                                         <h3 class="data2 mb-1 text-warning"
-                                                                                            id="total-label">RA - 101</h3>
+                                                                                            id="total-label">WDV - 101</h3>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -679,7 +724,7 @@
                                             
                                         </div>
                                     </section>
-                                    <!-- ======= End rna1 Enrollment form Section ======= -->
+                                    <!-- ======= End wdv1 Enrollment form Section ======= -->
                                 <?php
                             }
                     }

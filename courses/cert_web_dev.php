@@ -43,7 +43,7 @@
       <div class="row" data-aos="fade-left">
         <!-- web dev 1  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <a href="web_dev.php?type=web_level_1">
+          <a href="web_dev.php?type=wdv1">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev1.png">
               <h3 style="color: #00008b">Web development Level 1</h3>
@@ -74,6 +74,15 @@
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev4.png">
               <h3 style="color: #00008b">Web development Level 4</h3>
+            </div>
+          <!-- </a> -->
+        </div>
+        <!-- web dev 5  -->
+        <div class="col-lg-3 col-md-4 mt-4">
+          <!-- <a href=""> -->
+            <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
+              <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev5.png">
+              <h3 style="color: #00008b">Web development Level 5</h3>
             </div>
           <!-- </a> -->
         </div>

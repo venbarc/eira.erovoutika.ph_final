@@ -121,7 +121,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_rna_enrollment.php?type=rna1&approval=0";
+                                            location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=0";
                                         </script>
                                     <?php
                                 }
@@ -130,7 +130,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_rna_enrollment.php?type=rna1&approval=1";
+                                            location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=1";
                                         </script>
                                     <?php
                                 }
@@ -139,7 +139,7 @@
                                 {
                                     ?>
                                         <script>
-                                            location.href = "view_rna_enrollment.php?type=rna1&approval=2";
+                                            location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=2";
                                         </script>
                                     <?php
                                 }
@@ -216,7 +216,7 @@
                                                             {
                                                                 ?>
                                                                     <script>
-                                                                        location.href = "view_rna_enrollment.php?type=rna1&approval=<?php echo $approval ?>";
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
                                                                     </script>
                                                                 <?php
                                                             }
@@ -226,7 +226,7 @@
                                                             {
                                                                 ?>
                                                                     <script>
-                                                                        location.href = "view_rna_enrollment.php?type=rna1&approval=<?php echo $approval ?>";
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
                                                                     </script>
                                                                 <?php
                                                             }
@@ -236,7 +236,7 @@
                                                             {
                                                                 ?>
                                                                     <script>
-                                                                        location.href = "view_rna_enrollment.php?type=rna1&approval=<?php echo $approval ?>";
+                                                                        location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=<?php echo $approval ?>";
                                                                     </script>
                                                                 <?php
                                                             }
@@ -245,7 +245,7 @@
                                                         {
                                                             ?>
                                                             <script>
-                                                                location.href = "view_rna_enrollment.php?type=rna1&approval=0";
+                                                                location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=0";
                                                             </script>
                                                             <?php
                                                         }
@@ -343,7 +343,7 @@
                                                         {
                                                             ?>
                                                             <script>
-                                                                location.href = "view_rna_enrollment.php?type=rna1&approval=0";
+                                                                location.href = "view_enrollment.php?type=<?php echo $type ?>&approval=0";
                                                             </script>
                                                             <?php
                                                         }

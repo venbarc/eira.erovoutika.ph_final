@@ -32,7 +32,7 @@
                 {
                     $type = $_GET['type'];
 
-                    if($type == 'web_level_1')
+                    if($type == 'wdv1')
                     {
                         ?>
                             <!-- ======= Web dev 1 Section ======= -->
@@ -46,7 +46,9 @@
                                                     Certifications Level 1
                                                 </h1>
                                                 <div class="text-center text-lg-center">
-                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">Enroll now</a>
+                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">
+                                                        Enroll now
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -76,26 +78,31 @@
 
                                     <div class="section-title" data-aos="fade-up">
                                         <h2 class="text-secondary">Certifications</h2>
-                                        <p style="color: #00008b;">HTML, CSS, and JavaScript</p>
+                                        <p style="color: #00008b;">Basic HTML and CSS</p>
                                     </div>
 
                                     <div class="container">
                                         <div class="card p-4" data-aos="fade-up">
                                             <div class="image d-flex flex-column justify-content-center align-items-center"> 
                                                 <!-- img here  -->
-                                                <img src="assets/img/certificates/rna/level 1.webp" height="200" width="200" />
+                                                <img src="assets/img/certificates/web_dev/web_dev1.png" height="200" width="200" />
                                                 <!-- title here  -->
                                                 <span class="name">LEVEL 1</span> 
-                                                <span class="idd"> HTML, CSS, and JavaScript</span>
+                                                <span class="idd"> Basic HTML and CSS</span>
                                                
                                                 <!-- details here  -->
                                                 <div class="row mt-3">
                                                     <div class="col-md-12 mb-5">
                                                     <br>
-                                                    HTML (Hypertext Markup Language) is the standard markup language used to create the structure and content of web pages. It uses tags to define elements such as headings, paragraphs, lists, images, tables, and more. HTML provides the foundation for organizing and presenting information on the web.
-                                                    CSS (Cascading Style Sheets) is a styling language that works in conjunction with HTML. It allows developers to control the visual appearance of web pages. With CSS, you can specify colors, fonts, spacing, borders, backgrounds, and other stylistic properties. It provides a way to separate the presentation of a web page from its structure, making it easier to maintain and update the design across multiple pages.
-                                                    JavaScript is a versatile scripting language that adds interactivity to web pages. It enables dynamic behavior and functionality, such as form validation, interactive maps, image sliders, and much more. JavaScript can manipulate HTML elements, respond to user actions, handle events, and interact with servers to fetch data asynchronously, making web pages more engaging and responsive.
-                                                    By combining HTML, CSS, and JavaScript, developers can create rich and interactive web experiences. HTML provides the structure, CSS handles the visual styling, and JavaScript adds functionality and interactivity. This powerful trio forms the backbone of modern web development and is essential for creating user-friendly, visually appealing, and dynamic websites and web applications.
+                                                    Basic HTML/CSS! In this introductory course, we will explore the fundamental concepts of web development. 
+                                                    We will begin by understanding HTML tags, which form the building blocks of any webpage. With HTML tags, you'll 
+                                                    learn how to structure your content and create meaningful elements such as headings, paragraphs, links, images, 
+                                                    and more. Moving on, we will delve into the exciting world of CSS (Cascading Style Sheets), where we'll discover 
+                                                    how to style and enhance the appearance of HTML elements. We will explore various styling techniques, including 
+                                                    color, font, size, and layout. Additionally, we'll learn about class and ID attributes, powerful tools that allow 
+                                                    you to target specific elements and apply unique styles. So, let's embark on this journey together and unlock 
+                                                    the potential of HTML and CSS to create visually appealing and interactive web pages. Get ready to bring your 
+                                                    ideas to life!
                                                 </div>
                                                 </div>
                                             </div>
@@ -121,83 +128,46 @@
                                                     <!-- details 1  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            1. HTML BASICS
+                                                            1. HTML TAGS
                                                         </div>
-                                                        Understanding the syntax and structure of HTML, including tags, elements, attributes, and document 
-                                                        hierarchy. Familiarity with common HTML tags like html, head, body, p, a, img, and table. 
-                                                        Knowledge of creating basic web page structure and organizing content.
+                                                        Understanding the purpose and importance of HTML tags in web development.
+                                                        Exploring various HTML tags and their functions, such as headings (h1 to h6), paragraphs (p), links (a), images (img), lists (ul, ol, li), and more.
+                                                        Learning how to properly structure content using HTML tags to create a well-organized webpage.
+                                                        Understanding the hierarchical relationships between HTML elements and how they affect the layout and structure of a webpage.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 2  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            2. CSS STYLING
+                                                            2. STYLING HTML ELEMENTS
                                                         </div>
-                                                        Knowledge of CSS selectors and their usage to target HTML elements for styling. Understanding how to 
-                                                        apply styles to elements using properties like colors, fonts, backgrounds, margins, and padding. 
-                                                        Ability to create and use CSS classes and IDs, and familiarity with CSS box model concepts.
+                                                        Introduction to CSS (Cascading Style Sheets) and its role in web design.
+                                                        Understanding the different ways of applying styles to HTML elements, such as inline styles, embedded stylesheets, and external stylesheets.
+                                                        Exploring various CSS properties and values to modify the appearance of HTML elements, including color, font family, font size, background, margins, padding, and borders.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 3  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            3. CSS LAYOUTS
+                                                            3. CLASS AND ID ATTRIBUTES:
                                                         </div>
-                                                        Understanding CSS layout techniques, including using floats, positioning, and CSS grid. Knowledge of 
-                                                        creating responsive designs using media queries and understanding the concept of mobile-first design. 
-                                                        Familiarity with flexbox for creating flexible and responsive layouts.
+                                                        Understanding the purpose of class and ID attributes in HTML and CSS.
+                                                        Differentiating between class and ID attributes and knowing when to use each one.
+                                                        Applying class attributes to multiple HTML elements to group them together and apply common styles.
+                                                        Applying ID attributes to uniquely identify specific HTML elements and apply individual styles.
+                                                        Utilizing class and ID selectors in CSS to target and style elements with precision.
                                                         <br><br>
                                                     </div>
                                                     <!-- details 4  -->
                                                     <div class="col-md-6 mb-3">
                                                         <div class="fw-bold" style="color: #00008b;">
-                                                            4. JAVASCRIPT FUNDAMENTALS
+                                                            4. EXAM PREPARATION:
+
                                                         </div>
-                                                        Understanding JavaScript syntax, variables, data types, and operators. Knowledge of control structures 
-                                                        such as conditional statements (if, else, switch) and loops (for, while). Ability to write functions and
-                                                        work with arrays and objects. Understanding event handling and DOM manipulation.
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 5  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            5. DOM MANIPULATION
-                                                        </div>
-                                                        Knowledge of accessing and manipulating HTML elements using JavaScript. Understanding how to traverse
-                                                        the DOM, modify element properties, create new elements, and handle events. Familiarity with common DOM 
-                                                        methods and properties.
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 6  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            6. JAVASCRIPT EVENTS
-                                                        </div>
-                                                        The objective of this is to test the candidate’s understanding of comparison operators 
-                                                        and their ability to use if-else statements to control the flow of a program based on 
-                                                        certain conditions. The student should be able to write code using these concepts and 
-                                                        should be able to debug and resolve errors. The goal is to ensure the student has a 
-                                                        solid understanding of these fundamental concepts and can apply them to practical 
-                                                        projects and applications.
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 7  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            7. DEBUGGING AND ERROR HANDLING
-                                                        </div>
-                                                        Understanding how to use browser developer tools for debugging JavaScript code. Knowledge of common 
-                                                        JavaScript errors and how to handle them using try-catch blocks and error handling techniques.
-                                                        <br><br>
-                                                    </div>
-                                                    <!-- details 8  -->
-                                                    <div class="col-md-6 mb-3">
-                                                        <div class="fw-bold" style="color: #00008b;">
-                                                            8. PROJECT DEVELOPMENT
-                                                        </div>
-                                                        Ability to apply HTML, CSS, and JavaScript together to build a complete web project. Understanding how 
-                                                        to structure a project, organize files, and implement interactivity and styling. Familiarity with best 
-                                                        practices for code organization, performance optimization, and cross-browser compatibility.
+                                                        Reviewing and familiarizing yourself with a wide range of HTML tags and their usage.
+                                                        Practicing CSS styling techniques by creating and modifying different HTML elements.
+                                                        Understanding the concept of specificity in CSS and how it affects the application of styles.
+                                                        Exploring examples and practical exercises to reinforce your understanding of HTML tags, CSS styling, and the usage of class and ID attributes.
                                                         <br><br>
                                                     </div>
                                                 </div>
@@ -233,18 +203,6 @@
                                             Basic understanding of CSS styling, can modify colors, fonts, and basic layout properties.
                                             Proficient in CSS, demonstrates competence in using selectors, properties, and applying advanced styling techniques.
                                             Advanced CSS skills, able to create complex layouts, responsive designs, and custom animations.
-                                        </div>
-                                        <br>
-                                        <!-- evaluation 3  -->
-                                        <div style="margin-left: 3%;">
-                                            <strong>3. JAVASCRIPT (%)</strong>
-                                        </div>
-                                        <br>
-                                        <div style="margin-left: 5%;">
-                                            Limited familiarity with JavaScript, struggles with syntax and basic concepts.
-                                            Basic understanding of JavaScript fundamentals, can write simple scripts and handle basic interactivity.
-                                            Proficient in JavaScript, capable of implementing advanced functionality, working with arrays, objects, and manipulating the DOM.
-                                            Advanced JavaScript skills, proficient in using advanced concepts like closures, asynchronous programming, and working with APIs.
                                         </div>
                                         <br>
                                     </div>
