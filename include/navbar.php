@@ -20,6 +20,11 @@
                     </a>
                 </li>
                 <li>
+                    <a class="nav-link scrollto" href="">
+                        <i class="fas fa-certificate"></i> &nbsp; Training
+                    </a>
+                </li>
+                <li>
                     <a class="nav-link scrollto" href="verify_certificate.php">
                         <i class="fas fa-check-double"></i> &nbsp; Verify Certificate
                     </a>
@@ -30,12 +35,10 @@
                     </a>
                 </li>
 
-
                 <?php
                 if (isset($_SESSION['user_id'])) 
                 {
                     ?>
-                        <li><a class="nav-link scrollto" href="#contact"><i class="fas fa-phone-alt"></i>&nbsp; Contact</a></li>
                         <li>
                             <a href="profile.php">
                                 <i class="fas fa-user"></i> &nbsp; Profile
@@ -53,7 +56,6 @@
                     ?>
                         <li><a class="nav-link scrollto" href="login.php"><i class="fas fa-sign-in-alt"></i>&nbsp; Login</a></li>
                         <li><a class="nav-link scrollto" href="register.php"><i class="fas fa-user"></i>&nbsp; Register</a></li>
-                        <li><a class="nav-link scrollto" href="#contact"><i class="fas fa-phone-alt"></i>&nbsp; Contact</a></li>
                     <?php
                 }
                 ?>
