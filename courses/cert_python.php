@@ -45,7 +45,7 @@
 
       <div class="row" data-aos="fade-left">
         <!-- PY 1  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="python.php?type=pcep">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/python/pcep.png" alt="">
@@ -54,7 +54,7 @@
           </a>
         </div>
         <!-- PY 2  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="python.php?type=pcap">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/python/pcap.png" alt="">
@@ -63,7 +63,7 @@
           </a>
         </div>
         <!-- PY 3  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="python.php?type=pcpp1">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/python/pcpp1.png" alt="">
@@ -72,7 +72,7 @@
           </a>
         </div>
         <!-- PY 4  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="python.php?type=pcpp2">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/python/pcpp2.png" alt="">

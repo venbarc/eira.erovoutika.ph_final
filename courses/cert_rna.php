@@ -43,7 +43,7 @@
 
       <div class="row" data-aos="fade-left">
         <!-- RNA 1  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="rna.php?type=rna1">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/rna/level 1.webp" alt="">
@@ -52,7 +52,7 @@
           </a>
         </div>
         <!-- RNA 2  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <!-- <a href=""> -->
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/level 2.webp" alt="">
@@ -61,7 +61,7 @@
           <!-- </a> -->
         </div>
         <!-- RNA 3  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <!-- <a href=""> -->
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/level 3.webp" alt="">

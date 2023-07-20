@@ -165,6 +165,7 @@
                                     <table>
                                         <thead>
                                             <tr>
+                                                <th scope="col">Examination</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">First Name</th>
                                                 <th scope="col">Last Name</th>
@@ -189,7 +190,7 @@
                                         $pay_type = $row['pay_type'];
                                         $date_pay = $row['date_pay'];
 
-                                        $rna_type = $row['rna_type'];
+                                        $type = $row['type'];
 
                                         $approval = $row['approval'];
                                         $status = "";
@@ -197,7 +198,7 @@
                                         if($approval == 0)// pending 
                                         {
                                             $status = '
-                                            <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
+                                            <a href="view_enrollment.php?type='.$type.'&approval='.$approval.'" 
                                             style="color: #ff8c00; font-weight: 600;">
                                                 Pending
                                             </a> 
@@ -207,7 +208,7 @@
                                         if($approval == 1)//approved
                                         {
                                             $status = '
-                                            <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
+                                            <a href="view_enrollment.php?type='.$type.'&approval='.$approval.'" 
                                             style="color: green; font-weight: 600;">
                                                 Approved
                                             </a> 
@@ -217,7 +218,7 @@
                                         if($approval == 2)//rejected
                                         {
                                             $status = '
-                                            <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
+                                            <a href="view_enrollment.php?type='.$type.'&approval='.$approval.'" 
                                             style="color: red; font-weight: 600;">
                                                 Rejected
                                             </a> 
@@ -227,6 +228,7 @@
                                         echo'
                                         <tbody>
                                             <tr>
+                                                <td data-label="Type">'. $type .'</td>
                                                 <td data-label="Email">'. $email .'</td>
                                                 <td data-label="First Name">'. $fname .'</td>
                                                 <td data-label="Last Name">'. $lname .'</td>

@@ -78,7 +78,7 @@
                             {
                                 $image = $row['image'];
                                 $verdict = $row['verdict'];
-                                $type = $row['rna_type'];
+                                $type = $row['type'];
                                 $email = $row['email'];
 
                                 // check image 
@@ -108,7 +108,7 @@
                                             <a href="retake_allow.php?type='.$type.'&email='.$email.'" 
                                             onclick="return confirm(\'Are You sure you want to allow '. $email .' to retake ?\')"
                                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                                Allow retake
+                                                Allow
                                             </a>
                                         </td>
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

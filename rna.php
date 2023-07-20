@@ -46,7 +46,7 @@
                                                     Certifications Level 1
                                                 </h1>
                                                 <div class="text-center text-lg-center">
-                                                    <a href="enroll_rna.php?type=rna1" type="button" class="btn btn-warning scrollto">Enroll now</a>
+                                                    <a href="enroll_rna.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">Enroll now</a>
                                                 </div>
                                             </div>
                                         </div>
