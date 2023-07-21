@@ -1094,8 +1094,6 @@
                                                                     // ques_type from db 
                                                                     $ques_type = $row['ques_type'];
 
-                                                                    
-
                                                                     // get count of every question type first
                                                                     if($ques_type == 'html')
                                                                     {
@@ -1180,7 +1178,6 @@
                                                                             array_push($array_ques_type, "php");
                                                                         }
                                                                     }
-                                                                   
 
                                                                     // over all max percentages 
                                                                     $overall_max_percent = $max_percent_1 + $max_percent_2 + $max_percent_3 + $max_percent_4;
@@ -1201,25 +1198,29 @@
                                                                 if(in_array('html', $array_ques_type))
                                                                 {
                                                                     $max_percent_1 = ( $count_1 / $count_overall) * 100;
+                                                                    $user_percent_1 = ( $correct_1 / $count_overall);
                                                                 }
                                                                 if(in_array('css', $array_ques_type))
                                                                 {
                                                                     $max_percent_2 = ( $count_2 / $count_overall) * 100;
+                                                                    $user_percent_2 = ( $correct_1 / $count_overall);
                                                                 }
                                                                 if(in_array('js', $array_ques_type))
                                                                 {
                                                                     $max_percent_3 = ( $count_3 / $count_overall) * 100;
+                                                                    $user_percent_3 = ( $correct_1 / $count_overall);
                                                                 }
                                                                 if(in_array('php', $array_ques_type))
                                                                 {
                                                                     $max_percent_4 = ( $count_4 / $count_overall) * 100;
+                                                                    $user_percent_4 = ( $correct_1 / $count_overall);
                                                                 }
 
                                                                 echo '<pre>';
-                                                                    var_dump($html_percent ?? NULL);
-                                                                    var_dump($css_percent ?? NULL);
-                                                                    var_dump($js_percent ?? NULL);
-                                                                    var_dump($php_percent ?? NULL);
+                                                                    var_dump($max_percent_1 ?? NULL);
+                                                                    var_dump($max_percent_2 ?? NULL);
+                                                                    var_dump($max_percent_3 ?? NULL);
+                                                                    var_dump($max_percent_4 ?? NULL);
                                                                 echo '</pre>';
 
                                                                 exit();
