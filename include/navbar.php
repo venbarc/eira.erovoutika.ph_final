@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link scrollto" href="">
+                    <a class="nav-link scrollto" href="http://training.erovoutika.ph">
                         <i class="fas fa-certificate"></i> &nbsp; Training
                     </a>
                 </li>
