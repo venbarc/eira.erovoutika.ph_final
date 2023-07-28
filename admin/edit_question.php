@@ -125,7 +125,6 @@
                                     $stmt->close();
                                 }
                             }
-
                             if($res->num_rows > 0)
                             {
                                 while($row = $res->fetch_assoc())
@@ -324,7 +323,7 @@
                             }
                         }
                         else 
-                        if($type == 'wdv1' || $type == 'wdv2' || $type == 'wdv3' || $type == 'wdv4')//WDV 1-4
+                        if($type == 'wdv1' || $type == 'wdv2' || $type == 'wdv3' || $type == 'wdv4' || $type == 'wdv5')//WDV 1-5
                         {
                             // if edit question is posted 
                             if(isset($_POST['edit_question']))

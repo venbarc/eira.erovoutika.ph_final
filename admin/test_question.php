@@ -160,7 +160,7 @@
                                         $image = 'no image';
                                     }
                                     else{
-                                        $image = ' <img src="'.$image.'" width="100"> ';
+                                        $image = ' <img src="'.$image.'" class="w[-0] object-cover"> ';
                                     }
 
                                     echo'
@@ -246,20 +246,318 @@
                         else
                         if($type == 'rna2')
                         {
-                            echo '
-                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
-                                RNA 2 Not available yet
-                            </div>
-                            ';
+
+                            $stmt = $conn->prepare("SELECT * from test where type = ?");
+                            $stmt->bind_param('s', $type);
+                            $stmt->execute();
+                            $res = $stmt->get_result();
+
+                            if($res->num_rows > 0)
+                            {
+                                $count = 1;
+                                echo'
+                                <div class="flex items-center">
+                                    <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white pr-10">
+                                        Test Questions RNA 2 
+                                    </h3>
+                                    <a href="test_question.php" class="text-red-600 font-bold text-[40px] "> X </a>
+                                </div>
+                                <div class="overflow-x-auto ">
+                                    <div class="min-w-full">
+                                        <div class="bg-white shadow-md rounded my-6">
+                                        <table class="min-w-full leading-normal">
+                                            <thead>
+                                            <tr>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 1
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 2
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 3
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 4
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Answer
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Image
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                ';
+                                while($row = $res->fetch_assoc())
+                                {
+                                    $question = $row['question'];
+                                    $opt1 = $row['opt1'];
+                                    $opt2 = $row['opt2'];
+                                    $opt3 = $row['opt3'];
+                                    $opt4 = $row['opt4'];
+                                    $answer = $row['answer'];
+                                    $ques_type = $row['ques_type'];
+                                    $image = $row['image'];
+
+                                    if(empty($image))
+                                    {
+                                        $image = 'no image';
+                                    }
+                                    else{
+                                        $image = ' <img src="'.$image.'" class="w-[70] object-cover"> ';
+                                    }
+
+                                    echo'
+                                            <tbody>
+                                                <tr>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                        '.$count++.'
+                                                    </th>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$question.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt1.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt2.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt3.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt4.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-green-100 text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$answer.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$ques_type.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$image.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <div class="flex items-center">
+                                                            <form method="post">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                    Edit
+                                                                </a>
+                                                                <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    ';
+
+                                }
+                                echo'
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                            else
+                            {
+                                ?>
+                                <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
+                                    RNA 2 Questions no records yet
+                                </h2>
+                                <?php
+                            }
                         }
                         else
                         if($type == 'rna3')
                         {
-                            echo '
-                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
-                                RNA 3 Not available yet
-                            </div>
-                            ';
+
+                            $stmt = $conn->prepare("SELECT * from test where type = ?");
+                            $stmt->bind_param('s', $type);
+                            $stmt->execute();
+                            $res = $stmt->get_result();
+
+                            if($res->num_rows > 0)
+                            {
+                                $count = 1;
+                                echo'
+                                <div class="flex items-center">
+                                    <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white pr-10">
+                                        Test Questions RNA 3 
+                                    </h3>
+                                    <a href="test_question.php" class="text-red-600 font-bold text-[40px] "> X </a>
+                                </div>
+                                <div class="overflow-x-auto ">
+                                    <div class="min-w-full">
+                                        <div class="bg-white shadow-md rounded my-6">
+                                        <table class="min-w-full leading-normal">
+                                            <thead>
+                                            <tr>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 1
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 2
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 3
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 4
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Answer
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Image
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                ';
+                                while($row = $res->fetch_assoc())
+                                {
+                                    $question = $row['question'];
+                                    $opt1 = $row['opt1'];
+                                    $opt2 = $row['opt2'];
+                                    $opt3 = $row['opt3'];
+                                    $opt4 = $row['opt4'];
+                                    $answer = $row['answer'];
+                                    $ques_type = $row['ques_type'];
+                                    $image = $row['image'];
+
+                                    if(empty($image))
+                                    {
+                                        $image = 'no image';
+                                    }
+                                    else{
+                                        $image = ' <img src="'.$image.'" class="w-[70px] object-cover"> ';
+                                    }
+
+                                    echo'
+                                            <tbody>
+                                                <tr>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                        '.$count++.'
+                                                    </th>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$question.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt1.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt2.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt3.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt4.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-green-100 text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$answer.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$ques_type.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$image.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <div class="flex items-center">
+                                                            <form method="post">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                    Edit
+                                                                </a>
+                                                                <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    ';
+
+                                }
+                                echo'
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                            else
+                            {
+                                ?>
+                                <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
+                                    RNA 3 Questions no records yet
+                                </h2>
+                                <?php
+                            }
                         }
                     }
                 ?>
@@ -463,7 +761,7 @@
                             {
                                 ?>
                                 <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
-                                    RNA 1 Questions no records yet
+                                    WDV 1 Questions no records yet
                                 </h2>
                                 <?php
                             }
@@ -471,38 +769,634 @@
                         else
                         if($type == 'wdv2')
                         {
-                            echo '
-                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
-                                Web dev 2 not available yet
-                            </div>
-                            ';
+                            $stmt = $conn->prepare("select * from test where type = ?");
+                            $stmt->bind_param('s', $type);
+                            $stmt->execute();
+                            $res = $stmt->get_result();
+
+                            if($res->num_rows > 0)
+                            {
+                                $count = 1;
+                                echo'
+                                <div class="flex items-center">
+                                    <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white pr-10">
+                                        Test Questions WDV 2
+                                    </h3>
+                                    <a href="test_question.php" class="text-red-600 font-bold text-[40px] "> X </a>
+                                </div>
+
+                                <div class="overflow-x-auto ">
+                                    <div class="min-w-full">
+                                        <div class="bg-white shadow-md rounded my-6">
+                                        <table class="min-w-full leading-normal">
+                                            <thead>
+                                            <tr>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 1
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 2
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 3
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 4
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Answer
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Image
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                ';
+                                while($row = $res->fetch_assoc())
+                                {
+                                    $question = $row['question'];
+                                    $opt1 = $row['opt1'];
+                                    $opt2 = $row['opt2'];
+                                    $opt3 = $row['opt3'];
+                                    $opt4 = $row['opt4'];
+                                    $answer = $row['answer'];
+                                    $ques_type = $row['ques_type'];
+                                    $image = $row['image'];
+
+                                    if(empty($image))
+                                    {
+                                        $image = 'no image';
+                                    }
+                                    else{
+                                        $image = ' <img src="'.$image.'" width="100"> ';
+                                    }
+
+                                    echo'
+                                            <tbody>
+                                                <tr>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                        '.$count++.'
+                                                    </th>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$question.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt1.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt2.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt3.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt4.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-green-100 text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$answer.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$ques_type.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$image.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <div class="flex items-center">
+                                                            <form method="post">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                    Edit
+                                                                </a>
+                                                                <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    ';
+
+                                }
+                                echo'
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                            else
+                            {
+                                ?>
+                                <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
+                                    WDV 2 Questions no records yet
+                                </h2>
+                                <?php
+                            }
                         }
                         else
                         if($type == 'wdv3')
                         {
-                            echo '
-                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
-                                Web dev 3 not available yet
-                            </div>
-                            ';
+                            $stmt = $conn->prepare("select * from test where type = ?");
+                            $stmt->bind_param('s', $type);
+                            $stmt->execute();
+                            $res = $stmt->get_result();
+
+                            if($res->num_rows > 0)
+                            {
+                                $count = 1;
+                                echo'
+                                <div class="flex items-center">
+                                    <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white pr-10">
+                                        Test Questions WDV 3
+                                    </h3>
+                                    <a href="test_question.php" class="text-red-600 font-bold text-[40px] "> X </a>
+                                </div>
+
+                                <div class="overflow-x-auto ">
+                                    <div class="min-w-full">
+                                        <div class="bg-white shadow-md rounded my-6">
+                                        <table class="min-w-full leading-normal">
+                                            <thead>
+                                            <tr>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 1
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 2
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 3
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 4
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Answer
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Image
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                ';
+                                while($row = $res->fetch_assoc())
+                                {
+                                    $question = $row['question'];
+                                    $opt1 = $row['opt1'];
+                                    $opt2 = $row['opt2'];
+                                    $opt3 = $row['opt3'];
+                                    $opt4 = $row['opt4'];
+                                    $answer = $row['answer'];
+                                    $ques_type = $row['ques_type'];
+                                    $image = $row['image'];
+
+                                    if(empty($image))
+                                    {
+                                        $image = 'no image';
+                                    }
+                                    else{
+                                        $image = ' <img src="'.$image.'" width="100"> ';
+                                    }
+
+                                    echo'
+                                            <tbody>
+                                                <tr>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                        '.$count++.'
+                                                    </th>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$question.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt1.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt2.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt3.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt4.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-green-100 text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$answer.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$ques_type.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$image.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <div class="flex items-center">
+                                                            <form method="post">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                    Edit
+                                                                </a>
+                                                                <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    ';
+
+                                }
+                                echo'
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                            else
+                            {
+                                ?>
+                                <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
+                                    WDV 3 Questions no records yet
+                                </h2>
+                                <?php
+                            }
                         }
                         else
                         if($type == 'wdv4')
                         {
-                            echo '
-                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
-                                Web dev 4 not available yet
-                            </div>
-                            ';
+                            $stmt = $conn->prepare("select * from test where type = ?");
+                            $stmt->bind_param('s', $type);
+                            $stmt->execute();
+                            $res = $stmt->get_result();
+
+                            if($res->num_rows > 0)
+                            {
+                                $count = 1;
+                                echo'
+                                <div class="flex items-center">
+                                    <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white pr-10">
+                                        Test Questions WDV 4
+                                    </h3>
+                                    <a href="test_question.php" class="text-red-600 font-bold text-[40px] "> X </a>
+                                </div>
+
+                                <div class="overflow-x-auto ">
+                                    <div class="min-w-full">
+                                        <div class="bg-white shadow-md rounded my-6">
+                                        <table class="min-w-full leading-normal">
+                                            <thead>
+                                            <tr>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 1
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 2
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 3
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 4
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Answer
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Image
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                ';
+                                while($row = $res->fetch_assoc())
+                                {
+                                    $question = $row['question'];
+                                    $opt1 = $row['opt1'];
+                                    $opt2 = $row['opt2'];
+                                    $opt3 = $row['opt3'];
+                                    $opt4 = $row['opt4'];
+                                    $answer = $row['answer'];
+                                    $ques_type = $row['ques_type'];
+                                    $image = $row['image'];
+
+                                    if(empty($image))
+                                    {
+                                        $image = 'no image';
+                                    }
+                                    else{
+                                        $image = ' <img src="'.$image.'" width="100"> ';
+                                    }
+
+                                    echo'
+                                            <tbody>
+                                                <tr>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                        '.$count++.'
+                                                    </th>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$question.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt1.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt2.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt3.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt4.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-green-100 text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$answer.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$ques_type.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$image.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <div class="flex items-center">
+                                                            <form method="post">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                    Edit
+                                                                </a>
+                                                                <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    ';
+
+                                }
+                                echo'
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                            else
+                            {
+                                ?>
+                                <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
+                                    WDV 4 Questions no records yet
+                                </h2>
+                                <?php
+                            }
                         }
                         else
                         if($type == 'wdv5')
                         {
-                            echo '
-                            <div class="text-2xl font-bold text-center p-4 bg-gray-600 text-white">
-                                Web dev 5 not available yet
-                            </div>
-                            ';
+                            $stmt = $conn->prepare("select * from test where type = ?");
+                            $stmt->bind_param('s', $type);
+                            $stmt->execute();
+                            $res = $stmt->get_result();
+
+                            if($res->num_rows > 0)
+                            {
+                                $count = 1;
+                                echo'
+                                <div class="flex items-center">
+                                    <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white pr-10">
+                                        Test Questions WDV 5
+                                    </h3>
+                                    <a href="test_question.php" class="text-red-600 font-bold text-[40px] "> X </a>
+                                </div>
+
+                                <div class="overflow-x-auto ">
+                                    <div class="min-w-full">
+                                        <div class="bg-white shadow-md rounded my-6">
+                                        <table class="min-w-full leading-normal">
+                                            <thead>
+                                            <tr>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 1
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 2
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 3
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Option 4
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Answer
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Question Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Image
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                ';
+                                while($row = $res->fetch_assoc())
+                                {
+                                    $question = $row['question'];
+                                    $opt1 = $row['opt1'];
+                                    $opt2 = $row['opt2'];
+                                    $opt3 = $row['opt3'];
+                                    $opt4 = $row['opt4'];
+                                    $answer = $row['answer'];
+                                    $ques_type = $row['ques_type'];
+                                    $image = $row['image'];
+
+                                    if(empty($image))
+                                    {
+                                        $image = 'no image';
+                                    }
+                                    else{
+                                        $image = ' <img src="'.$image.'" width="100"> ';
+                                    }
+
+                                    echo'
+                                            <tbody>
+                                                <tr>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                        '.$count++.'
+                                                    </th>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$question.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt1.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt2.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt3.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$opt4.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-green-100 text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$answer.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$ques_type.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            '.$image.'
+                                                        </p>
+                                                    </td>
+                                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                        <div class="flex items-center">
+                                                            <form method="post">
+                                                                <a href="edit_question.php?id='.$row['id'].'&type='.$type.'" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                                                                    Edit
+                                                                </a>
+                                                                <button name="delete_id" value="'.$row['id'].'" class="text-red-600 hover:text-red-900" onclick="return confirm(\' Are you sure you want to delete this record ? \')">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    ';
+
+                                }
+                                echo'
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                            else
+                            {
+                                ?>
+                                <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
+                                    WDV 5 Questions no records yet
+                                </h2>
+                                <?php
+                            }
                         }
                     }
                 ?>
