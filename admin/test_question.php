@@ -89,7 +89,7 @@
                         if($type == 'rna1')
                         {
 
-                            $stmt = $conn->prepare("select * from test where type = ?");
+                            $stmt = $conn->prepare("SELECT * from test where type = ?");
                             $stmt->bind_param('s', $type);
                             $stmt->execute();
                             $res = $stmt->get_result();

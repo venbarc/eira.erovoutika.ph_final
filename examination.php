@@ -1023,7 +1023,7 @@
                                                                     </script>
                                                                 <?php
                                                             }
-                                                            $stmt->close();
+                                                            $stmt->close();//select from test questions
 
                                                             //if quiz is submitted 
                                                             if(isset($_POST['submit_quiz']))
@@ -1178,19 +1178,6 @@
                                                                             array_push($array_ques_type, "php");
                                                                         }
                                                                     }
-
-                                                                    // over all max percentages 
-                                                                    $overall_max_percent = $max_percent_1 + $max_percent_2 + $max_percent_3 + $max_percent_4;
-                                                                    // over all users percentages 
-                                                                    $overall_user_percent = $user_percent_1 + $user_percent_2 + $user_percent_3 + $user_percent_4;
-                                                                    // VERDICT 
-                                                                    if($overall_user_percent >= 70)
-                                                                    {
-                                                                        $verdict = 'passed';
-                                                                    }
-                                                                    else{
-                                                                        $verdict = 'failed';
-                                                                    }
                                                                 }
 
                                                                 $count_overall = count($array_ques_type);
@@ -1198,33 +1185,38 @@
                                                                 if(in_array('html', $array_ques_type))
                                                                 {
                                                                     $max_percent_1 = ( $count_1 / $count_overall) * 100;
-                                                                    $user_percent_1 = ( $correct_1 / $count_overall);
+                                                                    $user_percent_1 = ( $correct_1 / $count_overall) * 100;
                                                                 }
                                                                 if(in_array('css', $array_ques_type))
                                                                 {
                                                                     $max_percent_2 = ( $count_2 / $count_overall) * 100;
-                                                                    $user_percent_2 = ( $correct_1 / $count_overall);
+                                                                    $user_percent_2 = ( $correct_2 / $count_overall) * 100;
                                                                 }
                                                                 if(in_array('js', $array_ques_type))
                                                                 {
                                                                     $max_percent_3 = ( $count_3 / $count_overall) * 100;
-                                                                    $user_percent_3 = ( $correct_1 / $count_overall);
+                                                                    $user_percent_3 = ( $correct_3 / $count_overall) * 100;
                                                                 }
                                                                 if(in_array('php', $array_ques_type))
                                                                 {
                                                                     $max_percent_4 = ( $count_4 / $count_overall) * 100;
-                                                                    $user_percent_4 = ( $correct_1 / $count_overall);
+                                                                    $user_percent_4 = ( $correct_4 / $count_overall) * 100;
                                                                 }
 
-                                                                echo '<pre>';
-                                                                    var_dump($max_percent_1 ?? NULL);
-                                                                    var_dump($max_percent_2 ?? NULL);
-                                                                    var_dump($max_percent_3 ?? NULL);
-                                                                    var_dump($max_percent_4 ?? NULL);
-                                                                echo '</pre>';
+                                                                 // over all max percentages 
+                                                                 $overall_max_percent = 100.000;
+                                                                 // over all users percentages 
+                                                                 $overall_user_percent = $user_percent_1 + $user_percent_2 + $user_percent_3 + $user_percent_4;
+                                                                 // VERDICT 
+                                                                 if($overall_user_percent >= 70)
+                                                                 {
+                                                                     $verdict = 'passed';
+                                                                 }
+                                                                 else{
+                                                                     $verdict = 'failed';
+                                                                 }
 
-                                                                exit();
-                                                                $stmt->close();
+                                                                $stmt->close();// get the answer
 
                                                                 // insert data in result db 
                                                                 $stmt = $conn->prepare("insert into result 
@@ -1254,7 +1246,7 @@
                                                                     </div>
                                                                     ';
                                                                 }
-                                                                $stmt->close();
+                                                                $stmt->close();//insert the data
 
                                                             }
                                                         ?>
