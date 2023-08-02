@@ -47,7 +47,7 @@
 
       <div class="row" data-aos="fade-left">
         <!-- LINUX 1  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="linux.php?type=linux">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/linux/linux.webp" alt="">
@@ -56,7 +56,7 @@
           </a>
         </div>
         <!-- LINUX 2  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="linux.php?type=security">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/linux/security.webp" alt="">
@@ -65,7 +65,7 @@
           </a>
         </div>
         <!-- LINUX 3  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="linux.php?type=web">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/linux/web.webp" alt="">

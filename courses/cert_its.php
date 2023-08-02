@@ -45,7 +45,7 @@
 
       <div class="row" data-aos="fade-left">
         <!-- ITS 1  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="https://certiport.filecamp.com/s/b3cFIPIlhb5DsLfk/fi" target="_blank">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/its-img/ai.png" alt="">
@@ -54,7 +54,7 @@
           </a>
         </div>
         <!-- ITS 2  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="https://certiport.filecamp.com/s/HjzWHZfc8CGpYOaS/fi" target="_blank">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/its-img/cc.png" alt="">
@@ -63,7 +63,7 @@
           </a>
         </div>
         <!-- ITS 3  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="https://certiport.filecamp.com/s/LhQEG0ezFX93PRNQ/fi" target="_blank">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/its-img/ct.png" alt="">
@@ -72,7 +72,7 @@
           </a>
         </div>
         <!-- ITS 4  -->
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 mt-4">
           <a href="https://certiport.filecamp.com/s/WZamgoVwSSKHa5gU/fi" target="_blank">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="assets/img/certificates/its-img/cs.png" alt="">

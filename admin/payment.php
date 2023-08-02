@@ -53,7 +53,7 @@
             <section class="bg-white dark:bg-gray-900">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Total Payment Robotics and Automation</h2>
+                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Total Payment EIRA</h2>
                         <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white"><!-- Insert Echo Total USer here --><?php echo $total_payment?></h2>
                     </div>
                     
@@ -70,11 +70,11 @@
                                     if($res->num_rows > 0)
                                     {
                                         echo'
-                                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                        <div class="">
                                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                     <tr>
-                                                        <th scope="col" class="px-6 py-3" >Robotics and Automation Type</th>
+                                                        <th scope="col" class="px-6 py-3" >Type</th>
                                                         <th scope="col" class="px-6 py-3" >Payment Method </th>
                                                         <th scope="col" class="px-6 py-3" >Reference Number </th>
                                                         <th scope="col" class="px-6 py-3" >Approval </th>
@@ -89,7 +89,7 @@
                                         ';
                                         while($row = $res->fetch_assoc())
                                         {
-                                            $rna_type = $row['rna_type'];
+                                            $type = $row['type'];
                                             $pay_type = $row['pay_type'];
                                             $ref_num = $row['ref_num'];
                                             $approval = $row['approval'];
@@ -102,20 +102,47 @@
                                             $proof_pay = $row['proof_pay'];
 
                                             // check robotics and automation level
-                                            if($rna_type == 'rna1')
+                                            if($type == 'rna1')
                                             {
-                                                $rna_type = 'Robotics And Automation 1';
+                                                $type = 'Robotics And Automation 1';
                                             } 
                                             else
-                                            if($rna_type == 'rna2')
+                                            if($type == 'rna2')
                                             {
-                                                $rna_type = 'Robotics And Automation 1';
+                                                $type = 'Robotics And Automation 1';
                                             }
                                             else
-                                            if($rna_type == 'rna3')
+                                            if($type == 'rna3')
                                             {
-                                                $rna_type = 'Robotics And Automation 3';
+                                                $type = 'Robotics And Automation 3';
                                             }
+                                            // check Web Development level
+                                            if($type == 'wdv1')
+                                            {
+                                                $type = 'Web Development 1';
+                                            } 
+                                            else
+                                            if($type == 'wdv2')
+                                            {
+                                                $type = 'Web Development 2';
+
+                                            }
+                                            else
+                                            if($type == 'wdv3')
+                                            {
+                                                $type = 'Web Development 3';
+                                            }
+                                            else
+                                            if($type == 'wdv4')
+                                            {
+                                                $type = 'Web Development 4';
+                                            }
+                                            else
+                                            if($type == 'wdv5')
+                                            {
+                                                $type = 'Web Development 5';
+                                            }
+
                                             // check approval
                                             if($approval == 0)
                                             {
@@ -135,7 +162,7 @@
                                             echo'
                                                 <tbody>
                                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                        <td class="px-6 py-4">'. $rna_type .'</td>
+                                                        <td class="px-6 py-4">'. $type .'</td>
                                                         <td class="px-6 py-4">'. $pay_type .'</td>
                                                         <td class="px-6 py-4">'. $ref_num .'</td>
                                                         <td class="px-6 py-4">'. $approval .'</td>

@@ -10,11 +10,31 @@
         if($type == 'rna1')// retake for rna 1
         {
             // delete result  
-            $stmt_result = $conn->prepare("delete from result where email = ? and rna_type = ?");
+            $stmt_result = $conn->prepare("delete from result where email = ? and type = ?");
             $stmt_result->execute([$email, $type]);
 
             // delete payment  
-            $stmt_payment = $conn->prepare("delete from payments where email = ? and rna_type = ?");
+            $stmt_payment = $conn->prepare("delete from payments where email = ? and type = ?");
+            $stmt_payment->execute([$email, $type]);
+
+            if($stmt_result->affected_rows > 0 && $stmt_payment->affected_rows > 0)
+            {
+                ?>
+                <script>
+                    location.href = "test_result_retake.php";
+                </script>
+                <?php
+            }
+        }
+        else
+        if($type == 'wdv1')// retake for wdv 1
+        {
+            // delete result  
+            $stmt_result = $conn->prepare("delete from result where email = ? and type = ?");
+            $stmt_result->execute([$email, $type]);
+
+            // delete payment  
+            $stmt_payment = $conn->prepare("delete from payments where email = ? and type = ?");
             $stmt_payment->execute([$email, $type]);
 
             if($stmt_result->affected_rows > 0 && $stmt_payment->affected_rows > 0)

@@ -129,21 +129,6 @@
 
         <section>
             <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <h2 class="text-secondary">Early Access</h2>
-                    <p>E-Certification Lessons</p>
-                </div>
-                
-                <div class="container-fluid">
-                    <row class="justify-content-center">
-                        <a href="learn.php" target="_blank" class="btn btn-primary mb-3">Go to E-certification!</a>
-                    </row>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
                 
                 <div class="section-title" data-aos="fade-up">
                     <h2 class="text-secondary">Histories</h2>
@@ -152,7 +137,7 @@
                 
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-12 col-lg-11">
+                        <div class="col-lg-12">
                             <?php
                                 $stmt = $conn->prepare("select * from payments where email = ?");
                                 $stmt->bind_param('s', $email);
@@ -165,6 +150,7 @@
                                     <table>
                                         <thead>
                                             <tr>
+                                                <th scope="col">Examination</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">First Name</th>
                                                 <th scope="col">Last Name</th>
@@ -189,7 +175,7 @@
                                         $pay_type = $row['pay_type'];
                                         $date_pay = $row['date_pay'];
 
-                                        $rna_type = $row['rna_type'];
+                                        $type = $row['type'];
 
                                         $approval = $row['approval'];
                                         $status = "";
@@ -197,7 +183,7 @@
                                         if($approval == 0)// pending 
                                         {
                                             $status = '
-                                            <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
+                                            <a href="view_enrollment.php?type='.$type.'&approval='.$approval.'" 
                                             style="color: #ff8c00; font-weight: 600;">
                                                 Pending
                                             </a> 
@@ -207,7 +193,7 @@
                                         if($approval == 1)//approved
                                         {
                                             $status = '
-                                            <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
+                                            <a href="view_enrollment.php?type='.$type.'&approval='.$approval.'" 
                                             style="color: green; font-weight: 600;">
                                                 Approved
                                             </a> 
@@ -217,7 +203,7 @@
                                         if($approval == 2)//rejected
                                         {
                                             $status = '
-                                            <a href="view_rna_enrollment.php?type='.$rna_type.'&approval='.$approval.'" 
+                                            <a href="view_enrollment.php?type='.$type.'&approval='.$approval.'" 
                                             style="color: red; font-weight: 600;">
                                                 Rejected
                                             </a> 
@@ -227,6 +213,7 @@
                                         echo'
                                         <tbody>
                                             <tr>
+                                                <td data-label="Type">'. $type .'</td>
                                                 <td data-label="Email">'. $email .'</td>
                                                 <td data-label="First Name">'. $fname .'</td>
                                                 <td data-label="Last Name">'. $lname .'</td>

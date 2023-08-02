@@ -50,12 +50,13 @@
     <main>
 
         <?php
-        include "courses/cert_comptia.php";
-        include "courses/cert_its.php";
-        include "courses/cert_rna.php";
-        include "courses/cert_linux.php";
-        include "courses/cert_python.php";
-        include "include/contact.php";
+            include "courses/cert_comptia.php";
+            include "courses/cert_its.php";
+            include "courses/cert_rna.php";
+            include "courses/cert_linux.php";
+            include "courses/cert_python.php";
+            include "courses/cert_web_dev.php";
+            include "include/contact.php";
         ?>
 
     </main><!-- End #main -->

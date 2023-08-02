@@ -27,7 +27,7 @@
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                         <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                            Test Results Robotics and Automation
+                            Test Results EIRA
                         </h3>
                     </div>
 
@@ -49,6 +49,9 @@
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Profile Image
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Type
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Email
@@ -103,6 +106,9 @@
                                                 '.$image.'
                                             </th>
                                             <td class="px-6 py-4">
+                                            '. $row['type'] .'
+                                            </td>
+                                            <td class="px-6 py-4">
                                             '. $row['email'] .'
                                             </td>
                                             <td class="px-6 py-4">
@@ -129,9 +135,7 @@
 
                             ';
                         } 
-                    
                     ?>
-
                 </div>
             </section>
         </div>
