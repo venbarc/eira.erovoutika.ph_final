@@ -53,21 +53,21 @@
         </div>
         <!-- RNA 2  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <!-- <a href=""> -->
+          <a href="rna.php?type=rna2">
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/level 2.webp" alt="">
             <h3 style="color: #00008b">Robotics and Automation Level 2</h3>
           </div>
-          <!-- </a> -->
+          </a>
         </div>
         <!-- RNA 3  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <!-- <a href=""> -->
+          <a href="rna.php?type=rna3">
           <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
             <img class="certi_icon" src="assets/img/certificates/rna/level 3.webp" alt="">
             <h3 style="color: #00008b">Robotics and Automation Level 3</h3>
           </div>
-          <!-- </a> -->
+          </a>
         </div>
 
       </div>
