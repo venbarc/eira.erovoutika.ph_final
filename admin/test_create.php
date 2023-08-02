@@ -872,13 +872,6 @@
 
                             <?php
                         } 
-                        else{
-                            ?>
-                            <script>
-                                location.href = "404.php";
-                            </script>
-                            <?php
-                        }
                     }
                 ?>
                 
@@ -2276,13 +2269,6 @@
 
                             <?php
                         } 
-                        else{
-                            ?>
-                            <script>
-                                location.href = "404.php";
-                            </script>
-                            <?php
-                        }
                     }
                 ?>
 
