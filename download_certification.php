@@ -131,19 +131,8 @@
                                                     $name = $full_name;
                                                     $date = date("F j, Y", strtotime($date)); // format the date
 
-                                                    // center align the name
-                                                    // $name_width = imagettfbbox(90, 0, $font, $name);
-                                                    // $name_width = abs($name_width[4] - $name_width[0]);
-                                                    // $name_x = (imagesx($image) - $name_width) / 2;
-                                                    // center align the date
-                                                    $date_width = imagettfbbox(120, 0, $font, $date);
-                                                    $date_width = abs($date_width[4] - $date_width[0]);
-                                                    $date_x = (imagesx($image) - $date_width) / 2;
-                                                    // center align the certificate id
-                                                    $cert_width = imagettfbbox(49, 0, $font, $date);
-                                                    $cert_width = abs($cert_width[4] - $cert_width[0]);
-                                                    $cert_x = (imagesx($image) - $cert_width) / 2;
-
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
                                                     $name_x = 35;
 
                                                     // name and date positioning
@@ -242,20 +231,9 @@
                                                     $color = imagecolorallocate($image, 19, 21, 22);
                                                     $name = $full_name;
                                                     $date = date("F j, Y", strtotime($date)); // format the date
-
-                                                    // center align the name
-                                                    // $name_width = imagettfbbox(90, 0, $font, $name);
-                                                    // $name_width = abs($name_width[4] - $name_width[0]);
-                                                    // $name_x = (imagesx($image) - $name_width) / 2;
-                                                    // center align the date
-                                                    $date_width = imagettfbbox(120, 0, $font, $date);
-                                                    $date_width = abs($date_width[4] - $date_width[0]);
-                                                    $date_x = (imagesx($image) - $date_width) / 2;
-                                                    // center align the certificate id
-                                                    $cert_width = imagettfbbox(49, 0, $font, $date);
-                                                    $cert_width = abs($cert_width[4] - $cert_width[0]);
-                                                    $cert_x = (imagesx($image) - $cert_width) / 2;
-
+                                                
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
                                                     $name_x = 35;
 
                                                     // name and date positioning
@@ -355,19 +333,8 @@
                                                     $name = $full_name;
                                                     $date = date("F j, Y", strtotime($date)); // format the date
 
-                                                    // center align the name
-                                                    // $name_width = imagettfbbox(90, 0, $font, $name);
-                                                    // $name_width = abs($name_width[4] - $name_width[0]);
-                                                    // $name_x = (imagesx($image) - $name_width) / 2;
-                                                    // center align the date
-                                                    $date_width = imagettfbbox(120, 0, $font, $date);
-                                                    $date_width = abs($date_width[4] - $date_width[0]);
-                                                    $date_x = (imagesx($image) - $date_width) / 2;
-                                                    // center align the certificate id
-                                                    $cert_width = imagettfbbox(49, 0, $font, $date);
-                                                    $cert_width = abs($cert_width[4] - $cert_width[0]);
-                                                    $cert_x = (imagesx($image) - $cert_width) / 2;
-
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
                                                     $name_x = 35;
 
                                                     // name and date positioning
@@ -468,19 +435,416 @@
                                                     $name = $full_name;
                                                     $date = date("F j, Y", strtotime($date)); // format the date
 
-                                                    // center align the name
-                                                    // $name_width = imagettfbbox(90, 0, $font, $name);
-                                                    // $name_width = abs($name_width[4] - $name_width[0]);
-                                                    // $name_x = (imagesx($image) - $name_width) / 2;
                                                     // center align the date
-                                                    $date_width = imagettfbbox(120, 0, $font, $date);
+                                                    $date_width = imagettfbbox(13, 0, $font2, $date); 
                                                     $date_width = abs($date_width[4] - $date_width[0]);
-                                                    $date_x = (imagesx($image) - $date_width) / 2;
-                                                    // center align the certificate id
-                                                    $cert_width = imagettfbbox(49, 0, $font, $date);
-                                                    $cert_width = abs($cert_width[4] - $cert_width[0]);
-                                                    $cert_x = (imagesx($image) - $cert_width) / 2;
+                                                    $date_x = (imagesx($image) - $date_width) / 23;
 
+                                                    $cert_x = 265;
+                                                    $name_x = 35;
+
+                                                    // name and date positioning
+                                                    imagettftext($image, 45, 0, $name_x, 320, $color, $font, $name);
+                                                    imagettftext($image, 13, 0, $date_x, 575, $color, $font2, $date);
+                                                    // verification mark 
+                                                    imagettftext($image, 13, 0, $cert_x, 575, $color, $font2, $cert_id);
+
+                                                    // Output the image as base64-encoded data URI
+                                                    ob_start();
+                                                    imagepng($image);
+                                                    $data = ob_get_clean();
+                                                    
+                                                    // show and download the image 
+                                                    imagepng($image, "certifications_img/". $full_name .".png");
+
+                                                    $pdf = new FPDF('L', 'in' , [11.7, 8.27]);
+                                                    $pdf->AddPage();
+                                                    $pdf->Image("certifications_img/". $full_name .".png",0,0,11.7,8.27);
+                                                    $pdf->Output("certifications_img/". $full_name .".pdf", "F");
+                                                    imagedestroy($image);
+                                                    
+                                                    echo'
+                                                        <iframe src="certifications_img/'. $full_name .'.pdf" width="100%" height="700px"></iframe>
+                                                    ';
+                                                }
+                                                else{
+                                                    ?>
+                                                    <script>
+                                                        location.href = "404.php";
+                                                    </script>
+                                                    <?php
+                                                } 
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    $stmt->close();
+                }
+                else
+                if($type == 'wdv2' && $res->num_rows > 0)
+                {
+                    ?>
+                        <!-- ======= Hero Section ======= -->
+                        <section id="hero" id="verification" class="verification">
+                        
+                            <div class="container">
+                                <div class="flex justify-content-center">
+                                    <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                        <div data-aos="zoom-out">
+                                            <h3 class="text-center text-white text-lg-center">
+                                                Congratulations for passing <br> Web Development Level 2
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start wavy hero  -->
+                            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                <defs>
+                                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                </defs>
+                                <g class="wave1">
+                                    <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                </g>
+                                <g class="wave2">
+                                    <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                </g>
+                                <g class="wave3">
+                                    <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                </g>
+                            </svg>
+                        </section>
+                        <!-- End wavy hero  -->
+
+                        <!-- download content here  -->
+                        <div class="container" style="margin-bottom: 25%; margin-top: 3%;">
+                            <div class="flex justify-content-center">
+                                <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                    <div data-aos="zoom-out">
+                                        <h3 class="text-center text-dark text-lg-center mb-5">
+                                            Download Web Development Level 2 <br>
+                                            Certification
+                                        </h3>
+                                        <div class="text-center">
+                                            <?php
+                                                require ('certifications_template/fpdf.php');
+                                                if ($verdict == 'passed') 
+                                                {
+                                                    $font = "certifications_template/BRUSHSCI.TTF";
+                                                    $font2 = "certifications_template/Comme-Regular.TTF";
+                                                    $image = imagecreatefrompng("certifications_template/wdv2.png");
+                                                    $color = imagecolorallocate($image, 19, 21, 22);
+                                                    $name = $full_name;
+                                                    $date = date("F j, Y", strtotime($date)); // format the date
+
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
+                                                    $name_x = 35;
+
+                                                    // name and date positioning
+                                                    imagettftext($image, 45, 0, $name_x, 320, $color, $font, $name);
+                                                    imagettftext($image, 13, 0, $date_x, 575, $color, $font2, $date);
+                                                    // verification mark 
+                                                    imagettftext($image, 13, 0, $cert_x, 575, $color, $font2, $cert_id);
+
+                                                    // Output the image as base64-encoded data URI
+                                                    ob_start();
+                                                    imagepng($image);
+                                                    $data = ob_get_clean();
+                                                    
+                                                    // show and download the image 
+                                                    imagepng($image, "certifications_img/". $full_name .".png");
+
+                                                    $pdf = new FPDF('L', 'in' , [11.7, 8.27]);
+                                                    $pdf->AddPage();
+                                                    $pdf->Image("certifications_img/". $full_name .".png",0,0,11.7,8.27);
+                                                    $pdf->Output("certifications_img/". $full_name .".pdf", "F");
+                                                    imagedestroy($image);
+                                                    
+                                                    echo'
+                                                        <iframe src="certifications_img/'. $full_name .'.pdf" width="100%" height="700px"></iframe>
+                                                    ';
+                                                }
+                                                else{
+                                                    ?>
+                                                    <script>
+                                                        location.href = "404.php";
+                                                    </script>
+                                                    <?php
+                                                } 
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    $stmt->close();
+                }
+                else
+                if($type == 'wdv3' && $res->num_rows > 0)
+                {
+                    ?>
+                        <!-- ======= Hero Section ======= -->
+                        <section id="hero" id="verification" class="verification">
+                        
+                            <div class="container">
+                                <div class="flex justify-content-center">
+                                    <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                        <div data-aos="zoom-out">
+                                            <h3 class="text-center text-white text-lg-center">
+                                                Congratulations for passing <br> Web Development Level 3
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start wavy hero  -->
+                            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                <defs>
+                                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                </defs>
+                                <g class="wave1">
+                                    <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                </g>
+                                <g class="wave2">
+                                    <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                </g>
+                                <g class="wave3">
+                                    <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                </g>
+                            </svg>
+                        </section>
+                        <!-- End wavy hero  -->
+
+                        <!-- download content here  -->
+                        <div class="container" style="margin-bottom: 25%; margin-top: 3%;">
+                            <div class="flex justify-content-center">
+                                <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                    <div data-aos="zoom-out">
+                                        <h3 class="text-center text-dark text-lg-center mb-5">
+                                            Download Web Development Level 3 <br>
+                                            Certification
+                                        </h3>
+                                        <div class="text-center">
+                                            <?php
+                                                require ('certifications_template/fpdf.php');
+                                                if ($verdict == 'passed') 
+                                                {
+                                                    $font = "certifications_template/BRUSHSCI.TTF";
+                                                    $font2 = "certifications_template/Comme-Regular.TTF";
+                                                    $image = imagecreatefrompng("certifications_template/wdv3.png");
+                                                    $color = imagecolorallocate($image, 19, 21, 22);
+                                                    $name = $full_name;
+                                                    $date = date("F j, Y", strtotime($date)); // format the date
+
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
+                                                    $name_x = 35;
+
+                                                    // name and date positioning
+                                                    imagettftext($image, 45, 0, $name_x, 320, $color, $font, $name);
+                                                    imagettftext($image, 13, 0, $date_x, 575, $color, $font2, $date);
+                                                    // verification mark 
+                                                    imagettftext($image, 13, 0, $cert_x, 575, $color, $font2, $cert_id);
+
+                                                    // Output the image as base64-encoded data URI
+                                                    ob_start();
+                                                    imagepng($image);
+                                                    $data = ob_get_clean();
+                                                    
+                                                    // show and download the image 
+                                                    imagepng($image, "certifications_img/". $full_name .".png");
+
+                                                    $pdf = new FPDF('L', 'in' , [11.7, 8.27]);
+                                                    $pdf->AddPage();
+                                                    $pdf->Image("certifications_img/". $full_name .".png",0,0,11.7,8.27);
+                                                    $pdf->Output("certifications_img/". $full_name .".pdf", "F");
+                                                    imagedestroy($image);
+                                                    
+                                                    echo'
+                                                        <iframe src="certifications_img/'. $full_name .'.pdf" width="100%" height="700px"></iframe>
+                                                    ';
+                                                }
+                                                else{
+                                                    ?>
+                                                    <script>
+                                                        location.href = "404.php";
+                                                    </script>
+                                                    <?php
+                                                } 
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    $stmt->close();
+                }
+                else
+                if($type == 'wdv4' && $res->num_rows > 0)
+                {
+                    ?>
+                        <!-- ======= Hero Section ======= -->
+                        <section id="hero" id="verification" class="verification">
+                        
+                            <div class="container">
+                                <div class="flex justify-content-center">
+                                    <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                        <div data-aos="zoom-out">
+                                            <h3 class="text-center text-white text-lg-center">
+                                                Congratulations for passing <br> Web Development Level 4
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start wavy hero  -->
+                            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                <defs>
+                                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                </defs>
+                                <g class="wave1">
+                                    <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                </g>
+                                <g class="wave2">
+                                    <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                </g>
+                                <g class="wave3">
+                                    <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                </g>
+                            </svg>
+                        </section>
+                        <!-- End wavy hero  -->
+
+                        <!-- download content here  -->
+                        <div class="container" style="margin-bottom: 25%; margin-top: 3%;">
+                            <div class="flex justify-content-center">
+                                <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                    <div data-aos="zoom-out">
+                                        <h3 class="text-center text-dark text-lg-center mb-5">
+                                            Download Web Development Level 4 <br>
+                                            Certification
+                                        </h3>
+                                        <div class="text-center">
+                                            <?php
+                                                require ('certifications_template/fpdf.php');
+                                                if ($verdict == 'passed') 
+                                                {
+                                                    $font = "certifications_template/BRUSHSCI.TTF";
+                                                    $font2 = "certifications_template/Comme-Regular.TTF";
+                                                    $image = imagecreatefrompng("certifications_template/wdv4.png");
+                                                    $color = imagecolorallocate($image, 19, 21, 22);
+                                                    $name = $full_name;
+                                                    $date = date("F j, Y", strtotime($date)); // format the date
+
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
+                                                    $name_x = 35;
+
+                                                    // name and date positioning
+                                                    imagettftext($image, 45, 0, $name_x, 320, $color, $font, $name);
+                                                    imagettftext($image, 13, 0, $date_x, 575, $color, $font2, $date);
+                                                    // verification mark 
+                                                    imagettftext($image, 13, 0, $cert_x, 575, $color, $font2, $cert_id);
+
+                                                    // Output the image as base64-encoded data URI
+                                                    ob_start();
+                                                    imagepng($image);
+                                                    $data = ob_get_clean();
+                                                    
+                                                    // show and download the image 
+                                                    imagepng($image, "certifications_img/". $full_name .".png");
+
+                                                    $pdf = new FPDF('L', 'in' , [11.7, 8.27]);
+                                                    $pdf->AddPage();
+                                                    $pdf->Image("certifications_img/". $full_name .".png",0,0,11.7,8.27);
+                                                    $pdf->Output("certifications_img/". $full_name .".pdf", "F");
+                                                    imagedestroy($image);
+                                                    
+                                                    echo'
+                                                        <iframe src="certifications_img/'. $full_name .'.pdf" width="100%" height="700px"></iframe>
+                                                    ';
+                                                }
+                                                else{
+                                                    ?>
+                                                    <script>
+                                                        location.href = "404.php";
+                                                    </script>
+                                                    <?php
+                                                } 
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    $stmt->close();
+                }
+                else
+                if($type == 'wdv5' && $res->num_rows > 0)
+                {
+                    ?>
+                        <!-- ======= Hero Section ======= -->
+                        <section id="hero" id="verification" class="verification">
+                        
+                            <div class="container">
+                                <div class="flex justify-content-center">
+                                    <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                        <div data-aos="zoom-out">
+                                            <h3 class="text-center text-white text-lg-center">
+                                                Congratulations for passing <br> Web Development Level 5
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start wavy hero  -->
+                            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                <defs>
+                                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                </defs>
+                                <g class="wave1">
+                                    <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                </g>
+                                <g class="wave2">
+                                    <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                </g>
+                                <g class="wave3">
+                                    <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                </g>
+                            </svg>
+                        </section>
+                        <!-- End wavy hero  -->
+
+                        <!-- download content here  -->
+                        <div class="container" style="margin-bottom: 25%; margin-top: 3%;">
+                            <div class="flex justify-content-center">
+                                <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                    <div data-aos="zoom-out">
+                                        <h3 class="text-center text-dark text-lg-center mb-5">
+                                            Download Web Development Level 5 <br>
+                                            Certification
+                                        </h3>
+                                        <div class="text-center">
+                                            <?php
+                                                require ('certifications_template/fpdf.php');
+                                                if ($verdict == 'passed') 
+                                                {
+                                                    $font = "certifications_template/BRUSHSCI.TTF";
+                                                    $font2 = "certifications_template/Comme-Regular.TTF";
+                                                    $image = imagecreatefrompng("certifications_template/wdv5.png");
+                                                    $color = imagecolorallocate($image, 19, 21, 22);
+                                                    $name = $full_name;
+                                                    $date = date("F j, Y", strtotime($date)); // format the date
+                                      
+                                                    $date_x = 35;
+                                                    $cert_x = 265;
                                                     $name_x = 35;
 
                                                     // name and date positioning
@@ -530,7 +894,6 @@
                         </script>
                     <?php
                 }
-
             }
             else
             {

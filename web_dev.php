@@ -256,7 +256,799 @@
                             <!-- End Web dev 1 Section -->
                         <?php
                     }
-                   
+                    else
+                    if($type == 'wdv2')
+                    {
+                        ?>
+                            <!-- ======= Web dev 1 Section ======= -->
+                            <section id="hero">
+                                <div class="container">
+                                    <div class="flex justify-content-center">
+                                        <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                            <div data-aos="zoom-out">
+                                                <h1 class="text-center text-lg-center">
+                                                    Enrollment <strong class="text-warning">Web Development</strong> <br>
+                                                    Certifications Level 2
+                                                </h1>
+                                                <div class="text-center text-lg-center">
+                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">
+                                                        Enroll now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                    <defs>
+                                        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                    </defs>
+                                    <g class="wave1">
+                                        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                    </g>
+                                    <g class="wave2">
+                                        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                    </g>
+                                    <g class="wave3">
+                                        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                    </g>
+                                </svg>
+                            </section>
+                            <!-- End Hero -->
+
+                            <!-- ======= Web dev 1 Section ======= -->
+                            <section id="certificate" class="certificate">
+                                <div class="container">
+
+                                    <div class="section-title" data-aos="fade-up">
+                                        <h2 class="text-secondary">Certifications</h2>
+                                        <p style="color: #00008b;">Advance HTML, CSS and JS</p>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- img here  -->
+                                                <img src="assets/img/certificates/web_dev/web_dev2.png" height="200" width="200" />
+                                                <!-- title here  -->
+                                                <span class="name">LEVEL 2</span> 
+                                                <span class="idd"> Advance HTML, CSS and JS</span>
+                                               
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <div class="col-md-12 mb-5">
+                                                    <br>
+                                                    Advance Html,Css and JS Details here
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- What makes it different  -->
+                                        <div class="row" style="margin-top: 5%;" data-aos="fade-left">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- Coverage title  -->
+                                                <div class="justify-content-center align-items-center mt-5 mb-3">
+                                                    <span class="head_title">
+                                                        Exam Coverage
+                                                    </span> 
+                                                </div>
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <!-- details 1  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            1. one content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 2  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            2. two content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 3  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            3. three content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- HOW TO EVALUATE details  -->
+                                    <div class="container mt-5" data-aos="fade-up">
+                                        <span class="head_title">
+                                            How to evaluate examination ?
+                                        </span>
+                                        <br><br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>1. HTML (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Limited understanding of HTML basics, struggles with syntax and structure.
+                                            Adequate knowledge of HTML fundamentals, can create simple web pages with basic tags and structure.
+                                            Proficient in HTML, demonstrates a good grasp of tags, attributes, and document structure.
+                                            Advanced understanding of HTML, capable of building complex web pages, effectively using semantic elements, and optimizing for accessibility.
+                                        </div>
+                                        <br>
+                                        <!-- evaluation 2  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>2. CSS (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Limited knowledge of CSS, struggles with applying styles and understanding selectors.
+                                            Basic understanding of CSS styling, can modify colors, fonts, and basic layout properties.
+                                            Proficient in CSS, demonstrates competence in using selectors, properties, and applying advanced styling techniques.
+                                            Advanced CSS skills, able to create complex layouts, responsive designs, and custom animations.
+                                        </div>
+                                        <br>
+                                        <!-- evaluation 3  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>3. JS (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            JS content herer
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <div class="mt-5"></div>
+                                    
+                                    <!-- table  -->
+                                    <table data-aos="fade-up" >
+                                        <h2 style="color:#00008b;" data-aos="fade-right">Examination Details</h2>
+                                            <tr>
+                                                <th scope="col">Exam Name</th>
+                                                <td>Exam WDV-102</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Pre-requisites</th>
+                                                <td>None</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Validity</th>
+                                                <td>
+                                                    Lifetime
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Exam Duration</th>
+                                                <td>55 minutes</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                <th scope="col">Number of Questions</th>
+                                                <td>40 questions</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Type of Question</th>
+                                                <td>Multiple Choice</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Passing Score</th>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Cost</th>
+                                                <td>$17 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Languages</th>
+                                                <td>English</td>
+                                            </tr>
+                                    </table>
+                                </div>
+                            </section>
+                            <!-- End Web dev 1 Section -->
+                        <?php
+                    }
+                    else
+                    if($type == 'wdv3')
+                    {
+                        ?>
+                            <!-- ======= Web dev 3 Section ======= -->
+                            <section id="hero">
+                                <div class="container">
+                                    <div class="flex justify-content-center">
+                                        <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                            <div data-aos="zoom-out">
+                                                <h1 class="text-center text-lg-center">
+                                                    Enrollment <strong class="text-warning">Web Development</strong> <br>
+                                                    Certifications Level 3
+                                                </h1>
+                                                <div class="text-center text-lg-center">
+                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">
+                                                        Enroll now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                    <defs>
+                                        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                    </defs>
+                                    <g class="wave1">
+                                        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                    </g>
+                                    <g class="wave2">
+                                        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                    </g>
+                                    <g class="wave3">
+                                        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                    </g>
+                                </svg>
+                            </section>
+                            <!-- End Hero -->
+
+                            <!-- ======= Web dev 3 Section ======= -->
+                            <section id="certificate" class="certificate">
+                                <div class="container">
+
+                                    <div class="section-title" data-aos="fade-up">
+                                        <h2 class="text-secondary">Certifications</h2>
+                                        <p style="color: #00008b;">CSS Frame works</p>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- img here  -->
+                                                <img src="assets/img/certificates/web_dev/web_dev3.png" height="200" width="200" />
+                                                <!-- title here  -->
+                                                <span class="name">LEVEL 3</span> 
+                                                <span class="idd"> CSS Frame Works</span>
+                                               
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <div class="col-md-12 mb-5">
+                                                    <br>
+                                                    Css Frame works
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- What makes it different  -->
+                                        <div class="row" style="margin-top: 5%;" data-aos="fade-left">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- Coverage title  -->
+                                                <div class="justify-content-center align-items-center mt-5 mb-3">
+                                                    <span class="head_title">
+                                                        Exam Coverage
+                                                    </span> 
+                                                </div>
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <!-- details 1  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            1. one content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 2  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            2. two content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 3  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            3. three content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- HOW TO EVALUATE details  -->
+                                    <div class="container mt-5" data-aos="fade-up">
+                                        <span class="head_title">
+                                            How to evaluate examination ?
+                                        </span>
+                                        <br><br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>1. Bootstrap CSS (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Content here
+                                        </div>
+                                        <br>
+                                        <!-- evaluation 2  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>2. Tailwind CSS (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Content here
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <div class="mt-5"></div>
+                                    
+                                    <!-- table  -->
+                                    <table data-aos="fade-up" >
+                                        <h2 style="color:#00008b;" data-aos="fade-right">Examination Details</h2>
+                                            <tr>
+                                                <th scope="col">Exam Name</th>
+                                                <td>Exam WDV-103</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Pre-requisites</th>
+                                                <td>None</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Validity</th>
+                                                <td>
+                                                    Lifetime
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Exam Duration</th>
+                                                <td>55 minutes</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                <th scope="col">Number of Questions</th>
+                                                <td>40 questions</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Type of Question</th>
+                                                <td>Multiple Choice</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Passing Score</th>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Cost</th>
+                                                <td>$17 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Languages</th>
+                                                <td>English</td>
+                                            </tr>
+                                    </table>
+                                </div>
+                            </section>
+                            <!-- End Web dev 3 Section -->
+                        <?php
+                    }
+                    else
+                    if($type == 'wdv4')
+                    {
+                        ?>
+                            <!-- ======= Web dev 1 Section ======= -->
+                            <section id="hero">
+                                <div class="container">
+                                    <div class="flex justify-content-center">
+                                        <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                            <div data-aos="zoom-out">
+                                                <h1 class="text-center text-lg-center">
+                                                    Enrollment <strong class="text-warning">Web Development</strong> <br>
+                                                    Certifications Level 4
+                                                </h1>
+                                                <div class="text-center text-lg-center">
+                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">
+                                                        Enroll now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                    <defs>
+                                        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                    </defs>
+                                    <g class="wave1">
+                                        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                    </g>
+                                    <g class="wave2">
+                                        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                    </g>
+                                    <g class="wave3">
+                                        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                    </g>
+                                </svg>
+                            </section>
+                            <!-- End Hero -->
+
+                            <!-- ======= Web dev 1 Section ======= -->
+                            <section id="certificate" class="certificate">
+                                <div class="container">
+
+                                    <div class="section-title" data-aos="fade-up">
+                                        <h2 class="text-secondary">Certifications</h2>
+                                        <p style="color: #00008b;">Basic PHP/ MySQL</p>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- img here  -->
+                                                <img src="assets/img/certificates/web_dev/web_dev4.png" height="200" width="200" />
+                                                <!-- title here  -->
+                                                <span class="name">LEVEL 4</span> 
+                                                <span class="idd"> Basic PHP/ MySQL</span>
+                                               
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <div class="col-md-12 mb-5">
+                                                    <br>
+                                                    Basic PHP/ MySql content here
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- What makes it different  -->
+                                        <div class="row" style="margin-top: 5%;" data-aos="fade-left">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- Coverage title  -->
+                                                <div class="justify-content-center align-items-center mt-5 mb-3">
+                                                    <span class="head_title">
+                                                        Exam Coverage
+                                                    </span> 
+                                                </div>
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <!-- details 1  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            1. one content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 2  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            2. two content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 3  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            3. three content
+                                                        </div>
+                                                        here here here here here herehere herehere here here herehere herehere here
+                                                        <br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- HOW TO EVALUATE details  -->
+                                    <div class="container mt-5" data-aos="fade-up">
+                                        <span class="head_title">
+                                            How to evaluate examination ?
+                                        </span>
+                                        <br><br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>1. PHP/ MySql (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            content here.
+                                        </div>
+                                        <br>
+                           
+                                        <br>
+                                    </div>
+
+                                    <div class="mt-5"></div>
+                                    
+                                    <!-- table  -->
+                                    <table data-aos="fade-up" >
+                                        <h2 style="color:#00008b;" data-aos="fade-right">Examination Details</h2>
+                                            <tr>
+                                                <th scope="col">Exam Name</th>
+                                                <td>Exam WDV-104</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Pre-requisites</th>
+                                                <td>None</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Validity</th>
+                                                <td>
+                                                    Lifetime
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Exam Duration</th>
+                                                            <td>55 minutes</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                <th scope="col">Number of Questions</th>
+                                                <td>40 questions</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Type of Question</th>
+                                                <td>Multiple Choice</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Passing Score</th>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Cost</th>
+                                                <td>$17 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Languages</th>
+                                                <td>English</td>
+                                            </tr>
+                                    </table>
+                                </div>
+                            </section>
+                            <!-- End Web dev 1 Section -->
+                        <?php
+                    }
+                    else
+                    if($type == 'wdv5')
+                    {
+                        ?>
+                            <!-- ======= Web dev 1 Section ======= -->
+                            <section id="hero">
+                                <div class="container">
+                                    <div class="flex justify-content-center">
+                                        <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                            <div data-aos="zoom-out">
+                                                <h1 class="text-center text-lg-center">
+                                                    Enrollment <strong class="text-warning">Web Development</strong> <br>
+                                                    Certifications Level 5
+                                                </h1>
+                                                <div class="text-center text-lg-center">
+                                                    <a href="enroll_web_dev.php?type=<?php echo $type ?>" type="button" class="btn btn-warning scrollto">
+                                                        Enroll now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                    <defs>
+                                        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                    </defs>
+                                    <g class="wave1">
+                                        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                    </g>
+                                    <g class="wave2">
+                                        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                    </g>
+                                    <g class="wave3">
+                                        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                    </g>
+                                </svg>
+                            </section>
+                            <!-- End Hero -->
+
+                            <!-- ======= Web dev 1 Section ======= -->
+                            <section id="certificate" class="certificate">
+                                <div class="container">
+
+                                    <div class="section-title" data-aos="fade-up">
+                                        <h2 class="text-secondary">Certifications</h2>
+                                        <p style="color: #00008b;">Full Stack Development</p>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- img here  -->
+                                                <img src="assets/img/certificates/web_dev/web_dev5.png" height="200" width="200" />
+                                                <!-- title here  -->
+                                                <span class="name">LEVEL 5</span> 
+                                                <span class="idd"> Full Stack Development</span>
+                                               
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <div class="col-md-12 mb-5">
+                                                    <br>
+                                                    Content here
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- What makes it different  -->
+                                        <div class="row" style="margin-top: 5%;" data-aos="fade-left">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="card p-4" data-aos="fade-up">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center"> 
+                                                <!-- Coverage title  -->
+                                                <div class="justify-content-center align-items-center mt-5 mb-3">
+                                                    <span class="head_title">
+                                                        Exam Coverage
+                                                    </span> 
+                                                </div>
+                                                <!-- details here  -->
+                                                <div class="row mt-3">
+                                                    <!-- details 1  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            1. Content here 1
+                                                        </div>
+                                                        Content Here
+                                                        <br><br>
+                                                    </div>
+                                                    <!-- details 2  -->
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            1. Content here 2
+                                                        </div>
+                                                        Content Here
+                                                        <br><br>
+                                                    </div>
+                                                     <!-- details 3  -->
+                                                     <div class="col-md-6 mb-3">
+                                                        <div class="fw-bold" style="color: #00008b;">
+                                                            1. Content here 3
+                                                        </div>
+                                                        Content Here
+                                                        <br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- HOW TO EVALUATE details  -->
+                                    <div class="container mt-5" data-aos="fade-up">
+                                        <span class="head_title">
+                                            How to evaluate examination ?
+                                        </span>
+                                        <br><br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>1. HTML (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Content here
+                                        </div>
+                                        <br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>2. CSS (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Content here
+                                        </div>
+                                        <br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>3. JS (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Content here
+                                        </div>
+                                        <br>
+                                        <!-- evaluation 1  -->
+                                        <div style="margin-left: 3%;">
+                                            <strong>4. PHP/MySQL (%)</strong>
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: 5%;">
+                                            Content here
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <div class="mt-5"></div>
+                                    
+                                    <!-- table  -->
+                                    <table data-aos="fade-up" >
+                                        <h2 style="color:#00008b;" data-aos="fade-right">Examination Details</h2>
+                                            <tr>
+                                                <th scope="col">Exam Name</th>
+                                                <td>Exam WDV-105</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Pre-requisites</th>
+                                                <td>None</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Validity</th>
+                                                <td>
+                                                    Lifetime
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Exam Duration</th>
+                                                            <td>55 minutes</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                <th scope="col">Number of Questions</th>
+                                                <td>40 questions</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Type of Question</th>
+                                                <td>Multiple Choice</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Passing Score</th>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Cost</th>
+                                                <td>$17 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Languages</th>
+                                                <td>English</td>
+                                            </tr>
+                                    </table>
+                                </div>
+                            </section>
+                            <!-- End Web dev 1 Section -->
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <script>
+                            location.href = "404.php";
+                        </script>
+                        <?php
+                    }
                 }
             ?>
 

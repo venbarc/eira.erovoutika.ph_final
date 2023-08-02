@@ -52,39 +52,39 @@
         </div>
         <!-- web dev 2  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <!-- <a href=""> -->
+          <a href="web_dev.php?type=wdv2">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev2.png">
               <h3 style="color: #00008b">Web development Level 2</h3>
             </div>
-          <!-- </a> -->
+          </a>
         </div>
          <!-- web dev 3  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <!-- <a href=""> -->
+          <a href="web_dev.php?type=wdv3">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev3.png">
               <h3 style="color: #00008b">Web development Level 3</h3>
             </div>
-          <!-- </a> -->
+          </a>
         </div>
          <!-- web dev 4  -->
          <div class="col-lg-3 col-md-4 mt-4">
-          <!-- <a href=""> -->
+          <a href="web_dev.php?type=wdv4">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev4.png">
               <h3 style="color: #00008b">Web development Level 4</h3>
             </div>
-          <!-- </a> -->
+          </a>
         </div>
         <!-- web dev 5  -->
         <div class="col-lg-3 col-md-4 mt-4">
-          <!-- <a href=""> -->
+          <a href="web_dev.php?type=wdv5">
             <div class="icon-box pop-up" data-aos="zoom-in" data-aos-delay="50">
               <img class="certi_icon" src="../assets/img/certificates/web_dev/web_dev5.png">
               <h3 style="color: #00008b">Web development Level 5</h3>
             </div>
-          <!-- </a> -->
+          </a>
         </div>
       </div>
 
