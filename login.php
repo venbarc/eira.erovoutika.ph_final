@@ -165,17 +165,18 @@
                                     //SMTP settings
                                     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
                                     $mail->isSMTP();
-                                    $mail->Host = 'smtp.gmail.com';
-                                    $mail->SMTPAuth = true;
+                                    $mail->Host = 'localhost';
+                                    $mail->SMTPAuth = false;
+                                    $mail->SMTPAutoTLS = false;
 
                                     // erovoutika mails 
-                                    $mail->Username = 'erovoutikamails@gmail.com';
-                                    // erovoutika password form gmail 
-                                    $mail->Password = 'wycnwwgkkvdhieet';
-                                    $mail->SMTPSecure = 'tls';
-                                    $mail->Port = 587;
+                                    // $mail->Username = 'erovoutikamails@gmail.com';
+                                    // // erovoutika password form gmail 
+                                    // $mail->Password = 'wycnwwgkkvdhieet';
+                                    // $mail->SMTPSecure = 'tls';
+                                    // $mail->Port = 587;
 
-                                    $mail->setFrom('erovoutikamails@gmail.com', 'Eira Reset Password');
+                                    $mail->setFrom('bhainhuraisha.deplomo@erovoutika.ph', 'Eira Reset Password');
                                     // users email 
                                     $mail->addAddress($email);
                                     $mail->isHTML(true);
