@@ -1580,15 +1580,15 @@
                                                             Question Type
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="html" checked>
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="html" disabled>
                                                             <span class="ml-2 text-gray-900 dark:text-white">HTML</span>
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="css">
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="css" checked>
                                                             <span class="ml-2 text-gray-900 dark:text-white">CSS</span>
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="js">
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="js" disabled>
                                                             <span class="ml-2 text-gray-900 dark:text-white">JavaScript</span>
                                                         </label>
                                                         <label class="inline-flex items-center">
@@ -1846,19 +1846,19 @@
                                                             Question Type
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="html" checked>
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="html" disabled>
                                                             <span class="ml-2 text-gray-900 dark:text-white">HTML</span>
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="css">
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="css" disabled>
                                                             <span class="ml-2 text-gray-900 dark:text-white">CSS</span>
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="js">
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="js" disabled>
                                                             <span class="ml-2 text-gray-900 dark:text-white">JavaScript</span>
                                                         </label>
                                                         <label class="inline-flex items-center">
-                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="php">
+                                                            <input type="radio" class="form-radio text-blue-600" name="ques_type" value="php" checked>
                                                             <span class="ml-2 text-gray-900 dark:text-white">PHP/MySql</span>
                                                         </label>
                                                     </div>

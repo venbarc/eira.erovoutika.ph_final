@@ -282,7 +282,7 @@
                                         <br><br>
                                         <!-- evaluation 1  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>1. Robotics and Automation Terminologies (%)</strong>
+                                            <strong>1. Robotics and Automation Terminologies</strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -294,7 +294,7 @@
                                         <br>
                                         <!-- evaluation 2  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>2. Programming (%)</strong>
+                                            <strong>2. Programming </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -305,7 +305,7 @@
                                         <br>
                                         <!-- evaluation 3  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>3. Troubleshooting (%)</strong>
+                                            <strong>3. Troubleshooting </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -317,7 +317,7 @@
                                         <br>
                                         <!-- evaluation 4  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>4. Design and Implementation (%)</strong>
+                                            <strong>4. Design and Implementation </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -439,16 +439,22 @@
                                                 <!-- details here  -->
                                                 <div class="row mt-3">
                                                     <div class="col-md-12 mb-5">
-                                                    <br>
-                                                    <div style="text-align: justify;">
-                                                    CONTENT HERE 
+                                                        <br>
+                                                        <div style="text-align: justify;">
+                                                            Robotics Automation Level 2 offers an intermediate-level immersive educational journey for individuals eager to enhance their proficiency in the realms of robotics and automation. This program delves into both foundational and advanced aspects of the Arduino ecosystem, programming languages, and innovative design principles. Participants will actively engage in the construction of intricate automation projects, enabling the practical application of their freshly acquired knowledge.
+                                                            Upon completion of the course, participants will gain the following competencies:
+                                                        </div>
+                                                        <div style="margin-left: 3%;">
+                                                            <span style="color: #00008b;">✱</span> Comprehensive understanding of robotics and automation principles.
+                                                            <br>
+                                                            <span style="color: #00008b;">✱</span> Proficiency in the creation and execution of fundamental robotics and automation projects.
+                                                            <br>
+                                                            <span style="color: #00008b;">✱</span> Skill in designing and implementing advanced automation projects utilizing the complete Arduino ecosystem, programming languages, and methodologies.
+                                                            <br>
+                                                        </div>
+                                                        <br>
+                                                        <p>Similarly, a Robotics and Automation certification examination is available. This assessment is meticulously crafted to evaluate a candidate's grasp of essential robotics and automation concepts, including Arduino programming, electronic circuitry design, and systematic troubleshooting. The examination is tailored for individuals aspiring to excel in roles such as Research and Development (R&D) Engineer, Embedded Systems Engineer, Electronics Design Engineer, Robotics and Automation Engineer, and Robotics Educator.</p>
                                                     </div>
-                                                    <div style="margin-left: 3%;">
-                                                         CONTENT HERE
-                                                    </div>
-                                                    <br>
-                                                    CONTENT HERE
-                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -614,7 +620,7 @@
                                         <br><br>
                                         <!-- evaluation 1  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>1. Robotics and Automation Terminologies (%)</strong>
+                                            <strong>1. Robotics and Automation Terminologies </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -626,7 +632,7 @@
                                         <br>
                                         <!-- evaluation 2  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>2. Programming (%)</strong>
+                                            <strong>2. Programming </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -637,7 +643,7 @@
                                         <br>
                                         <!-- evaluation 3  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>3. Troubleshooting (%)</strong>
+                                            <strong>3. Troubleshooting </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -649,7 +655,7 @@
                                         <br>
                                         <!-- evaluation 4  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>4. Design and Implementation (%)</strong>
+                                            <strong>4. Design and Implementation </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -770,14 +776,20 @@
                                                     <div class="col-md-12 mb-5">
                                                     <br>
                                                     <div style="text-align: justify;">
-                                                    CONTENT HERE 
+                                                        Robotics Automation Level 3 represents the pinnacle of educational excellence, tailored for individuals with a deep-rooted passion for advancing their mastery in robotics and automation. This program embarks on an intricate exploration of the Arduino ecosystem, encompassing sophisticated programming paradigms, cutting-edge design methodologies, and intricate system integration. Participants will orchestrate the creation of highly intricate and multifaceted automation projects, translating their profound theoretical knowledge into groundbreaking practical implementations.
+                                                        Upon the culmination of this program, participants will ascend to the following zenith of capabilities:
                                                     </div>
                                                     <div style="margin-left: 3%;">
-                                                         CONTENT HERE
+                                                        <span style="color: #00008b;">✱</span> Mastery of intricate robotics and automation theories, underpinned by advanced mathematical and algorithmic foundations.
+                                                        <br>
+                                                        <span style="color: #00008b;">✱</span> Aptitude to architect and execute complex robotics and automation projects that push the boundaries of innovation.
+                                                        <br>
+                                                        <span style="color: #00008b;">✱</span> Proficiency in integrating state-of-the-art technologies within the Arduino environment, employing advanced programming languages, and pioneering methodologies.
+                                                        <br>
                                                     </div>
                                                     <br>
-                                                    CONTENT HERE
-                                                </div>
+                                                    <p>Furthermore, a Robotics and Automation certification examination of utmost sophistication is available for those who dare to challenge their acumen. This rigorous evaluation scrutinizes a candidate's virtuosity in intricate robotics and automation facets, encompassing advanced Arduino programming, intricate electronic circuitry design, and systematic diagnostic acumen. This assessment is tailored for individuals poised to excel in illustrious roles such as Lead Research and Development (R&D) Engineer, Robotics Systems Architect, Automation Strategist, and a Trailblazing Robotics Educator.</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -943,7 +955,7 @@
                                         <br><br>
                                         <!-- evaluation 1  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>1. Robotics and Automation Terminologies (%)</strong>
+                                            <strong>1. Robotics and Automation Terminologies </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -955,7 +967,7 @@
                                         <br>
                                         <!-- evaluation 2  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>2. Programming (%)</strong>
+                                            <strong>2. Programming </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -966,7 +978,7 @@
                                         <br>
                                         <!-- evaluation 3  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>3. Troubleshooting (%)</strong>
+                                            <strong>3. Troubleshooting </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">
@@ -978,7 +990,7 @@
                                         <br>
                                         <!-- evaluation 4  -->
                                         <div style="margin-left: 3%;">
-                                            <strong>4. Design and Implementation (%)</strong>
+                                            <strong>4. Design and Implementation </strong>
                                         </div>
                                         <br>
                                         <div style="margin-left: 5%;">

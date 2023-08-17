@@ -62,23 +62,50 @@
                     {
                         $delete_id = $_POST['delete_id'];
 
-                        $stmt = $conn->prepare("delete from test where id = ? ");
-                        $stmt->bind_param('i', $delete_id);
-                        $stmt->execute();
-
-                        if($stmt->affected_rows > 0)
-                        {
-                            echo'
-                            <div class="scs"> Successfully deleted Question. </div>
-                            ';
-                        }
-                        else{
-                            echo'
-                            <div class="err"> Something went wrong please try again! </div>
-                            ';
-                        }
-                        $stmt->close();
+                        //select the data in to database first for insertion
+                        $stmt_sel_in_test = $conn->prepare("SELECT * from test where id = ?");
+                        $stmt_sel_in_test->execute([$delete_id]);
+                        $res_sel_in_test = $stmt_sel_in_test->get_result();
                         
+                        // get value of specific data in test 
+                        $row_sel_in_test = $res_sel_in_test->fetch_assoc();
+                        $type = $row_sel_in_test['type'];
+                        $question = $row_sel_in_test['question'];
+                        $opt1 = $row_sel_in_test['opt1'];
+                        $opt2 = $row_sel_in_test['opt2'];
+                        $opt3 = $row_sel_in_test['opt3'];
+                        $opt4 = $row_sel_in_test['opt4'];
+                        $answer = $row_sel_in_test['answer'];
+                        $ques_type = $row_sel_in_test['ques_type'];
+                        $image = $row_sel_in_test['image'];
+
+                        //move to recycle bin 
+                        $stmt_rec_bin = $conn->prepare("INSERT into recycle_bin (type, question, opt1, opt2, opt3, opt4, answer, ques_type, image) 
+                                                        values(?,?,?,?,?,?,?,?,?)");
+
+                        $stmt_rec_bin->execute([$type, $question, $opt1, $opt2, $opt3, $opt4, $answer, $ques_type, $image]);
+
+
+                        if($stmt_rec_bin->affected_rows > 0)
+                        {
+                            // delete the test question 
+                            $stmt = $conn->prepare("delete from test where id = ? ");
+                            $stmt->bind_param('i', $delete_id);
+                            $stmt->execute();
+
+                            if($stmt->affected_rows > 0)
+                            {
+                                echo'
+                                <div class="scs"> Successfully deleted Question. </div>
+                                ';
+                            }
+                            else{
+                                echo'
+                                <div class="err"> Something went wrong please try again! </div>
+                                ';
+                            }
+                            $stmt->close();
+                        }
                     }
 
                     // selecting RNA type 

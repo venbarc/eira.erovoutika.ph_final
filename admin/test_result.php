@@ -32,7 +32,7 @@
                     </div>
 
                     <?php
-                        $stmt = $conn->prepare("select r.*,u.* from result r join users u on r.email = u.email");
+                        $stmt = $conn->prepare("SELECT r.*,u.* from result r join users u on r.email = u.email order by r.date desc");
                         $stmt->execute();
                         $res = $stmt->get_result();
 

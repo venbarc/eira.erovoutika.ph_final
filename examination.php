@@ -338,7 +338,7 @@
                                                                                     <input type="radio" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $options[2] ?>" class="mb-3"/>
                                                                                     <span><h6>C.) &nbsp; </h6><?php echo $options[2] ?></span>
                                                                                 </label>
-                                                                                <label title=<?php echo $answer ?>>
+                                                                                <label title="<?php echo $answer ?>">
                                                                                     <input type="radio" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $options[3] ?>" class="mb-3"/>
                                                                                     <span><h6>D.) &nbsp; </h6><?php echo $options[3] ?></span>
                                                                                 </label>

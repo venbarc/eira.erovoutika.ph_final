@@ -27,12 +27,12 @@
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                         <h3 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                            Test Results for <span class="text-red-600"> Failed </span> Robotics and Automation
+                            Test Results for <span class="text-red-600"> Failed </span> 
                         </h3>
                     </div>
 
                     <?php
-                        $stmt = $conn->prepare("select r.*,u.* from result r join users u on r.email = u.email where r.verdict = 'failed' ");
+                        $stmt = $conn->prepare("SELECT r.*,u.* from result r join users u on r.email = u.email where r.verdict = 'failed' ");
                         $stmt->execute();
                         $res = $stmt->get_result();
                         
@@ -87,7 +87,7 @@
                                     $image = '<img src="../assets/img/profile/default2.png" class="admin_user_profile">';
                                 }
                                 else{
-                                    $image = '<img src="../'. $image .'" class="admin_user_profile">';
+                                    $image = '<img src="../'. $image .'" class="admin_user_profile w-[55px] h-auto object-cover">';
                                 }
                                 // verdict color 
                                 if($verdict == 'failed')

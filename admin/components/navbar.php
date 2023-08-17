@@ -74,16 +74,6 @@
             </a>
           </li>
           <li>
-            <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16 3H4a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H4z" clip-rule="evenodd"/>
-                  <rect width="2" height="2" x="9.002" y="12" rx="1"/>
-                <path d="M9.1 6.995a.905.905 0 111.8 0l-.35 3.507a.553.553 0 01-1.1 0L9.1 6.995z"/>
-              </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Issue</span>
-            </a>
-          </li>
-          <li>
             <button href="log_out.php" id="deleteButton" data-modal-toggle="logoutmodal" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
               <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M7.854 6.646a.5.5 0 00-.708 0l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708-.708L5.207 10l2.647-2.646a.5.5 0 000-.708z" clip-rule="evenodd"/>
@@ -91,6 +81,15 @@
               </svg>
               <span class="flex-1 ml-3 whitespace-nowrap">Logout</span><!-- LOGOUT Modal toggle -->
             </button>
+          </li>
+          <li>
+            <a href="recycle_bin.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+              <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M7.5 7.5A.5.5 0 018 8v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V8z"/>
+                <path fill-rule="evenodd" d="M16.5 5a1 1 0 01-1 1H15v9a2 2 0 01-2 2H7a2 2 0 01-2-2V6h-.5a1 1 0 01-1-1V4a1 1 0 011-1H8a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM6.118 6L6 6.059V15a1 1 0 001 1h6a1 1 0 001-1V6.059L13.882 6H6.118zM4.5 5V4h11v1h-11z" clip-rule="evenodd"/>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Recycle bin</span>
+            </a>
           </li>
         </ul>
       </div>
