@@ -67,7 +67,8 @@
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                     </svg>
                                 </div>
-                                <input type="search" id="default-search" name="search_name" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+                                <input type="search" id="default-search" name="search_name" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                    placeholder="Search payments details here" required>
                                 <button type="submit" name="search_pay" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     Search
                                 </button>
@@ -79,7 +80,6 @@
                                 Back
                             </a>
                         </div>
-                        
                         <!-- End search bar-->
                     </div>
                     
@@ -93,6 +93,7 @@
                                         $search_name = $_POST['search_name'];
                                         $stmt = $conn->prepare("SELECT * from payments 
                                                                 WHERE 
+                                                                type LIKE '%$search_name%' or 
                                                                 pay_type LIKE '%$search_name%' or 
                                                                 ref_num LIKE '%$search_name%' or 
                                                                 approval LIKE '%$search_name%' or 
@@ -102,13 +103,13 @@
                                                                 contact LIKE '%$search_name%' or 
                                                                 address LIKE '%$search_name%' or 
                                                                 date_pay LIKE '%$search_name%'
-                                                                Order by approval = 'pending', date_pay desc
+                                                                Order by approval = 'pending' desc, date_pay desc
                                                                 ");
                                         $stmt->execute();
                                         $res = $stmt->get_result();
                                     }
                                     else{
-                                        $stmt = $conn->prepare("SELECT * from payments order by approval = 'pending', date_pay desc");
+                                        $stmt = $conn->prepare("SELECT * from payments order by approval = 'pending' desc, date_pay desc");
                                         $stmt->execute();
                                         $res = $stmt->get_result();
                                     }
@@ -148,47 +149,7 @@
                                             $date_pay = $row['date_pay'];
                                             $proof_pay = $row['proof_pay'];
 
-                                            // check robotics and automation level
-                                            if($type == 'rna1')
-                                            {
-                                                $type = 'Robotics And Automation 1';
-                                            } 
-                                            else
-                                            if($type == 'rna2')
-                                            {
-                                                $type = 'Robotics And Automation 1';
-                                            }
-                                            else
-                                            if($type == 'rna3')
-                                            {
-                                                $type = 'Robotics And Automation 3';
-                                            }
-                                            // check Web Development level
-                                            if($type == 'wdv1')
-                                            {
-                                                $type = 'Web Development 1';
-                                            } 
-                                            else
-                                            if($type == 'wdv2')
-                                            {
-                                                $type = 'Web Development 2';
-
-                                            }
-                                            else
-                                            if($type == 'wdv3')
-                                            {
-                                                $type = 'Web Development 3';
-                                            }
-                                            else
-                                            if($type == 'wdv4')
-                                            {
-                                                $type = 'Web Development 4';
-                                            }
-                                            else
-                                            if($type == 'wdv5')
-                                            {
-                                                $type = 'Web Development 5';
-                                            }
+                                            $date_pay = date('F j, Y');
 
                                             // check approval
                                             if($approval == 0)
@@ -206,11 +167,12 @@
                                                 $approval = ' <strong class="text-red-500">Rejected</strong> ';
                                             }
 
+
                                             echo'
                                                 <tbody>
                                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                        <td class="px-6 py-4">'. $type .'</td>
-                                                        <td class="px-6 py-4">'. $pay_type .'</td>
+                                                        <td class="px-6 py-4 font-bold">'. $type .'</td>
+                                                        <td class="px-6 py-4 font-bold text-blue-600">'. $pay_type .'</td>
                                                         <td class="px-6 py-4">'. $ref_num .'</td>
                                                         <td class="px-6 py-4">'. $approval .'</td>
                                                         <td class="px-6 py-4">'. $email .'</td>
