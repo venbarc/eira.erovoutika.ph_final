@@ -32,7 +32,7 @@
                     </div>
 
                     <?php
-                        $stmt = $conn->prepare("SELECT r.*,u.* from result r join users u on r.email = u.email where r.verdict = 'failed' ");
+                        $stmt = $conn->prepare("SELECT r.*,u.* from result r join users u on r.email = u.email where r.verdict = 'failed' order by date desc");
                         $stmt->execute();
                         $res = $stmt->get_result();
                         
@@ -61,6 +61,9 @@
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Score %
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Type
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Passing Score %
@@ -122,6 +125,9 @@
                                         </td>
                                         <td class="px-6 py-4">
                                         '. $row['overall_user_percent'] .' %
+                                        </td>
+                                        <td class="px-6 py-4">
+                                        '. $row['type'] .'
                                         </td>
                                         <td class="px-6 py-4">
                                             Passing 70%

@@ -39,6 +39,7 @@
                         </h2>
                     </div>
                    
+                    
 
                     <?php
                         $stmt = $conn->prepare("SELECT * from recycle_bin");
@@ -86,7 +87,10 @@
                                                 Image
                                             </th>
                                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Action
+                                                Recycle
+                                            </th>
+                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                                                Remove
                                             </th>
                                         </tr>
                                         </thead>
@@ -163,20 +167,22 @@
                                                     '.$image.'
                                                 </p>
                                             </td>
-                                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <div class="flex items-center">
-                                                    <form method="post">
-                                                    <button type="submit" name="recover_id" value="'.$row['id'].'" class="text-blue-700">  
-                                                        <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path fill-rule="evenodd" d="M4 9.5a.5.5 0 00-.5.5 6.5 6.5 0 0012.13 3.25.5.5 0 00-.866-.5A5.5 5.5 0 014.5 10a.5.5 0 00-.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M4.354 9.146a.5.5 0 00-.708 0l-2 2a.5.5 0 00.708.708L4 10.207l1.646 1.647a.5.5 0 00.708-.708l-2-2zM15.947 10.5a.5.5 0 00.5-.5 6.5 6.5 0 00-12.13-3.25.5.5 0 10.866.5A5.5 5.5 0 0115.448 10a.5.5 0 00.5.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M18.354 8.146a.5.5 0 00-.708 0L16 9.793l-1.646-1.647a.5.5 0 00-.708.708l2 2a.5.5 0 00.708 0l2-2a.5.5 0 000-.708z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        Recover 
-                                                     </button>
-                                                    </form>
-                                                </div>
-                                            </td>
+                                            <form method="post">
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <div class="flex items-center">
+                                                        <button type="submit" name="recover_id" value="'.$row['id'].'" class="text-blue-700">  
+                                                            Recover 
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <div class="flex items-center">
+                                                        <button type="submit" name="delete_id" value="'.$row['id'].'" class="text-red-700">  
+                                                            Remove 
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </form>
                                         </tr>
                                     </tbody>
                                 ';
@@ -252,6 +258,24 @@
                                 <h2 class="text-gray-900 dark:text-white" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
                                     No Data to recover yet.
                                 </h2>
+                                <?php
+                            }
+                        }
+
+                        // delete function 
+                        if(isset($_POST['delete_id']))
+                        {
+                            $delete_id = $_POST['delete_id'];
+
+                            $stmt_del = $conn->prepare("DELETE from recycle_bin where id = ?");
+                            $stmt_del->execute([$delete_id]);
+
+                            if($stmt_del->affected_rows > 0)
+                            {
+                                ?>
+                                <script>
+                                    location.href ="recycle_bin.php";
+                                </script>
                                 <?php
                             }
                         }
