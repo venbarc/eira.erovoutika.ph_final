@@ -74,15 +74,6 @@
             </a>
           </li>
           <li>
-            <button href="log_out.php" id="deleteButton" data-modal-toggle="logoutmodal" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M7.854 6.646a.5.5 0 00-.708 0l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708-.708L5.207 10l2.647-2.646a.5.5 0 000-.708z" clip-rule="evenodd"/>
-                <path fill-rule="evenodd" d="M12 10a.5.5 0 00-.5-.5H5a.5.5 0 000 1h6.5a.5.5 0 00.5-.5zm2.5 6a.5.5 0 01-.5-.5v-11a.5.5 0 011 0v11a.5.5 0 01-.5.5z" clip-rule="evenodd"/>
-              </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Logout</span><!-- LOGOUT Modal toggle -->
-            </button>
-          </li>
-          <li>
             <a href="recycle_bin.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
               <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M7.5 7.5A.5.5 0 018 8v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V8z"/>
@@ -90,6 +81,25 @@
               </svg>
               <span class="flex-1 ml-3 whitespace-nowrap">Recycle bin</span>
             </a>
+          </li>
+          <li>
+          <li>
+            <a href="certifications.php" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+              <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 3h8a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V5a1 1 0 00-1-1H6z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M6.5 14a.5.5 0 01.5-.5h3a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Certifications</span>
+            </a>
+          </li>
+          <li>
+            <button href="log_out.php" id="deleteButton" data-modal-toggle="logoutmodal" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+              <svg width="35" height="35" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.854 6.646a.5.5 0 00-.708 0l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708-.708L5.207 10l2.647-2.646a.5.5 0 000-.708z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M12 10a.5.5 0 00-.5-.5H5a.5.5 0 000 1h6.5a.5.5 0 00.5-.5zm2.5 6a.5.5 0 01-.5-.5v-11a.5.5 0 011 0v11a.5.5 0 01-.5.5z" clip-rule="evenodd"/>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Logout</span><!-- LOGOUT Modal toggle -->
+            </button>
           </li>
         </ul>
       </div>
