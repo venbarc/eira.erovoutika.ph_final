@@ -22,6 +22,20 @@
     <?php
     include "./components/navbar.php";
 
+    $query = "select count(*) from result";
+    $result = $conn->query($query);
+    if($result->num_rows > 0)
+    {
+        $row = $result->fetch_assoc();
+        $total_result = $row["count(*)"];
+    }
+    else
+    {
+        echo '
+            <h4 class ="no-record"> There are no Certifications to be recorded! </h4>
+        ';
+    }
+
     ?>  
     <!-- dashboard -->
     <div class="p-4 sm:ml-64">
@@ -30,7 +44,10 @@
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">
-                            Certifications 
+                            Certifications EIRA
+                        </h2>
+                        <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                            <?php echo $total_result?>
                         </h2>
                         <!-- Start search bar-->
                         <form method="POST">   
@@ -70,12 +87,15 @@
                                                     email LIKE '%$search_name%' or 
                                                     full_name LIKE '%$search_name%'or
                                                     date LIKE '%$search_name%'
+                                                    Order by date desc
                                                     ");
                             $stmt->execute();
                             $res = $stmt->get_result();
                         }
                         else{
-                            $stmt = $conn->prepare("SELECT * from result");
+                            $stmt = $conn->prepare("SELECT * from result
+                                                    Order by date desc
+                                                    ");
                             $stmt->execute();
                             $res = $stmt->get_result();
                         }
@@ -89,29 +109,29 @@
                                     <div class="bg-white shadow-md rounded my-6">
                                     <table class="min-w-full leading-normal">
                                         <thead>
-                                        <tr>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                #
-                                            </th>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Certificate ID
-                                            </th>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Type
-                                            </th>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Email
-                                            </th>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Full Name
-                                            </th>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Action
-                                            </th>
-                                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
-                                                Date Accomplished
-                                            </th>
-                                        </tr>
+                                            <tr class="text-sm">
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    #
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    Certificate ID
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    Type
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    Email
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    Full Name
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    Action
+                                                </th>
+                                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-900 text-left font-semibold text-white uppercase tracking-wider">
+                                                    Date Accomplished
+                                                </th>
+                                            </tr>
                                         </thead>
 
                             ';
@@ -202,14 +222,6 @@
                                 </div>
                             </div>
                             ';
-                        }
-                        else
-                        {
-                            ?>
-                            <h2 class="text-gray-900 dark:text-white text-center" style="background: rgb(0,0,0,0.3); padding: 20px; font-size: 30px;">
-                                There is no certificate yet.
-                            </h2>
-                            <?php
                         }
 
                         //recover function 
