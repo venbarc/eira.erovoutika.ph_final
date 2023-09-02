@@ -56,6 +56,7 @@
             include "courses/cert_linux.php";
             include "courses/cert_python.php";
             include "courses/cert_web_dev.php";
+            include "courses/cert_elect_and_pcb.php";
             include "include/contact.php";
         ?>
 

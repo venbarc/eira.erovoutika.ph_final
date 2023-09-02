@@ -2706,6 +2706,1031 @@
                         }
                         
                     }
+                    // epcb dev section 
+                    else
+                    if($type == 'epcb1')
+                    {
+                        // check if there are result in database 
+                        $stmt = $conn->prepare("select * from result where email = ?");
+                        $stmt->bind_param('s', $email);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
+
+                        if($res->num_rows > 0) //if user already have result
+                        {
+                            ?>
+                                <!-- ======= start Hero ======= -->
+                                <section id="hero">
+                                    <div class="container">
+                                        <div class="flex justify-content-center">
+                                            <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                                <div data-aos="zoom-out">
+                                                    <h1 class="text-center text-lg-center">
+                                                        Examination Result <br>
+                                                        Electronics and PCB Design 1
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                        <defs>
+                                            <path id="wave-path"
+                                                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                        </defs>
+                                        <g class="wave1">
+                                            <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                        </g>
+                                        <g class="wave2">
+                                            <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                        </g>
+                                        <g class="wave3">
+                                            <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                        </g>
+                                    </svg>
+                                </section>
+                                <!-- End Hero -->
+
+                                <section>
+                                    <div class="container">
+                                        <div class="section-title" data-aos="fade-up">
+                                            <h2 class="text-secondary">Electronics and PCB Design </h2>
+                                            <p>Level 1 Result</p>
+                                        </div>
+
+                                        <div class="container-fluid" data-aos="fade-up">
+                                            <div class="row justify-content-center">
+                                                <div class="col-12 col-lg-11">
+                                                    <!-- user data result -->
+                                                    
+                                                    <?php 
+                                                        $stmt = $conn->prepare("select * from result where email = ? and type = ?");
+                                                        $stmt->bind_param('ss', $email, $type);
+                                                        $stmt->execute();
+                                                        $res = $stmt->get_result();
+
+                                                        if($res->num_rows > 0)
+                                                        {
+                                                            echo'
+                                                                <h3>Exam Details</h3>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col"> Exam Code Level </th>
+                                                                            <th scope="col"> Level </th>
+                                                                            <th scope="col"> Email </th>
+                                                                            <th scope="col"> Full Name </th>
+                                                                            <th scope="col"> Date Completed </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                            ';
+                                                            while($row = $res->fetch_assoc())
+                                                            {
+                                                                $email = $row['email'];
+                                                                $full_name = $row['full_name'];
+                                                                $date = $row['date'];
+                                                                $cert_id = $row['cert_id'];
+
+                                                                $user_percent_1 = $row['user_percent_1'];
+                                                                $user_percent_2 = $row['user_percent_2'];
+                                                                $user_percent_3 = $row['user_percent_3'];
+                                                                $user_percent_4 = $row['user_percent_4'];
+                                                                $overall_user_percent = $row['overall_user_percent'];
+
+                                                                $max_percent_1 = $row['max_percent_1'];
+                                                                $max_percent_2 = $row['max_percent_2'];
+                                                                $max_percent_3 = $row['max_percent_3'];
+                                                                $max_percent_4 = $row['max_percent_4'];
+                                                                $overall_max_percent = $row['overall_max_percent'];
+
+                                                                $verdict = $row['verdict'];
+
+                                                                $code = '';
+                                                                $level = '';
+
+                                                                switch ($type) {
+                                                                    case 'rna1':
+                                                                        $code = 'RA-101';
+                                                                        $level = 'Entry Level';
+                                                                        break;
+                                                                    case 'rna2':
+                                                                        $code = 'RA-102';
+                                                                        $level = '2nd Level';
+                                                                        break;
+                                                                    case 'rna3':
+                                                                        $code = 'RA-103';
+                                                                        $level = '3rd Level';
+                                                                        break;
+
+                                                                    case 'wdv1':
+                                                                        $code = 'WDV-101';
+                                                                        $level = '1st Level';
+                                                                        break;
+                                                                    case 'wdv2':
+                                                                        $code = 'WDV-102';
+                                                                        $level = '2nd Level';
+                                                                        break;
+                                                                    case 'wdv3':
+                                                                        $code = 'WDV-103';
+                                                                        $level = '3rd Level';
+                                                                            break;
+                                                                    case 'wdv4':
+                                                                        $code = 'WDV-104';
+                                                                        $level = '4th Level';
+                                                                            break;
+                                                                    case 'wdv5':
+                                                                        $code = 'WDV-105';
+                                                                        $level = '5th Level';
+                                                                            break;
+
+                                                                    case 'epcb1':
+                                                                        $code = 'EPCB-101';
+                                                                        $level = '1st Level';
+                                                                            break;
+                                                                    case 'epcb2':
+                                                                        $code = 'EPCB-102';
+                                                                        $level = '2nd Level';
+                                                                            break;
+                                                                    case 'epcb3':
+                                                                        $code = 'EPCB-105';
+                                                                        $level = '3rd Level';
+                                                                            break;
+                                                                    default:
+                                                                        // Default action if $type does not match any of the above cases
+                                                                        $code = '';
+                                                                        $level = '';
+                                                                        break;
+                                                                }
+                                                                
+                                                                // get half of max percentages first
+                                                                $half_max_percent_1 = ($max_percent_1 / 2);
+                                                                $half_max_percent_2 = ($max_percent_2 / 2);
+                                                                $half_max_percent_3 = ($max_percent_3 / 2);
+                                                                $half_max_percent_4 = ($max_percent_4 / 2);
+
+                                                                $half_overall_max_percent = ($overall_max_percent / 2);
+
+                                                                // initialize color 
+                                                                $color1 = '';
+                                                                $color2 = '';
+                                                                $color3 = '';
+                                                                $color4 = '';
+                                                                $color5 = '';
+
+                                                                $color1 = ($user_percent_1 >= $half_max_percent_1) ? 'green' : 'red';
+                                                                $color2 = ($user_percent_2 >= $half_max_percent_2) ? 'green' : 'red';
+                                                                $color3 = ($user_percent_3 >= $half_max_percent_3) ? 'green' : 'red';
+                                                                $color4 = ($user_percent_4 >= $half_max_percent_4) ? 'green' : 'red';
+
+                                                                $color5 = ($overall_user_percent >= 70) ? 'green' : 'red';
+
+                                                                $verdict_color = ($verdict == 'passed') ? '<span style="color: green;"> Passed </span>' : 
+                                                                                                    '<span style="color: red;"> Failed </span>';
+                                                                echo'
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td data-label="Code">'.$code.'</td>
+                                                                            <td data-label="Level">'.$level.'</td>
+                                                                            <td data-label="Email">'.$email.'</td>
+                                                                            <td data-label="Full Name">'.$full_name.'</td>
+                                                                            <td data-label="Date Completed">'.$date.'</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                ';
+                                                            }
+                                                            echo'
+                                                                </table>
+                                                            ';
+                                                            
+                                                        }
+                                                    ?>
+
+                                                        <div class="row mt-4">
+
+                                                            <!-- Exam percentages  -->
+                                                            <h5 class="mb-3">Exam Percentage %</h5>
+                                                            <table class="mb-4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Electronics Components and Equipment %</th>
+                                                                        <th scope="col">Electronics Design %</th>
+                                                                        <th scope="col">PCB Design %</th>
+                                                                        <th scope="col">Test & Troubleshooting %</th>
+                                                                        <th scope="col">Total %</th>
+                                                                    <tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td data-label="Electronics Components and Equipment">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_1 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="CSS">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_2 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="JS">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_3 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="PHP/MySql">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_4 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="Total %">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $overall_max_percent ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+
+                                                            <!-- users percentages  -->
+                                                            <h5 class="mb-3">Your Exam Percentage %</h5>
+                                                            <table class="mb-4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Electronics Components and Equipment %</th>
+                                                                        <th scope="col">Electronics Design %</th>
+                                                                        <th scope="col">PCB Design %</th>
+                                                                        <th scope="col">Test & Troubleshooting %</th>
+                                                                        <th scope="col">Total %</th>
+                                                                    <tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td data-label="HTML">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color1 ?>">
+                                                                                <?php echo $user_percent_1 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="CSS">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color2 ?>">
+                                                                                <?php echo $user_percent_2 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="JS">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color3 ?>">
+                                                                                <?php echo $user_percent_3 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="PHP/MySql">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color4 ?>">
+                                                                                <?php echo $user_percent_4 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="Total %">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color5 ?>">
+                                                                                <?php echo $overall_user_percent ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+
+                                                            <!-- overall  -->
+                                                            <h5 class="mb-3">Overall Result %</h5>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Your total</p>
+                                                                <h6 style="font-weight: 600; color: <?php echo $color5 ?> ;">
+                                                                    <?php echo $overall_user_percent ?> %
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Passing</p>
+                                                                <h6 style="font-weight: 600;">
+                                                                    70 %
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Verdict</p>
+                                                                <h6 style="font-weight: 600;">
+                                                                    <?php echo $verdict_color ?> 
+                                                                </h6>
+                                                            </div>
+
+                                                            <!-- download link here  -->
+                                                            <?php
+                                                                if($verdict == 'passed')
+                                                                {
+                                                                    ?>
+                                                                        <div class="col-md-12 mt-5 text-center">
+                                                                            <a href="download_certification.php?type=<?php echo $type ?>&full_name=<?php echo $full_name ?>&date=<?php echo $date ?>&cert_id=<?php echo $cert_id ?>" class="btn btn-primary">
+                                                                                Download your Certificate
+                                                                            </a>
+                                                                        </div>
+                                                                    <?php
+                                                                }
+                                                                else
+                                                                {
+                                                                    
+                                                                }
+                                                            ?>
+
+                                                            <!-- line  -->
+                                                            <div style="border-bottom: 2px solid #00008b; margin: 4% 0;"></div>
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                                <script>
+                                    location.href = "404.php";
+                                </script>
+                            <?php
+                        }
+                        
+                    }
+                    else
+                    if($type == 'epcb2')
+                    {
+                        // check if there are result in database 
+                        $stmt = $conn->prepare("select * from result where email = ?");
+                        $stmt->bind_param('s', $email);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
+
+                        if($res->num_rows > 0) //if user already have result
+                        {
+                            ?>
+                                <!-- ======= start Hero ======= -->
+                                <section id="hero">
+                                    <div class="container">
+                                        <div class="flex justify-content-center">
+                                            <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                                <div data-aos="zoom-out">
+                                                    <h1 class="text-center text-lg-center">
+                                                        Examination Result <br>
+                                                        Web Development Level 2
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                        <defs>
+                                            <path id="wave-path"
+                                                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                        </defs>
+                                        <g class="wave1">
+                                            <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                        </g>
+                                        <g class="wave2">
+                                            <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                        </g>
+                                        <g class="wave3">
+                                            <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                        </g>
+                                    </svg>
+                                </section>
+                                <!-- End Hero -->
+
+                                <section>
+                                    <div class="container">
+                                        <div class="section-title" data-aos="fade-up">
+                                            <h2 class="text-secondary">Web Development </h2>
+                                            <p>Level 2 Result</p>
+                                        </div>
+
+                                        <div class="container-fluid" data-aos="fade-up">
+                                            <div class="row justify-content-center">
+                                                <div class="col-12 col-lg-11">
+                                                    <!-- user data result -->
+                                                    
+                                                    <?php 
+                                                        $stmt = $conn->prepare("select * from result where email = ? and type = ?");
+                                                        $stmt->bind_param('ss', $email, $type);
+                                                        $stmt->execute();
+                                                        $res = $stmt->get_result();
+
+                                                        if($res->num_rows > 0)
+                                                        {
+                                                            echo'
+                                                                <h3>Exam Details</h3>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col"> Exam Code Level </th>
+                                                                            <th scope="col"> Level </th>
+                                                                            <th scope="col"> Email </th>
+                                                                            <th scope="col"> Full Name </th>
+                                                                            <th scope="col"> Date Completed </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                            ';
+                                                            while($row = $res->fetch_assoc())
+                                                            {
+                                                                $email = $row['email'];
+                                                                $full_name = $row['full_name'];
+                                                                $date = $row['date'];
+                                                                $cert_id = $row['cert_id'];
+
+                                                                $user_percent_1 = $row['user_percent_1'];
+                                                                $user_percent_2 = $row['user_percent_2'];
+                                                                $user_percent_3 = $row['user_percent_3'];
+                                                                $user_percent_4 = $row['user_percent_4'];
+                                                                $overall_user_percent = $row['overall_user_percent'];
+
+                                                                $max_percent_1 = $row['max_percent_1'];
+                                                                $max_percent_2 = $row['max_percent_2'];
+                                                                $max_percent_3 = $row['max_percent_3'];
+                                                                $max_percent_4 = $row['max_percent_4'];
+                                                                $overall_max_percent = $row['overall_max_percent'];
+
+                                                                $verdict = $row['verdict'];
+
+                                                                $code = '';
+                                                                $level = '';
+
+                                                                switch ($type) {
+                                                                    case 'rna1':
+                                                                        $code = 'RA-101';
+                                                                        $level = 'Entry Level';
+                                                                        break;
+                                                                    case 'rna2':
+                                                                        $code = 'RA-102';
+                                                                        $level = '2nd Level';
+                                                                        break;
+                                                                    case 'rna3':
+                                                                        $code = 'RA-103';
+                                                                        $level = '3rd Level';
+                                                                        break;
+
+                                                                    case 'wdv1':
+                                                                        $code = 'WDV-101';
+                                                                        $level = '1st Level';
+                                                                        break;
+                                                                    case 'wdv2':
+                                                                        $code = 'WDV-102';
+                                                                        $level = '2nd Level';
+                                                                        break;
+                                                                    case 'wdv3':
+                                                                        $code = 'WDV-103';
+                                                                        $level = '3rd Level';
+                                                                            break;
+                                                                    case 'wdv4':
+                                                                        $code = 'WDV-104';
+                                                                        $level = '4th Level';
+                                                                            break;
+                                                                    case 'wdv5':
+                                                                        $code = 'WDV-105';
+                                                                        $level = '5th Level';
+                                                                            break;
+                                                                    default:
+                                                                        // Default action if $type does not match any of the above cases
+                                                                        $code = '';
+                                                                        $level = '';
+                                                                        break;
+                                                                }
+                                                                
+                                                                // get half of max percentages first
+                                                                $half_max_percent_1 = ($max_percent_1 / 2);
+                                                                $half_max_percent_2 = ($max_percent_2 / 2);
+                                                                $half_max_percent_3 = ($max_percent_3 / 2);
+                                                                $half_max_percent_4 = ($max_percent_4 / 2);
+
+                                                                $half_overall_max_percent = ($overall_max_percent / 2);
+
+                                                                // initialize color 
+                                                                $color1 = '';
+                                                                $color2 = '';
+                                                                $color3 = '';
+                                                                $color4 = '';
+                                                                $color5 = '';
+
+                                                                $color1 = ($user_percent_1 >= $half_max_percent_1) ? 'green' : 'red';
+                                                                $color2 = ($user_percent_2 >= $half_max_percent_2) ? 'green' : 'red';
+                                                                $color3 = ($user_percent_3 >= $half_max_percent_3) ? 'green' : 'red';
+                                                                $color4 = ($user_percent_4 >= $half_max_percent_4) ? 'green' : 'red';
+
+                                                                $color5 = ($overall_user_percent >= 70) ? 'green' : 'red';
+
+                                                                $verdict_color = ($verdict == 'passed') ? '<span style="color: green;"> Passed </span>' : 
+                                                                                                    '<span style="color: red;"> Failed </span>';
+                                                                echo'
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td data-label="Code">'.$code.'</td>
+                                                                            <td data-label="Level">'.$level.'</td>
+                                                                            <td data-label="Email">'.$email.'</td>
+                                                                            <td data-label="Full Name">'.$full_name.'</td>
+                                                                            <td data-label="Date Completed">'.$date.'</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                ';
+                                                            }
+                                                            echo'
+                                                                </table>
+                                                            ';
+                                                            
+                                                        }
+                                                    ?>
+
+                                                        <div class="row mt-4">
+
+                                                            <!-- Exam percentages  -->
+                                                            <h5 class="mb-3">Exam Percentage %</h5>
+                                                            <table class="mb-4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">HTML %</th>
+                                                                        <th scope="col">CSS %</th>
+                                                                        <th scope="col">JS %</th>
+                                                                        <th scope="col">PHP/MySql %</th>
+                                                                        <th scope="col">Total %</th>
+                                                                    <tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td data-label="HTML">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_1 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="CSS">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_2 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="JS">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_3 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="PHP/MySql">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_4 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="Total %">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $overall_max_percent ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+
+                                                            <!-- users percentages  -->
+                                                            <h5 class="mb-3">Your Exam Percentage %</h5>
+                                                            <table class="mb-4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">HTML %</th>
+                                                                        <th scope="col">CSS %</th>
+                                                                        <th scope="col">JS %</th>
+                                                                        <th scope="col">PHP/MySql %</th>
+                                                                        <th scope="col">Total %</th>
+                                                                    <tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td data-label="HTML">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color1 ?>">
+                                                                                <?php echo $user_percent_1 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="CSS">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color2 ?>">
+                                                                                <?php echo $user_percent_2 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="JS">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color3 ?>">
+                                                                                <?php echo $user_percent_3 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="PHP/MySql">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color4 ?>">
+                                                                                <?php echo $user_percent_4 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="Total %">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color5 ?>">
+                                                                                <?php echo $overall_user_percent ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+
+                                                            <!-- overall  -->
+                                                            <h5 class="mb-3">Overall Result %</h5>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Your total</p>
+                                                                <h6 style="font-weight: 600; color: <?php echo $color5 ?> ;">
+                                                                    <?php echo $overall_user_percent ?> %
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Passing</p>
+                                                                <h6 style="font-weight: 600;">
+                                                                    70 %
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Verdict</p>
+                                                                <h6 style="font-weight: 600;">
+                                                                    <?php echo $verdict_color ?> 
+                                                                </h6>
+                                                            </div>
+
+                                                            <!-- download link here  -->
+                                                            <?php
+                                                                if($verdict == 'passed')
+                                                                {
+                                                                    ?>
+                                                                        <div class="col-md-12 mt-5 text-center">
+                                                                            <a href="download_certification.php?type=<?php echo $type ?>&full_name=<?php echo $full_name ?>&date=<?php echo $date ?>&cert_id=<?php echo $cert_id ?>" class="btn btn-primary">
+                                                                                Download your Certificate
+                                                                            </a>
+                                                                        </div>
+                                                                    <?php
+                                                                }
+                                                                else
+                                                                {
+                                                                    
+                                                                }
+                                                            ?>
+
+                                                            <!-- line  -->
+                                                            <div style="border-bottom: 2px solid #00008b; margin: 4% 0;"></div>
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                                <script>
+                                    location.href = "404.php";
+                                </script>
+                            <?php
+                        }
+                        
+                    }
+                    else
+                    if($type == 'epcb3')
+                    {
+                        // check if there are result in database 
+                        $stmt = $conn->prepare("select * from result where email = ?");
+                        $stmt->bind_param('s', $email);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
+
+                        if($res->num_rows > 0) //if user already have result
+                        {
+                            ?>
+                                <!-- ======= start Hero ======= -->
+                                <section id="hero">
+                                    <div class="container">
+                                        <div class="flex justify-content-center">
+                                            <div class="pt-5 pt-lg-0 order-2 order-lg-1  align-items-center">
+                                                <div data-aos="zoom-out">
+                                                    <h1 class="text-center text-lg-center">
+                                                        Examination Result <br>
+                                                        Web Development Level 3
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 24 150 28 " preserveAspectRatio="none">
+                                        <defs>
+                                            <path id="wave-path"
+                                                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                                        </defs>
+                                        <g class="wave1">
+                                            <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                                        </g>
+                                        <g class="wave2">
+                                            <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                                        </g>
+                                        <g class="wave3">
+                                            <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                                        </g>
+                                    </svg>
+                                </section>
+                                <!-- End Hero -->
+
+                                <section>
+                                    <div class="container">
+                                        <div class="section-title" data-aos="fade-up">
+                                            <h2 class="text-secondary">Web Development </h2>
+                                            <p>Level 3 Result</p>
+                                        </div>
+
+                                        <div class="container-fluid" data-aos="fade-up">
+                                            <div class="row justify-content-center">
+                                                <div class="col-12 col-lg-11">
+                                                    <!-- user data result -->
+                                                    
+                                                    <?php 
+                                                        $stmt = $conn->prepare("select * from result where email = ? and type = ?");
+                                                        $stmt->bind_param('ss', $email, $type);
+                                                        $stmt->execute();
+                                                        $res = $stmt->get_result();
+
+                                                        if($res->num_rows > 0)
+                                                        {
+                                                            echo'
+                                                                <h3>Exam Details</h3>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col"> Exam Code Level </th>
+                                                                            <th scope="col"> Level </th>
+                                                                            <th scope="col"> Email </th>
+                                                                            <th scope="col"> Full Name </th>
+                                                                            <th scope="col"> Date Completed </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                            ';
+                                                            while($row = $res->fetch_assoc())
+                                                            {
+                                                                $email = $row['email'];
+                                                                $full_name = $row['full_name'];
+                                                                $date = $row['date'];
+                                                                $cert_id = $row['cert_id'];
+
+                                                                $user_percent_1 = $row['user_percent_1'];
+                                                                $user_percent_2 = $row['user_percent_2'];
+                                                                $user_percent_3 = $row['user_percent_3'];
+                                                                $user_percent_4 = $row['user_percent_4'];
+                                                                $overall_user_percent = $row['overall_user_percent'];
+
+                                                                $max_percent_1 = $row['max_percent_1'];
+                                                                $max_percent_2 = $row['max_percent_2'];
+                                                                $max_percent_3 = $row['max_percent_3'];
+                                                                $max_percent_4 = $row['max_percent_4'];
+                                                                $overall_max_percent = $row['overall_max_percent'];
+
+                                                                $verdict = $row['verdict'];
+
+                                                                $code = '';
+                                                                $level = '';
+
+                                                                switch ($type) {
+                                                                    case 'rna1':
+                                                                        $code = 'RA-101';
+                                                                        $level = 'Entry Level';
+                                                                        break;
+                                                                    case 'rna2':
+                                                                        $code = 'RA-102';
+                                                                        $level = '2nd Level';
+                                                                        break;
+                                                                    case 'rna3':
+                                                                        $code = 'RA-103';
+                                                                        $level = '3rd Level';
+                                                                        break;
+
+                                                                    case 'wdv1':
+                                                                        $code = 'WDV-101';
+                                                                        $level = '1st Level';
+                                                                        break;
+                                                                    case 'wdv2':
+                                                                        $code = 'WDV-102';
+                                                                        $level = '2nd Level';
+                                                                        break;
+                                                                    case 'wdv3':
+                                                                        $code = 'WDV-103';
+                                                                        $level = '3rd Level';
+                                                                            break;
+                                                                    case 'wdv4':
+                                                                        $code = 'WDV-104';
+                                                                        $level = '4th Level';
+                                                                            break;
+                                                                    case 'wdv5':
+                                                                        $code = 'WDV-105';
+                                                                        $level = '5th Level';
+                                                                            break;
+                                                                    default:
+                                                                        // Default action if $type does not match any of the above cases
+                                                                        $code = '';
+                                                                        $level = '';
+                                                                        break;
+                                                                }
+                                                                
+                                                                // get half of max percentages first
+                                                                $half_max_percent_1 = ($max_percent_1 / 2);
+                                                                $half_max_percent_2 = ($max_percent_2 / 2);
+                                                                $half_max_percent_3 = ($max_percent_3 / 2);
+                                                                $half_max_percent_4 = ($max_percent_4 / 2);
+
+                                                                $half_overall_max_percent = ($overall_max_percent / 2);
+
+                                                                // initialize color 
+                                                                $color1 = '';
+                                                                $color2 = '';
+                                                                $color3 = '';
+                                                                $color4 = '';
+                                                                $color5 = '';
+
+                                                                $color1 = ($user_percent_1 >= $half_max_percent_1) ? 'green' : 'red';
+                                                                $color2 = ($user_percent_2 >= $half_max_percent_2) ? 'green' : 'red';
+                                                                $color3 = ($user_percent_3 >= $half_max_percent_3) ? 'green' : 'red';
+                                                                $color4 = ($user_percent_4 >= $half_max_percent_4) ? 'green' : 'red';
+
+                                                                $color5 = ($overall_user_percent >= 70) ? 'green' : 'red';
+
+                                                                $verdict_color = ($verdict == 'passed') ? '<span style="color: green;"> Passed </span>' : 
+                                                                                                    '<span style="color: red;"> Failed </span>';
+                                                                echo'
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td data-label="Code">'.$code.'</td>
+                                                                            <td data-label="Level">'.$level.'</td>
+                                                                            <td data-label="Email">'.$email.'</td>
+                                                                            <td data-label="Full Name">'.$full_name.'</td>
+                                                                            <td data-label="Date Completed">'.$date.'</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                ';
+                                                            }
+                                                            echo'
+                                                                </table>
+                                                            ';
+                                                            
+                                                        }
+                                                    ?>
+
+                                                        <div class="row mt-4">
+
+                                                            <!-- Exam percentages  -->
+                                                            <h5 class="mb-3">Exam Percentage %</h5>
+                                                            <table class="mb-4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">HTML %</th>
+                                                                        <th scope="col">CSS %</th>
+                                                                        <th scope="col">JS %</th>
+                                                                        <th scope="col">PHP/MySql %</th>
+                                                                        <th scope="col">Total %</th>
+                                                                    <tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td data-label="HTML">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_1 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="CSS">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_2 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="JS">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_3 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="PHP/MySql">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $max_percent_4 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="Total %">
+                                                                            <h6 style="font-weight: 600;">
+                                                                                <?php echo $overall_max_percent ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+
+                                                            <!-- users percentages  -->
+                                                            <h5 class="mb-3">Your Exam Percentage %</h5>
+                                                            <table class="mb-4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">HTML %</th>
+                                                                        <th scope="col">CSS %</th>
+                                                                        <th scope="col">JS %</th>
+                                                                        <th scope="col">PHP/MySql %</th>
+                                                                        <th scope="col">Total %</th>
+                                                                    <tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td data-label="HTML">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color1 ?>">
+                                                                                <?php echo $user_percent_1 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="CSS">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color2 ?>">
+                                                                                <?php echo $user_percent_2 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="JS">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color3 ?>">
+                                                                                <?php echo $user_percent_3 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="PHP/MySql">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color4 ?>">
+                                                                                <?php echo $user_percent_4 ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                        <td data-label="Total %">
+                                                                            <h6 style="font-weight: 600; color: <?php echo $color5 ?>">
+                                                                                <?php echo $overall_user_percent ?> %
+                                                                            </h6>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+
+                                                            <!-- overall  -->
+                                                            <h5 class="mb-3">Overall Result %</h5>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Your total</p>
+                                                                <h6 style="font-weight: 600; color: <?php echo $color5 ?> ;">
+                                                                    <?php echo $overall_user_percent ?> %
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Passing</p>
+                                                                <h6 style="font-weight: 600;">
+                                                                    70 %
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-md-4 justify-align-center text-center text-dark py-3" style="background-color: whitesmoke;">
+                                                                <p>Verdict</p>
+                                                                <h6 style="font-weight: 600;">
+                                                                    <?php echo $verdict_color ?> 
+                                                                </h6>
+                                                            </div>
+
+                                                            <!-- download link here  -->
+                                                            <?php
+                                                                if($verdict == 'passed')
+                                                                {
+                                                                    ?>
+                                                                        <div class="col-md-12 mt-5 text-center">
+                                                                            <a href="download_certification.php?type=<?php echo $type ?>&full_name=<?php echo $full_name ?>&date=<?php echo $date ?>&cert_id=<?php echo $cert_id ?>" class="btn btn-primary">
+                                                                                Download your Certificate
+                                                                            </a>
+                                                                        </div>
+                                                                    <?php
+                                                                }
+                                                                else
+                                                                {
+                                                                    
+                                                                }
+                                                            ?>
+
+                                                            <!-- line  -->
+                                                            <div style="border-bottom: 2px solid #00008b; margin: 4% 0;"></div>
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                                <script>
+                                    location.href = "404.php";
+                                </script>
+                            <?php
+                        }
+                        
+                    }
                     else //if not approved
                     {
                         ?>
